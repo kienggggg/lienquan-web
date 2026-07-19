@@ -1,0 +1,26 @@
+{
+  "_note": "Gợi ý trang bị theo NHÓM (tính từ loại sát thương + vai trò). Tên trang bị cụ thể tự điền cho khớp phiên bản hiện tại — site sẽ hiện tên nếu có, không thì hiện nhóm.",
+  "categories": {
+    "pen_phys":   {"label": "Xuyên giáp vật lý", "items": []},
+    "ad":         {"label": "Sát thương vật lý", "items": []},
+    "crit":       {"label": "Chí mạng & tốc đánh", "items": []},
+    "lifesteal":  {"label": "Hút máu", "items": []},
+    "ap":         {"label": "Sức mạnh phép", "items": []},
+    "pen_magic":  {"label": "Xuyên kháng phép", "items": []},
+    "cdr":        {"label": "Giảm hồi chiêu / mana", "items": []},
+    "armor":      {"label": "Giáp vật lý", "items": []},
+    "magicres":   {"label": "Kháng phép", "items": []},
+    "hp_shield":  {"label": "Máu & khiên", "items": []},
+    "antiheal":   {"label": "Kháng hồi máu (khi địch nhiều hồi phục)", "items": []},
+    "boots_atk":  {"label": "Giày công / tốc chạy", "items": []},
+    "boots_res":  {"label": "Giày kháng hiệu ứng", "items": []}
+  },
+  "builds": {
+    "Xạ thủ":  ["ad", "crit", "lifesteal", "boots_atk"],
+    "Sát thủ": ["pen_phys", "ad", "lifesteal", "boots_atk"],
+    "Đấu sĩ":  ["pen_phys", "hp_shield", "lifesteal", "boots_res"],
+    "Pháp sư": ["ap", "pen_magic", "cdr", "boots_atk"],
+    "Đỡ đòn":  ["armor", "magicres", "hp_shield", "boots_res"],
+    "Hỗ trợ":  ["hp_shield", "cdr", "magicres", "boots_res"]
+  }
+}

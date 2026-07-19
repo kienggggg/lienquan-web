@@ -1,0 +1,65 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rouie — khắc chế, trang bị, đội hình | Liên Quân Tổng Hợp</title><style>
+:root{--bg:#0e1420;--card:#161f2e;--ink:#e8eef6;--muted:#9fb0c3;--accent:#4aa3ff;--line:#243347;--chip:#1e2a3d}
+@media(prefers-color-scheme:light){:root{--bg:#f4f7fb;--card:#fff;--ink:#16202e;--muted:#5a6b7d;--accent:#0b6bd6;--line:#e2e9f1;--chip:#eef3f9}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:16px/1.6 "Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+img.av,.av{border-radius:12px;object-fit:cover;display:block;flex:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line);background:var(--card)}
+nav .wrap{display:flex;gap:6px;align-items:center;padding:12px 20px}
+nav b{font-size:16px;margin-right:14px}
+nav a{padding:7px 14px;border-radius:8px;color:var(--muted);font-size:14px;font-weight:600}
+nav a.on,nav a:hover{background:var(--chip);color:var(--ink);text-decoration:none}
+header{padding:30px 0 6px}h1{font-size:28px}
+.sub{color:var(--muted);margin:6px 0 4px;max-width:74ch;font-size:14.5px}
+.warn{background:var(--chip);border:1px solid var(--line);border-left:3px solid #ffd93d;border-radius:8px;padding:10px 14px;color:var(--muted);font-size:13px;margin:14px 0}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+.bar button{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:7px 15px;font-size:13.5px;cursor:pointer}
+.bar button.on{background:var(--accent);color:#fff;border-color:transparent}
+.tierrow{display:flex;gap:14px;align-items:stretch;margin:12px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
+.tierbadge{width:60px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#0e1420}
+.tierheroes{display:flex;gap:10px;flex-wrap:wrap;padding:12px}
+.htile{display:flex;gap:10px;align-items:center;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:8px 12px 8px 8px;min-width:150px}
+.htile:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px);transition:.12s}
+.htile .av{width:40px;height:40px}
+.htile .nm{font-weight:700;color:var(--ink);font-size:14.5px}
+.htile .ro{font-size:11.5px;color:var(--muted)}
+.htile .wr{font-size:12px;margin-top:2px}.htile .wr b{color:var(--accent)}
+footer{color:var(--muted);font-size:13px;padding:30px 0 60px;border-top:1px solid var(--line);margin-top:26px}
+code{background:var(--chip);padding:2px 6px;border-radius:5px}
+
+.hwrap{padding:24px 0}
+.crumbs{font-size:13px;color:var(--muted);margin-bottom:12px}
+.head{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.head .av{width:76px;height:76px;border-radius:16px}
+.head h1{font-size:30px}.head .meta{color:var(--muted);font-size:14px;margin-top:3px}
+.pill{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:20px;padding:3px 11px;font-size:12.5px;margin:4px 6px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.panel h2{font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.attr{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:13px}
+.attr .lb{width:104px;color:var(--muted)}
+.attr .track{flex:1;height:8px;background:var(--chip);border-radius:6px;overflow:hidden}
+.attr .fill{height:100%;border-radius:6px}
+.mu{margin:8px 0;font-size:13.5px}.mu a{font-weight:700}.mu .rz{color:var(--muted);display:block;font-size:12.5px;margin-top:1px}
+.lst{margin:2px 0 0;padding-left:18px;font-size:13.5px}.lst li{margin:4px 0}
+.lst.pro li::marker{color:#2fbf9f}.lst.con li::marker{color:#ff5d73}
+.play{font-size:14px;color:var(--ink)}
+.build span{display:inline-block;background:var(--chip);border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:20px;font-size:13px;margin:4px 6px 0 0}
+.tags span{display:inline-block;background:var(--chip);color:var(--muted);padding:4px 10px;border-radius:20px;font-size:12px;margin:3px 5px 0 0}
+.empty{color:var(--muted);font-size:13px}
+.subhead{font-size:12px;color:var(--muted);font-weight:700;margin:2px 0 4px;text-transform:uppercase;letter-spacing:.6px}
+
+.comp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0}
+.comp .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.comp .thm{font-size:20px;font-weight:800}
+.comp .team{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.comp .slot{background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;width:118px}
+.comp .slot .av{width:46px;height:46px;margin:0 auto 6px}
+.comp .slot .ln{font-size:11px;color:var(--muted)}
+.comp .slot .nm{font-weight:700;font-size:13.5px}
+.comp .why{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:13.5px;margin-top:6px}
+.comp .why .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+@media(max-width:720px){.grid2,.comp .why{grid-template-columns:1fr}}
+</style></head><body><nav><div class="wrap"><b>Liên Quân Tổng Hợp</b><a href="../index.html" class="">Bảng xếp hạng</a><a href="../comps.html" class="">Đội hình</a></div></nav><div class="wrap hwrap"><div class="crumbs"><a href="../index.html">← Bảng xếp hạng</a> · <a href="../comps.html">Đội hình</a></div><div class="head"><svg class="av" width="76" height="76" viewBox="0 0 76 76"><rect width="76" height="76" rx="12" fill="#e0b93d"/><text x="50%" y="50%" dy=".08em" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI,Arial" font-weight="800" font-size="31" fill="#0e1420">RO</text></svg><div><h1>Rouie</h1><div class="meta">Hỗ trợ · Hỗ trợ</div><span class="pill" style="background:#9fb0c3;color:#0e1420;border:0;font-weight:700">Tier ?</span><span class="pill">Mạnh sớm</span><span class="pill" style="border-color:#ffd93d;color:#c99a00">Thuộc tính theo mẫu vai trò — chờ tinh chỉnh</span><div class="tags"></div></div></div><div class="grid2"><div class="panel"><h2>Thuộc tính (từ bộ kỹ năng)</h2><div class="attr"><div class="lb">Cơ động</div><div class="track"><div class="fill" style="width:33%;background:#e0b93d"></div></div></div><div class="attr"><div class="lb">Bùng nổ</div><div class="track"><div class="fill" style="width:33%;background:#e0b93d"></div></div></div><div class="attr"><div class="lb">Sát thương dồn</div><div class="track"><div class="fill" style="width:33%;background:#e0b93d"></div></div></div><div class="attr"><div class="lb">Khống chế</div><div class="track"><div class="fill" style="width:67%;background:#e0b93d"></div></div></div><div class="attr"><div class="lb">Mở giao tranh</div><div class="track"><div class="fill" style="width:33%;background:#e0b93d"></div></div></div><div class="attr"><div class="lb">Trụ đòn</div><div class="track"><div class="fill" style="width:67%;background:#e0b93d"></div></div></div><div class="attr"><div class="lb">Hồi phục</div><div class="track"><div class="fill" style="width:67%;background:#e0b93d"></div></div></div><div class="attr"><div class="lb">Tầm đánh</div><div class="track"><div class="fill" style="width:33%;background:#e0b93d"></div></div></div></div><div class="panel"><h2>Cách vận hành</h2><div class="play">Bám sát chủ lực, hồi phục/tạo khiên và khống chế giải vây đúng lúc; giữ tầm nhìn cho đội.</div></div><div class="panel"><h2>✅ Ưu điểm</h2><ul class="lst pro"><li>Bảo kê chủ lực mạnh</li><li>Có khống chế / hồi phục / giải vây</li></ul></div><div class="panel"><h2>⚠️ Nhược điểm</h2><ul class="lst con"><li>Bản thân yếu, sát thương thấp</li><li>Sợ bị nhắm trước</li></ul></div><div class="panel"><h2>Khắc chế — đi đường</h2><div class="subhead">⚔️ Khắc chế được (cùng đường)</div><div class="mu"><a href="ormarr.html">Ormarr</a><span class="rz">Tầm tay dài hơn, cấu rỉa Ormarr ngay từ giai đoạn đi đường.</span></div><div class="mu"><a href="cresht.html">Cresht</a><span class="rz">Tầm tay dài hơn, cấu rỉa Cresht ngay từ giai đoạn đi đường.</span></div><div class="mu"><a href="chaugnar.html">Chaugnar</a><span class="rz">Tầm tay dài hơn, cấu rỉa Chaugnar ngay từ giai đoạn đi đường.</span></div><div class="subhead" style="margin-top:12px">🛡️ Bị khắc chế (cùng đường)</div><div class="mu"><a href="alice.html">Alice</a><span class="rz">Tầm tay dài hơn, cấu rỉa Rouie ngay từ giai đoạn đi đường.</span></div><div class="mu"><a href="grakk.html">Grakk</a><span class="rz">Tầm tay dài hơn, cấu rỉa Rouie ngay từ giai đoạn đi đường.</span></div></div><div class="panel"><h2>Khắc chế — giao tranh</h2><div class="subhead">⚔️ Khắc chế được (khác đường)</div><div class="mu"><a href="murad.html">Murad</a><span class="rz">Khống chế cứng + trụ đòn, khóa chết Murad ngay khi lao vào.</span></div><div class="mu"><a href="nakroth.html">Nakroth</a><span class="rz">Khống chế cứng + trụ đòn, khóa chết Nakroth ngay khi lao vào.</span></div><div class="mu"><a href="zephys.html">Zephys</a><span class="rz">Khống chế cứng + trụ đòn, khóa chết Zephys ngay khi lao vào.</span></div><div class="subhead" style="margin-top:12px">🛡️ Bị khắc chế (khác đường)</div><div class="mu"><a href="telannas.html">Tel&#x27;Annas</a><span class="rz">Tầm bắn vượt trội, rỉa máu Rouie cận chiến trước khi kịp áp sát.</span></div></div><div class="panel"><h2>🤝 Phối hợp đội hình</h2><div class="mu"><a href="nakroth.html">Nakroth</a><span class="rz">Rouie giữ máu &amp; giải vây cho chủ lực Nakroth.</span></div><div class="mu"><a href="violet.html">Violet</a><span class="rz">Rouie chắn tuyến đầu cho Violet rảnh tay xả sát thương.</span></div><div class="mu"><a href="telannas.html">Tel&#x27;Annas</a><span class="rz">Rouie chắn tuyến đầu cho Tel&#x27;Annas rảnh tay xả sát thương.</span></div></div><div class="panel"><h2>Trang bị gợi ý</h2><div class="build"><span title="Máu &amp; khiên">Máu &amp; khiên</span><span title="Giảm hồi chiêu / mana">Giảm hồi chiêu / mana</span><span title="Kháng phép">Kháng phép</span><span title="Giày kháng hiệu ứng">Giày kháng hiệu ứng</span></div><div class="empty" style="margin-top:10px">Địch nhiều hồi máu → thêm <b>Kháng hồi máu</b>. Nhiều khống chế → <b>Giày kháng hiệu ứng</b>.</div></div></div></div></body></html>
