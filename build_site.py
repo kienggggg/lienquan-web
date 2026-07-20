@@ -82,24 +82,37 @@ table.stats tr:hover td{background:var(--chip)}
 .head .av{width:72px;height:72px;border-radius:16px}
 .head h1{font-size:28px}.head .meta{color:var(--muted);font-size:13.5px;margin-top:3px}
 
-/* Banner tướng kiểu MetaTFT */
-.hbanner{position:relative;border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-bottom:18px;background:var(--card)}
-.hbanner .bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(26px) brightness(.5) saturate(1.3);transform:scale(1.25);opacity:.55}
-.hbanner .row{position:relative;display:flex;gap:20px;padding:20px;align-items:center;flex-wrap:wrap}
-.hbanner .port{width:112px;height:112px;border-radius:16px;object-fit:cover;border:2px solid rgba(255,255,255,.15);flex:none;box-shadow:0 8px 26px rgba(0,0,0,.4)}
-.hbanner .info{flex:1;min-width:220px;color:#fff}
-.hbanner .info h1{font-size:30px;text-shadow:0 2px 12px rgba(0,0,0,.6)}
-.hbanner .info .meta{color:#dfe8f2;font-size:13.5px;margin:4px 0 8px;text-shadow:0 1px 6px rgba(0,0,0,.6)}
-.hbanner .badges{display:flex;gap:7px;flex-wrap:wrap}
-.hbanner .badges span{background:rgba(0,0,0,.42);border:1px solid rgba(255,255,255,.16);color:#fff;border-radius:20px;padding:3px 11px;font-size:12px;backdrop-filter:blur(3px)}
-.hbanner .kpis{display:flex;gap:18px;margin-top:10px}
-.hbanner .kpi b{font-size:20px;color:#fff;display:block;line-height:1.1}
-.hbanner .kpi span{font-size:11px;color:#cdd8e6;text-transform:uppercase;letter-spacing:.5px}
-.hbanner .rbuild{position:relative;background:rgba(0,0,0,.34);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:12px 14px;backdrop-filter:blur(4px)}
-.hbanner .rbuild .k{font-size:11px;color:#cdd8e6;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
-.hbanner .rbuild .strip{display:flex;gap:6px;align-items:center}
-.hbanner .rbuild .strip img,.hbanner .rbuild .strip .ph2{width:42px;height:42px;border-radius:9px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2)}
-.hbanner .rbuild .sep{color:#9fb0c3;font-size:14px}
+/* Unit detail kiểu MetaTFT: thẻ chân dung trái + chỉ số phải */
+.udetail{display:grid;grid-template-columns:340px 1fr;gap:16px;margin-bottom:16px}
+.usummary{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.usplash{position:relative;height:180px}
+.usplash img{width:100%;height:100%;object-fit:cover}
+.usplash .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px}
+.usplash .nm{font-size:26px;font-weight:800;color:#fff;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,.7)}
+.usplash .role{display:inline-block;width:fit-content;margin-top:5px;padding:3px 10px;border-radius:7px;font-size:12px;font-weight:700;color:#0e1420}
+.usplash .cost{position:absolute;top:10px;right:10px;display:flex;gap:6px}
+.usplash .cost span{background:rgba(0,0,0,.55);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:8px;padding:3px 9px;font-size:12px;font-weight:700;backdrop-filter:blur(3px)}
+.utraits{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.utraits span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:20px;padding:2px 9px;font-size:11px}
+.uability{padding:13px 14px}
+.uability .top{display:flex;gap:10px;align-items:center}
+.uability .top img{width:44px;height:44px;border-radius:10px;flex:none;background:var(--chip)}
+.uability .kind{font-size:11px;color:var(--accent);font-weight:700}
+.uability .an{font-weight:700;font-size:15px}
+.uability .desc{color:var(--muted);font-size:12.5px;margin-top:8px;line-height:1.55}
+.ustats{display:flex;flex-direction:column;gap:14px}
+.spanel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+.spanel .t{font-size:13px;font-weight:700;margin-bottom:12px}
+.kpirow{display:flex;gap:26px;flex-wrap:wrap}
+.kpi{text-align:left}
+.kpi b{font-size:28px;font-weight:800;display:block;line-height:1}
+.kpi span{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.posboard{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:6px}
+.posboard .cell{background:var(--chip);border:1px solid var(--line);border-radius:9px;padding:9px 4px;text-align:center;font-size:11px;color:var(--muted)}
+.posboard .cell.on{background:var(--accent);color:#fff;border-color:transparent;font-weight:700}
+.rbanner{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:16px}
+.rbanner .t{font-size:13px;font-weight:700;margin-bottom:4px}
+.rbanner .sub{color:var(--muted);font-size:12.5px;margin-bottom:12px}
 
 /* Item build có icon + thứ tự */
 .ib{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
@@ -553,34 +566,59 @@ def build_hero(h, roster, items) -> str:
                 f'<div class="subhead" style="margin-top:12px">🛡️ Bị khắc chế (khác đường)</div>'
                 f'{_mu_list(c["teamfight"]["bi_khac_che"], "Chưa có tướng khắc rõ ở giao tranh.")}')
 
-    # BANNER kiểu MetaTFT: ảnh nền mờ + chân dung + thông tin + dải build đề xuất.
-    port = (f'<img class="port" src="{esc(h["img"])}" alt="{esc(h["name"])}">'
-            if h.get("img") else f'<div class="port">{avatar(h,112)}</div>')
-    kpis = ""
-    if wr is not None:
-        kpis = (f'<div class="kpis"><div class="kpi"><b>{wr}%</b><span>Tỉ lệ thắng</span></div>'
-                f'<div class="kpi"><b>{h.get("pickrate","?")}%</b><span>Tỉ lệ chọn</span></div>'
-                f'<div class="kpi"><b>Tier {t}</b><span>Xếp hạng</span></div></div>')
-    strip = ""
-    for s in prio[:6]:
-        strip += (f'<img src="{esc(s["icon"])}" alt="" loading="lazy">' if s.get("icon")
-                  else '<div class="ph2"></div>')
-    bg = f'<div class="bg" style="background-image:url({esc(h["img"])})"></div>' if h.get("img") else ""
-    banner = (f'<div class="hbanner">{bg}<div class="row">{port}'
-              f'<div class="info"><h1>{esc(h["name"])}</h1>'
-              f'<div class="meta">{esc(" / ".join(h["roles"]))} · Đường {esc(h["lane"])} · '
-              f'{esc(SPIKE_TXT.get(h.get("spike","mid"),""))}</div>'
-              f'<div class="badges"><span style="background:{TIER_COLOR[t]};color:#0e1420;border:0;font-weight:700">Tier {t}</span>'
-              + "".join(f'<span>{esc(x)}</span>' for x in h.get("tags", [])[:4])
-              + f'</div>{kpis}</div>'
-              f'<div class="rbuild"><div class="k">⚙️ Bộ trang bị đề xuất</div>'
-              f'<div class="strip">{strip}</div></div></div></div>')
+    # ---- Khối UnitDetail kiểu MetaTFT ----
+    rc = ROLE_COLOR.get(engine.primary_role(h), "#4aa3ff")
+    splash_img = (f'<img src="{esc(h["img"])}" alt="{esc(h["name"])}">'
+                  if h.get("img") else avatar(h, 180))
+    traits = "".join(f'<span>{esc(x)}</span>' for x in h.get("tags", [])[:4])
+    summary = (
+        f'<div class="usummary"><div class="usplash">{splash_img}'
+        f'<div class="cost"><span style="background:{TIER_COLOR[t]};color:#0e1420">Tier {t}</span>'
+        f'<span>{esc(SPIKE_TXT.get(h.get("spike","mid"),""))}</span></div>'
+        f'<div class="ov"><div class="nm">{esc(h["name"])}</div>'
+        f'<span class="role" style="background:{rc}">{esc(" · ".join(h["roles"]))}</span>'
+        f'<div class="utraits">{traits}</div></div></div>')
+    # Kỹ năng nổi bật = chiêu cuối (hoặc nội tại nếu ít chiêu).
+    if h.get("skills"):
+        feat = h["skills"][-1] if len(h["skills"]) >= 4 else h["skills"][0]
+        fi = len(h["skills"]) - 1 if len(h["skills"]) >= 4 else 0
+        kind = _SKILL_KIND[fi] if fi < len(_SKILL_KIND) else "Chiêu"
+        ic = (f'<img src="{esc(feat.get("icon",""))}" alt="">' if feat.get("icon")
+              else '<div style="width:44px;height:44px;border-radius:10px;background:var(--chip)"></div>')
+        summary += (f'<div class="uability"><div class="top">{ic}'
+                    f'<div><div class="kind">{kind} · Kỹ năng chủ chốt</div>'
+                    f'<div class="an">{esc(feat.get("name",""))}</div></div></div>'
+                    f'<div class="desc">{esc(feat.get("desc",""))}</div></div>')
+    summary += "</div>"
+
+    # Cột phải: chỉ số + vị trí (bảng 5 đường).
+    kpirow = (f'<div class="kpirow">'
+              f'<div class="kpi"><b style="color:{TIER_COLOR[t]}">{wr if wr is not None else "—"}%</b><span>Tỉ lệ thắng</span></div>'
+              f'<div class="kpi"><b>{h.get("pickrate","—")}%</b><span>Tỉ lệ chọn</span></div>'
+              f'<div class="kpi"><b>{t}</b><span>Xếp hạng</span></div></div>')
+    board = '<div class="posboard">' + "".join(
+        f'<div class="cell{" on" if l==h["lane"] else ""}">{esc(l)}</div>' for l in LANES
+    ) + "</div>"
+    stats = (f'<div class="ustats">'
+             f'<div class="spanel"><div class="t">Chỉ số {esc(h["name"])}</div>{kpirow}</div>'
+             f'<div class="spanel"><div class="t">Vị trí trong đội hình</div>'
+             f'<div class="kpi"><b style="font-size:16px;color:{rc}">{esc(pos_tag)}</b></div>'
+             f'<div class="play" style="margin:6px 0 4px">{esc(pos_note)}</div>{board}</div>'
+             f'{_ad("hero-side","ad-inline")}</div>')
+
+    detail = f'<div class="udetail">{summary}{stats}</div>'
+
+    # Recommended Builds — dải nổi bật (giống MetaTFT).
+    rec = (f'<div class="rbanner"><div class="t">⚙️ Bộ trang bị đề xuất (thứ tự ưu tiên lên đồ)</div>'
+           f'<div class="sub">Gợi ý theo vai trò {esc(engine.primary_role(h))} — bổ trợ '
+           f'<b>{esc(h.get("spell",""))}</b>, phù hiệu <b>{esc(engine.emblem(h))}</b>. '
+           f'Địch nhiều hồi máu → chèn Kháng hồi máu; nhiều khống chế → Giày kháng hiệu ứng.</div>'
+           f'<div class="ib">{build_html}</div></div>')
 
     body = (f'<div class="wrap hwrap">'
             f'<div class="crumbs"><a href="../index.html">← Bảng xếp hạng</a> · '
             f'<a href="../khac-che.html">Tra khắc chế</a> · <a href="../comps.html">Đội hình</a></div>'
-            f'{banner}'
-            f'{tmpl}'
+            f'{tmpl}{detail}{rec}'
             # Giới thiệu
             f'<div class="introbox">{esc(_intro(h))}</div>'
             f'<div class="grid2">'
@@ -588,14 +626,7 @@ def build_hero(h, roster, items) -> str:
             f'<div class="panel"><h2>Hướng dẫn chơi cơ bản</h2><div class="play">{esc(h.get("play",""))}</div></div>'
             f'{skills_html}'
             + _ad("hero-mid", "ad-inline")
-            + f'<div class="panel" style="grid-column:1/-1"><h2>Trang bị (thứ tự ưu tiên lên đồ)</h2>'
-            f'<div class="ib">{build_html}</div>'
-            f'<div class="empty" style="margin-top:10px">Địch nhiều hồi máu → chèn <b>Kháng hồi máu</b>. '
-            f'Nhiều khống chế → <b>Giày kháng hiệu ứng</b>.</div></div>'
-            f'<div class="panel"><h2>Bổ trợ · Phù hiệu · Ngọc</h2>{spellbox}</div>'
-            f'<div class="panel"><h2>Vị trí trong đội hình</h2>'
-            f'<div class="posbox"><span class="tag">{esc(pos_tag)}</span></div>'
-            f'<div class="play" style="margin-top:8px">{esc(pos_note)}</div></div>'
+            + f'<div class="panel"><h2>Bổ trợ · Phù hiệu · Bảng ngọc</h2>{spellbox}</div>'
             f'<div class="panel"><h2>✅ Ưu điểm</h2>{_ul(h.get("pros",[]),"pro")}</div>'
             f'<div class="panel"><h2>⚠️ Nhược điểm</h2>{_ul(h.get("cons",[]),"con")}</div>'
             f'<div class="panel"><h2>Khắc chế — đi đường</h2>{lane_block}</div>'
