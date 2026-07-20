@@ -4,3 +4,6 @@ __pycache__/
 site/
 .DS_Store
 Thumbs.db
+
+# Ảnh nguồn (regenerate bằng download_assets.py; docs/img mới là bản commit)
+assets/img/

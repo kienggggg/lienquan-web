@@ -676,14 +676,26 @@ def main() -> None:
     meta = engine.load_meta()
     items = engine.load_items()
     by_id = {h["id"]: h for h in roster}
+    # Dọn docs NHƯNG GIỮ docs/img (ảnh nặng, được commit để GitHub Pages phục vụ;
+    # không xóa mỗi lần build kẻo rebuild trên bản clone thiếu assets/ làm mất ảnh).
     if OUT.exists():
-        shutil.rmtree(OUT)
-    (OUT / "hero").mkdir(parents=True)
+        for p in OUT.iterdir():
+            if p.name == "img":
+                continue
+            shutil.rmtree(p) if p.is_dir() else p.unlink()
+    OUT.mkdir(exist_ok=True)
+    (OUT / "hero").mkdir(parents=True, exist_ok=True)
+    (OUT / "img").mkdir(exist_ok=True)
 
-    # Ảnh local (nếu đã chạy download_assets.py) -> docs/img.
+    # Bổ sung ảnh mới từ assets/img (nếu có) — chỉ copy file còn thiếu.
     if ASSETS.is_dir():
-        shutil.copytree(ASSETS, OUT / "img")
-        print(f"  copy {sum(1 for _ in (OUT/'img').glob('*'))} ảnh -> docs/img")
+        added = 0
+        for f in ASSETS.glob("*"):
+            dst = OUT / "img" / f.name
+            if not dst.exists():
+                shutil.copy2(f, dst)
+                added += 1
+        print(f"  đồng bộ ảnh -> docs/img (+{added} mới, tổng {sum(1 for _ in (OUT/'img').glob('*'))})")
 
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUT / "index.html").write_text(build_index(roster, meta), encoding="utf-8")
