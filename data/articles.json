@@ -1,0 +1,30 @@
+{
+  "_note": "Bài viết/cẩm nang. sections[] theo cấu trúc giáo án Học viện: text/items/talent/rune/emblem/teammate/counter/stage/tip. heroes[] & items[] dùng id/tên khớp data để tự gắn ảnh. Nội dung GỐC (không sao chép bài người khác). AURA hoặc user thêm bài mới vào đây.",
+  "articles": [
+    {
+      "id": "meta-tuong-manh-dau-mua",
+      "title": "Điểm mặt các tướng mạnh đầu mùa & vì sao nên leo rank cùng chúng",
+      "author": "AURA",
+      "date": "2026-07-20",
+      "tags": ["Meta", "Tổng quan"],
+      "sections": [
+        {"type": "text", "text": "Đầu mỗi mùa, meta thường xoay quanh những tướng vừa dễ chơi vừa tạo ảnh hưởng lớn lên giao tranh. Bài này điểm nhanh vài hướng chọn tướng an toàn để leo rank, dựa trên vai trò và lối chơi — không phụ thuộc vào một cái tên cụ thể dễ bị chỉnh sức mạnh."},
+        {"type": "text", "label": "Đường Rừng", "text": "Ưu tiên sát thủ cơ động cao: dọn rừng nhanh, gank sớm tạo khác biệt. Nếu chưa quen nhịp rừng, chọn tướng có khống chế diện rộng để mở giao tranh thay vì phải combo bắt lẻ chuẩn xác."},
+        {"type": "text", "label": "Đường Rồng & Trung", "text": "Xạ thủ và pháp sư gánh sát thương cuối trận. Người mới nên chọn tướng có sẵn công cụ tự vệ (choáng, lướt) để sống sót qua giai đoạn dễ bị bắt lẻ."},
+        {"type": "tip", "label": "Mẹo leo rank", "text": "Chọn 2-3 tướng tủ mỗi vai trò và luyện thật thạo, thay vì đổi tướng liên tục. Đọc bảng khắc chế trước khi khóa tướng để tránh vào thế đối đầu bất lợi ngay từ khâu chọn tướng."}
+      ]
+    },
+    {
+      "id": "cach-doc-bang-khac-che",
+      "title": "Cách đọc bảng khắc chế để thắng ngay từ khâu chọn tướng",
+      "author": "AURA",
+      "date": "2026-07-20",
+      "tags": ["Hướng dẫn", "Khắc chế"],
+      "sections": [
+        {"type": "text", "text": "Rất nhiều ván thắng-thua được định đoạt ngay ở màn chọn tướng. Trang này giải thích cách tận dụng công cụ Tra khắc chế của web để không bao giờ vào thế đối đầu bất lợi."},
+        {"type": "text", "label": "Cùng đường vs Khác đường", "text": "Khắc chế CÙNG ĐƯỜNG quan trọng khi đôi công 1v1 (tầm đánh, hồi máu, all-in). Khắc chế KHÁC ĐƯỜNG nói về giao tranh tổng và bản đồ (sát thủ lao vào tuyến sau, tank khóa sát thủ, bắn tỉa rỉa cận chiến). Chọn tướng phải cân cả hai."},
+        {"type": "tip", "label": "Quy trình chọn tướng", "text": "1) Xem địch khóa tướng gì; 2) Mở Tra khắc chế, chọn tướng địch; 3) Ưu tiên tướng trong danh sách 'khắc chế được' hợp đường của bạn; 4) Tránh tướng bị địch khắc. Chỉ mất 10 giây nhưng đổi được cả thế trận."}
+      ]
+    }
+  ]
+}
