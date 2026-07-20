@@ -1,5 +1,7 @@
 {
-  "_note": "DỮ LIỆU MẪU. attr(0-3) mã hóa từ bộ kỹ năng. spike=thời điểm mạnh (early/mid/late). winrate/pickrate là số MẪU. img rỗng -> site tự sinh avatar theo vai trò; điền đường dẫn ảnh thật để thay.",
+  "_note": "DỮ LIỆU MẪU. attr(0-3) mã hóa từ bộ kỹ năng. spike=thời điểm mạnh (early/mid/late). winrate/pickrate là số MẪU. img rỗng -> site tự sinh avatar theo vai trò; điền đường dẫn ảnh thật để thay. skills=[{name,desc,note}] nạp dần theo giáo án; spell/arcana bỏ trống -> mặc định theo vai trò.",
+  "patch": "Bản mẫu (chưa nạp số liệu mùa)",
+  "source": "Số liệu win/pick: DỮ LIỆU MẪU — thay bằng số thật trong game",
   "heroes": [
     {"id":"murad","name":"Murad","roles":["Sát thủ"],"lane":"Rừng","damage":"physical","spike":"mid","img":"",
      "attr":{"mobility":3,"cc":1,"range":0,"sustain":1,"burst":3,"dps":1,"engage":2,"tanky":0},

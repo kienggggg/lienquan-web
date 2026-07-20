@@ -1,65 +1,83 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capheny — khắc chế, trang bị, đội hình | Liên Quân Tổng Hợp</title><style>
-:root{--bg:#0e1420;--card:#161f2e;--ink:#e8eef6;--muted:#9fb0c3;--accent:#4aa3ff;--line:#243347;--chip:#1e2a3d}
-@media(prefers-color-scheme:light){:root{--bg:#f4f7fb;--card:#fff;--ink:#16202e;--muted:#5a6b7d;--accent:#0b6bd6;--line:#e2e9f1;--chip:#eef3f9}}
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capheny Liên Quân — khắc chế, trang bị, ngọc bổ trợ, cách chơi</title><meta name="description" content="Giáo án Capheny Liên Quân Mobile: cách chơi, trang bị, ngọc, bổ trợ, khắc chế cùng đường và giao tranh, đội hình phối hợp."><style>
+:root{--bg:#0e1420;--card:#161f2e;--ink:#e8eef6;--muted:#9fb0c3;--accent:#4aa3ff;--line:#243347;--chip:#1e2a3d;--ok:#2fbf9f;--bad:#ff5d73}
+@media(prefers-color-scheme:light){:root{--bg:#f4f7fb;--card:#fff;--ink:#16202e;--muted:#5a6b7d;--accent:#0b6bd6;--line:#e2e9f1;--chip:#eef3f9;--ok:#0e9f6e;--bad:#d64550}}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font:16px/1.6 "Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+body{font:15.5px/1.6 "Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
-img.av,.av{border-radius:12px;object-fit:cover;display:block;flex:none}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-nav{border-bottom:1px solid var(--line);background:var(--card)}
-nav .wrap{display:flex;gap:6px;align-items:center;padding:12px 20px}
-nav b{font-size:16px;margin-right:14px}
-nav a{padding:7px 14px;border-radius:8px;color:var(--muted);font-size:14px;font-weight:600}
+img.av,svg.av{border-radius:12px;object-fit:cover;display:block;flex:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+nav{border-bottom:1px solid var(--line);background:var(--card);position:sticky;top:0;z-index:9}
+nav .wrap{display:flex;gap:4px;align-items:center;padding:10px 20px;flex-wrap:wrap}
+nav b{font-size:16px;margin-right:12px;white-space:nowrap}
+nav a{padding:7px 13px;border-radius:8px;color:var(--muted);font-size:13.5px;font-weight:600;white-space:nowrap}
 nav a.on,nav a:hover{background:var(--chip);color:var(--ink);text-decoration:none}
-header{padding:30px 0 6px}h1{font-size:28px}
-.sub{color:var(--muted);margin:6px 0 4px;max-width:74ch;font-size:14.5px}
-.warn{background:var(--chip);border:1px solid var(--line);border-left:3px solid #ffd93d;border-radius:8px;padding:10px 14px;color:var(--muted);font-size:13px;margin:14px 0}
-.bar{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-.bar button{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:7px 15px;font-size:13.5px;cursor:pointer}
+header{padding:26px 0 6px}h1{font-size:26px}
+.sub{color:var(--muted);margin:6px 0 4px;max-width:76ch;font-size:14px}
+.trust{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin:10px 0 2px}
+.trust b{color:var(--ok)}
+.warn{background:var(--chip);border:1px solid var(--line);border-left:3px solid #ffd93d;border-radius:8px;padding:9px 13px;color:var(--muted);font-size:12.5px;margin:12px 0}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0;align-items:center}
+.bar button{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:13px;cursor:pointer}
 .bar button.on{background:var(--accent);color:#fff;border-color:transparent}
+.bar input,select.pick{background:var(--chip);color:var(--ink);border:1px solid var(--line);border-radius:20px;padding:7px 14px;font-size:13.5px;outline:none}
+.bar input:focus{border-color:var(--accent)}
 .tierrow{display:flex;gap:14px;align-items:stretch;margin:12px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
-.tierbadge{width:60px;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:800;color:#0e1420}
+.tierbadge{width:56px;display:flex;align-items:center;justify-content:center;font-size:23px;font-weight:800;color:#0e1420;flex:none}
 .tierheroes{display:flex;gap:10px;flex-wrap:wrap;padding:12px}
 .htile{display:flex;gap:10px;align-items:center;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:8px 12px 8px 8px;min-width:150px}
 .htile:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px);transition:.12s}
-.htile .av{width:40px;height:40px}
-.htile .nm{font-weight:700;color:var(--ink);font-size:14.5px}
-.htile .ro{font-size:11.5px;color:var(--muted)}
-.htile .wr{font-size:12px;margin-top:2px}.htile .wr b{color:var(--accent)}
-footer{color:var(--muted);font-size:13px;padding:30px 0 60px;border-top:1px solid var(--line);margin-top:26px}
+.htile .av{width:38px;height:38px}
+.htile .nm{font-weight:700;color:var(--ink);font-size:14px}
+.htile .ro{font-size:11px;color:var(--muted)}
+.htile .wr{font-size:11.5px;margin-top:2px}.htile .wr b{color:var(--accent)}
+footer{color:var(--muted);font-size:12px;padding:26px 0 55px;border-top:1px solid var(--line);margin-top:26px;line-height:1.7}
 code{background:var(--chip);padding:2px 6px;border-radius:5px}
 
-.hwrap{padding:24px 0}
-.crumbs{font-size:13px;color:var(--muted);margin-bottom:12px}
+table.stats{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px}
+table.stats th{background:var(--chip);text-align:left;padding:9px 12px;cursor:pointer;user-select:none;white-space:nowrap}
+table.stats th:hover{color:var(--accent)}
+table.stats td{padding:8px 12px;border-top:1px solid var(--line);white-space:nowrap}
+table.stats tr:hover td{background:var(--chip)}
+.tbadge{display:inline-block;min-width:26px;text-align:center;border-radius:7px;font-weight:800;color:#0e1420;padding:1px 7px;font-size:12.5px}
+.statwrap{overflow-x:auto;border-radius:12px}
+
+.hwrap{padding:22px 0}
+.crumbs{font-size:12.5px;color:var(--muted);margin-bottom:12px}
 .head{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
-.head .av{width:76px;height:76px;border-radius:16px}
-.head h1{font-size:30px}.head .meta{color:var(--muted);font-size:14px;margin-top:3px}
-.pill{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:20px;padding:3px 11px;font-size:12.5px;margin:4px 6px 0 0}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
-.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
-.panel h2{font-size:12.5px;letter-spacing:1.3px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
-.attr{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:13px}
-.attr .lb{width:104px;color:var(--muted)}
+.head .av{width:72px;height:72px;border-radius:16px}
+.head h1{font-size:28px}.head .meta{color:var(--muted);font-size:13.5px;margin-top:3px}
+.pill{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:20px;padding:3px 11px;font-size:12px;margin:4px 6px 0 0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:17px}
+.panel h2{font-size:12px;letter-spacing:1.3px;text-transform:uppercase;color:var(--accent);margin-bottom:11px}
+.attr{display:flex;align-items:center;gap:10px;margin:6px 0;font-size:12.5px}
+.attr .lb{width:102px;color:var(--muted)}
 .attr .track{flex:1;height:8px;background:var(--chip);border-radius:6px;overflow:hidden}
 .attr .fill{height:100%;border-radius:6px}
-.mu{margin:8px 0;font-size:13.5px}.mu a{font-weight:700}.mu .rz{color:var(--muted);display:block;font-size:12.5px;margin-top:1px}
-.lst{margin:2px 0 0;padding-left:18px;font-size:13.5px}.lst li{margin:4px 0}
-.lst.pro li::marker{color:#2fbf9f}.lst.con li::marker{color:#ff5d73}
-.play{font-size:14px;color:var(--ink)}
-.build span{display:inline-block;background:var(--chip);border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:20px;font-size:13px;margin:4px 6px 0 0}
-.tags span{display:inline-block;background:var(--chip);color:var(--muted);padding:4px 10px;border-radius:20px;font-size:12px;margin:3px 5px 0 0}
-.empty{color:var(--muted);font-size:13px}
-.subhead{font-size:12px;color:var(--muted);font-weight:700;margin:2px 0 4px;text-transform:uppercase;letter-spacing:.6px}
+.mu{margin:9px 0;font-size:13px}.mu a{font-weight:700;font-size:14px}
+.mu ul{margin:4px 0 0 18px;color:var(--muted);font-size:12.5px}.mu ul li{margin:2px 0}
+.lst{margin:2px 0 0;padding-left:18px;font-size:13px}.lst li{margin:4px 0}
+.lst.pro li::marker{color:var(--ok)}.lst.con li::marker{color:var(--bad)}
+.play{font-size:13.5px}
+.build span,.spellbox span{display:inline-block;background:var(--chip);border:1px solid var(--line);color:var(--ink);padding:6px 12px;border-radius:20px;font-size:12.5px;margin:4px 6px 0 0}
+.tags span{display:inline-block;background:var(--chip);color:var(--muted);padding:4px 10px;border-radius:20px;font-size:11.5px;margin:3px 5px 0 0}
+.empty{color:var(--muted);font-size:12.5px}
+.subhead{font-size:11.5px;color:var(--muted);font-weight:700;margin:2px 0 4px;text-transform:uppercase;letter-spacing:.6px}
+.skill{border-left:3px solid var(--accent);padding:2px 0 2px 12px;margin:10px 0}
+.skill b{font-size:14px}.skill p{color:var(--muted);font-size:13px;margin-top:2px}
 
-.comp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0}
-.comp .top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
-.comp .thm{font-size:20px;font-weight:800}
-.comp .team{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
-.comp .slot{background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center;width:118px}
-.comp .slot .av{width:46px;height:46px;margin:0 auto 6px}
-.comp .slot .ln{font-size:11px;color:var(--muted)}
-.comp .slot .nm{font-weight:700;font-size:13.5px}
-.comp .why{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:13.5px;margin-top:6px}
-.comp .why .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.5px}
+.comp{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin:14px 0}
+.comp .top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:4px}
+.comp .thm{font-size:18px;font-weight:800}
+.comp .team{display:flex;gap:10px;flex-wrap:wrap;margin:12px 0}
+.comp .slot{background:var(--chip);border:1px solid var(--line);border-radius:12px;padding:9px;text-align:center;width:114px}
+.comp .slot .av{width:44px;height:44px;margin:0 auto 5px}
+.comp .slot .ln{font-size:10.5px;color:var(--muted)}
+.comp .slot .nm{font-weight:700;font-size:13px}
+.comp .why{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;font-size:13px;margin-top:4px}
+.comp .why .k{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.5px}
+
+.picker{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0}
+#ctr-result .vs{font-size:19px;font-weight:800;margin:16px 0 4px}
 @media(max-width:720px){.grid2,.comp .why{grid-template-columns:1fr}}
-</style></head><body><nav><div class="wrap"><b>Liên Quân Tổng Hợp</b><a href="../index.html" class="">Bảng xếp hạng</a><a href="../comps.html" class="">Đội hình</a></div></nav><div class="wrap hwrap"><div class="crumbs"><a href="../index.html">← Bảng xếp hạng</a> · <a href="../comps.html">Đội hình</a></div><div class="head"><svg class="av" width="76" height="76" viewBox="0 0 76 76"><rect width="76" height="76" rx="12" fill="#ff9f45"/><text x="50%" y="50%" dy=".08em" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI,Arial" font-weight="800" font-size="31" fill="#0e1420">CA</text></svg><div><h1>Capheny</h1><div class="meta">Xạ thủ · Rồng</div><span class="pill" style="background:#9fb0c3;color:#0e1420;border:0;font-weight:700">Tier ?</span><span class="pill">Mạnh cuối trận</span><span class="pill" style="border-color:#ffd93d;color:#c99a00">Thuộc tính theo mẫu vai trò — chờ tinh chỉnh</span><div class="tags"></div></div></div><div class="grid2"><div class="panel"><h2>Thuộc tính (từ bộ kỹ năng)</h2><div class="attr"><div class="lb">Cơ động</div><div class="track"><div class="fill" style="width:33%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Bùng nổ</div><div class="track"><div class="fill" style="width:67%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Sát thương dồn</div><div class="track"><div class="fill" style="width:100%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Khống chế</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Mở giao tranh</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Trụ đòn</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Hồi phục</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Tầm đánh</div><div class="track"><div class="fill" style="width:67%;background:#ff9f45"></div></div></div></div><div class="panel"><h2>Cách vận hành</h2><div class="play">Farm an toàn, đứng sau tuyến giao tranh xả sát thương vào mục tiêu gần nhất; luôn giữ khoảng cách với sát thủ.</div></div><div class="panel"><h2>✅ Ưu điểm</h2><ul class="lst pro"><li>Sát thương dồn cao, gánh kèo cuối trận</li><li>Kiểm soát mục tiêu từ khoảng cách</li></ul></div><div class="panel"><h2>⚠️ Nhược điểm</h2><ul class="lst con"><li>Mỏng, cơ động thấp, sợ bị bắt lẻ</li><li>Đầu trận yếu, cần được bảo kê</li></ul></div><div class="panel"><h2>Khắc chế — đi đường</h2><div class="subhead">⚔️ Khắc chế được (cùng đường)</div><div class="empty">Không có đối thủ cùng đường bị khắc rõ.</div><div class="subhead" style="margin-top:12px">🛡️ Bị khắc chế (cùng đường)</div><div class="mu"><a href="telannas.html">Tel&#x27;Annas</a><span class="rz">Tầm tay dài hơn, cấu rỉa Capheny ngay từ giai đoạn đi đường.</span></div></div><div class="panel"><h2>Khắc chế — giao tranh</h2><div class="subhead">⚔️ Khắc chế được (khác đường)</div><div class="empty">Chưa tính ra đối trọng rõ ở giao tranh.</div><div class="subhead" style="margin-top:12px">🛡️ Bị khắc chế (khác đường)</div><div class="mu"><a href="murad.html">Murad</a><span class="rz">Cơ động + bùng nổ, nhảy thẳng vào Capheny (tầm xa, ít di chuyển) hạ trước khi kịp phản ứng.</span></div><div class="mu"><a href="nakroth.html">Nakroth</a><span class="rz">Cơ động + bùng nổ, nhảy thẳng vào Capheny (tầm xa, ít di chuyển) hạ trước khi kịp phản ứng.</span></div><div class="mu"><a href="butterfly.html">Butterfly</a><span class="rz">Cơ động + bùng nổ, nhảy thẳng vào Capheny (tầm xa, ít di chuyển) hạ trước khi kịp phản ứng.</span></div></div><div class="panel"><h2>🤝 Phối hợp đội hình</h2><div class="mu"><a href="thane.html">Thane</a><span class="rz">Thane chắn tuyến đầu cho Capheny rảnh tay xả sát thương.</span></div><div class="mu"><a href="maloch.html">Maloch</a><span class="rz">Maloch chắn tuyến đầu cho Capheny rảnh tay xả sát thương.</span></div><div class="mu"><a href="arthur.html">Arthur</a><span class="rz">Arthur chắn tuyến đầu cho Capheny rảnh tay xả sát thương.</span></div></div><div class="panel"><h2>Trang bị gợi ý</h2><div class="build"><span title="Sát thương vật lý">Sát thương vật lý</span><span title="Chí mạng &amp; tốc đánh">Chí mạng &amp; tốc đánh</span><span title="Hút máu">Hút máu</span><span title="Giày công / tốc chạy">Giày công / tốc chạy</span></div><div class="empty" style="margin-top:10px">Địch nhiều hồi máu → thêm <b>Kháng hồi máu</b>. Nhiều khống chế → <b>Giày kháng hiệu ứng</b>.</div></div></div></div></body></html>
+</style></head><body><nav><div class="wrap"><b>⚔️ Liên Quân Tổng Hợp</b><a href="../index.html" class="">Bảng xếp hạng</a><a href="../stats.html" class="">Chỉ số tướng</a><a href="../comps.html" class="">Đội hình</a><a href="../khac-che.html" class="">Tra khắc chế</a></div></nav><div class="wrap hwrap"><div class="crumbs"><a href="../index.html">← Bảng xếp hạng</a> · <a href="../khac-che.html">Tra khắc chế</a> · <a href="../comps.html">Đội hình</a></div><div class="head"><svg class="av" width="72" height="72" viewBox="0 0 72 72"><rect width="72" height="72" rx="11" fill="#ff9f45"/><text x="50%" y="50%" dy=".08em" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI,Arial" font-weight="800" font-size="30" fill="#0e1420">CA</text></svg><div><h1>Capheny</h1><div class="meta">Xạ thủ · Rồng</div><span class="pill" style="background:#9fb0c3;color:#0e1420;border:0;font-weight:700">Tier ?</span><span class="pill">Mạnh cuối trận</span><span class="pill" style="border-color:#ffd93d;color:#c99a00">Thuộc tính theo mẫu vai trò — chờ tinh chỉnh</span><div class="tags"></div></div></div><div class="grid2"><div class="panel"><h2>Thuộc tính (từ bộ kỹ năng)</h2><div class="attr"><div class="lb">Cơ động</div><div class="track"><div class="fill" style="width:33%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Bùng nổ</div><div class="track"><div class="fill" style="width:67%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Sát thương dồn</div><div class="track"><div class="fill" style="width:100%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Khống chế</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Mở giao tranh</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Trụ đòn</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Hồi phục</div><div class="track"><div class="fill" style="width:0%;background:#ff9f45"></div></div></div><div class="attr"><div class="lb">Tầm đánh</div><div class="track"><div class="fill" style="width:67%;background:#ff9f45"></div></div></div></div><div class="panel"><h2>Cách vận hành</h2><div class="play">Farm an toàn, đứng sau tuyến giao tranh xả sát thương vào mục tiêu gần nhất; luôn giữ khoảng cách với sát thủ.</div></div><div class="panel"><h2>✅ Ưu điểm</h2><ul class="lst pro"><li>Sát thương dồn cao, gánh kèo cuối trận</li><li>Kiểm soát mục tiêu từ khoảng cách</li></ul></div><div class="panel"><h2>⚠️ Nhược điểm</h2><ul class="lst con"><li>Mỏng, cơ động thấp, sợ bị bắt lẻ</li><li>Đầu trận yếu, cần được bảo kê</li></ul></div><div class="panel"><h2>Trang bị gợi ý</h2><div class="build"><span title="Sát thương vật lý">Sát thương vật lý</span><span title="Chí mạng &amp; tốc đánh">Chí mạng &amp; tốc đánh</span><span title="Hút máu">Hút máu</span><span title="Giày công / tốc chạy">Giày công / tốc chạy</span></div><div class="empty" style="margin-top:10px">Địch nhiều hồi máu → thêm <b>Kháng hồi máu</b>. Nhiều khống chế → <b>Giày kháng hiệu ứng</b>.</div></div><div class="panel"><h2>Bổ trợ & Ngọc</h2><div class="spellbox"><div class="subhead">Bổ trợ</div><span>Bộc Phá</span><span style="color:var(--muted)">Địch nhiều khống chế → Thanh Tẩy</span><div class="subhead" style="margin-top:10px">Ngọc (theo loại chỉ số)</div><span>Đỏ: Công vật lý / tốc đánh</span><span>Tím: Tốc đánh + tốc chạy</span><span>Lục: Chí mạng / xuyên giáp</span></div></div><div class="panel"><h2>Khắc chế — đi đường</h2><div class="subhead">⚔️ Khắc chế được (cùng đường)</div><div class="empty">Không có đối thủ cùng đường bị khắc rõ.</div><div class="subhead" style="margin-top:12px">🛡️ Bị khắc chế (cùng đường)</div><div class="mu"><a href="telannas.html">Tel&#x27;Annas</a><ul><li>Tầm tay dài hơn, cấu rỉa Capheny ngay từ giai đoạn đi đường.</li></ul></div></div><div class="panel"><h2>Khắc chế — giao tranh</h2><div class="subhead">⚔️ Khắc chế được (khác đường)</div><div class="empty">Chưa tính ra đối trọng rõ ở giao tranh.</div><div class="subhead" style="margin-top:12px">🛡️ Bị khắc chế (khác đường)</div><div class="mu"><a href="murad.html">Murad</a><ul><li>Cơ động + bùng nổ, nhảy thẳng vào Capheny (tầm xa, ít di chuyển) hạ trước khi kịp phản ứng.</li></ul></div><div class="mu"><a href="nakroth.html">Nakroth</a><ul><li>Cơ động + bùng nổ, nhảy thẳng vào Capheny (tầm xa, ít di chuyển) hạ trước khi kịp phản ứng.</li></ul></div><div class="mu"><a href="butterfly.html">Butterfly</a><ul><li>Cơ động + bùng nổ, nhảy thẳng vào Capheny (tầm xa, ít di chuyển) hạ trước khi kịp phản ứng.</li></ul></div></div><div class="panel" style="grid-column:1/-1"><h2>🤝 Phối hợp đội hình</h2><div class="mu"><a href="thane.html">Thane</a><ul><li>Thane chắn tuyến đầu cho Capheny rảnh tay xả sát thương.</li></ul></div><div class="mu"><a href="maloch.html">Maloch</a><ul><li>Maloch chắn tuyến đầu cho Capheny rảnh tay xả sát thương.</li></ul></div><div class="mu"><a href="arthur.html">Arthur</a><ul><li>Arthur chắn tuyến đầu cho Capheny rảnh tay xả sát thương.</li></ul></div></div></div></div><footer><div class="wrap">Trang do người hâm mộ xây dựng — KHÔNG liên kết với Garena hay Tencent/TiMi. Liên Quân Mobile là thương hiệu của chủ sở hữu tương ứng.<br>Khắc chế · phối hợp · đội hình · trang bị được <b>máy suy luận từ thuộc tính bộ kỹ năng</b>; số liệu win/pick nạp từ nguồn ngoài. Vận hành: sửa <code>data/heroes.json</code> → <code>python build_site.py</code>.</div></footer></body></html>

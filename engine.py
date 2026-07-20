@@ -50,6 +50,19 @@ ROLE_TEMPLATE = {
 }
 _ROLE_PICK = ["Xạ thủ", "Sát thủ", "Đấu sĩ", "Pháp sư", "Đỡ đòn", "Hỗ trợ"]
 
+# Bổ trợ mặc định: đi Rừng luôn là Trừng Trị; còn lại Bộc Phá (đổi Thanh Tẩy khi
+# địch nhiều khống chế — ghi chú hiện trên trang). Ngọc gợi ý theo LOẠI CHỈ SỐ
+# (luôn đúng theo vai trò); tên viên cụ thể để user tinh chỉnh theo phiên bản.
+ROLE_SPELL = {"default": "Bộc Phá", "Rừng": "Trừng Trị"}
+ROLE_ARCANA = {
+    "Sát thủ": ["Đỏ: Công vật lý / chí mạng", "Tím: Xuyên giáp + tốc chạy", "Lục: Công vật lý / xuyên giáp"],
+    "Xạ thủ":  ["Đỏ: Công vật lý / tốc đánh", "Tím: Tốc đánh + tốc chạy", "Lục: Chí mạng / xuyên giáp"],
+    "Pháp sư": ["Đỏ: Công phép", "Tím: Xuyên giáp phép + tốc chạy", "Lục: Công phép / giảm hồi chiêu"],
+    "Đấu sĩ":  ["Đỏ: Công vật lý / máu", "Tím: Máu + tốc chạy", "Lục: Xuyên giáp / hút máu"],
+    "Đỡ đòn":  ["Đỏ: Máu / giáp", "Tím: Máu + tốc chạy", "Lục: Giáp / kháng phép / hồi chiêu"],
+    "Hỗ trợ":  ["Đỏ: Máu / công phép", "Tím: Máu + tốc chạy", "Lục: Giảm hồi chiêu / kháng phép"],
+}
+
 
 def _fill(h: dict) -> dict:
     """Điền các trường thiếu từ mẫu vai trò (cho tướng nhập gọn)."""
@@ -62,12 +75,21 @@ def _fill(h: dict) -> dict:
     h.setdefault("combo", "")
     h.setdefault("winrate", None)
     h.setdefault("pickrate", None)
+    h.setdefault("skills", [])       # [{"name","desc","note"}] — nạp dần từ giáo án
+    h.setdefault("spell", ROLE_SPELL.get(h.get("lane"), ROLE_SPELL["default"]))
+    h.setdefault("arcana", ROLE_ARCANA.get(role, ROLE_ARCANA["Đấu sĩ"]))
     return h
 
 
 def load_heroes() -> list[dict]:
     raw = json.loads((DATA / "heroes.json").read_text(encoding="utf-8"))["heroes"]
     return [_fill(dict(h)) for h in raw]
+
+
+def load_meta() -> dict:
+    """Metadata site: patch (phiên bản game của số liệu), nguồn số liệu..."""
+    d = json.loads((DATA / "heroes.json").read_text(encoding="utf-8"))
+    return {"patch": d.get("patch", ""), "source": d.get("source", "")}
 
 
 def load_items() -> dict:
