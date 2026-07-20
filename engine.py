@@ -123,13 +123,34 @@ def positioning(hero: dict) -> tuple[str, str]:
 
 
 def build_priority(hero: dict, items: dict) -> list[dict]:
-    """Trang bị theo THỨ TỰ ƯU TIÊN lên đồ (nhãn giai đoạn + nhóm)."""
-    steps = build(hero, items)
-    labels = ["Khởi đầu", "Cốt lõi", "Nâng cấp", "Tùy biến", "Giày", "Món 6"]
+    """Bộ trang bị theo THỨ TỰ ƯU TIÊN lên đồ. Ưu tiên role_builds (tên THẬT + icon);
+    không có thì rơi về nhóm category cũ."""
+    role = primary_role(hero)
+    labels = items.get("phase_labels",
+                       ["Khởi đầu", "Cốt lõi", "Giày", "Nâng cấp", "Tùy biến", "Món 6"])
+    rb = items.get("role_builds", {}).get(role)
+    if rb:
+        db = item_db()
+        out = []
+        for i, name in enumerate(rb):
+            info = db.get(name, {})
+            itype = info.get("type", "")
+            if itype == "Tốc độ":
+                phase = "Giày"
+            elif i == 0:
+                phase = "Khởi đầu"
+            elif i <= 2:
+                phase = "Cốt lõi"
+            else:
+                phase = "Bổ sung"
+            out.append({"order": i + 1, "phase": phase, "name": name,
+                        "icon": info.get("icon", ""), "type": itype})
+        return out
+    # fallback: nhóm category
     out = []
-    for i, s in enumerate(steps):
+    for i, s in enumerate(build(hero, items)):
         out.append({"order": i + 1, "phase": labels[i] if i < len(labels) else f"Món {i+1}",
-                    "label": s["label"], "items": s["items"]})
+                    "name": s["label"], "icon": "", "type": ""})
     return out
 
 
@@ -157,6 +178,21 @@ def comps_with(hero: dict, roster: list[dict], limit: int = 3) -> list[dict]:
 
 def load_items() -> dict:
     return json.loads((DATA / "items.json").read_text(encoding="utf-8"))
+
+
+_ITEM_DB: dict[str, dict] | None = None
+
+
+def item_db() -> dict[str, dict]:
+    """Map tên trang bị -> {name, type, level, icon} từ garena_items.json (nếu có)."""
+    global _ITEM_DB
+    if _ITEM_DB is None:
+        f = DATA / "garena_items.json"
+        _ITEM_DB = {}
+        if f.is_file():
+            for it in json.loads(f.read_text(encoding="utf-8")).get("items", []):
+                _ITEM_DB[it["name"]] = it
+    return _ITEM_DB
 
 
 def _a(h: dict, k: str) -> int:

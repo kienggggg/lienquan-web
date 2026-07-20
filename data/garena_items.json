@@ -1,0 +1,791 @@
+{
+ "_note": "Trang bị cào từ lienquan.garena.vn/hoc-vien/trang-bi (chính thống). level: 1=cơ bản, 2=trung, 3=hoàn chỉnh.",
+ "source": "https://lienquan.garena.vn/hoc-vien/trang-bi/",
+ "scraped_at": "2026-07-20",
+ "items": [
+  {
+   "id": "chybngsng",
+   "name": "Chùy băng sương",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2025/07/Chuy-bang-suong.png"
+  },
+  {
+   "id": "huytnhao",
+   "name": "Huyết ảnh đao",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2025/07/Huyet-dao.png"
+  },
+  {
+   "id": "thccarano",
+   "name": "Thệ ước Carano",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2025/07/The-uoc-Carano.jpg"
+  },
+  {
+   "id": "maphptrngbo",
+   "name": "Ma pháp trường bào",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2025/07/Ma-phap-truong-bao-1.jpg"
+  },
+  {
+   "id": "cuchimtinh",
+   "name": "Cầu chiêm tinh",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/11/cau-chiem-tinh.png"
+  },
+  {
+   "id": "ditthncung",
+   "name": "Diệt thần cung",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/11/diet-than-cung.png"
+  },
+  {
+   "id": "huytcung",
+   "name": "Huyết cung",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/11/huyet-cung.png"
+  },
+  {
+   "id": "lithothntc",
+   "name": "Liệt hoả thần tốc",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16237.png"
+  },
+  {
+   "id": "lithomtri",
+   "name": "Liệt hoả mở trói",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16234.png"
+  },
+  {
+   "id": "lithohihuyt",
+   "name": "Liệt hoả hồi huyết",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16236.png"
+  },
+  {
+   "id": "lithomanhn",
+   "name": "Liệt hoả ma nhãn",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16232.png"
+  },
+  {
+   "id": "lithothnkhin",
+   "name": "Liệt hoả thần khiên",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16231.png"
+  },
+  {
+   "id": "iahihuyt",
+   "name": "Đại địa hồi huyết",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16216.png"
+  },
+  {
+   "id": "iamanhn",
+   "name": "Đại địa ma nhãn",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16212.png"
+  },
+  {
+   "id": "iathnkhin",
+   "name": "Đại địa thần khiên",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16211.png"
+  },
+  {
+   "id": "iamtri",
+   "name": "Đại địa Mở trói",
+   "type": "Trợ thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16214.png"
+  },
+  {
+   "id": "iathntc",
+   "name": "Đại địa thần tốc",
+   "type": "Trợ thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16217.png"
+  },
+  {
+   "id": "hohbothch",
+   "name": "Hoả hệ bảo thạch",
+   "type": "Trợ thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2級輔助裝-法.png"
+  },
+  {
+   "id": "thhbothch",
+   "name": "Thổ hệ bảo thạch",
+   "type": "Trợ thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2級輔助裝-坦.png"
+  },
+  {
+   "id": "nguyntbothch",
+   "name": "Nguyên tố bảo thạch",
+   "type": "Trợ thủ",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icona78636f147efe1ac850a5495c044a9565ef2df9dd61a31.png"
+  },
+  {
+   "id": "giyhermes",
+   "name": "Giày Hermes",
+   "type": "Tốc độ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b86b4a1e5a5c3801f0c11fd76a8cbe0c5875f18bcc5ec1.png"
+  },
+  {
+   "id": "giydumc",
+   "name": "Giày du mục",
+   "type": "Tốc độ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3ff001f7078fc0b3f77e9ec7b283e2735875f14d9d0a31.png"
+  },
+  {
+   "id": "giyphthy",
+   "name": "Giày phù thủy",
+   "type": "Tốc độ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/85bfb0396118e0b32f1e3f4b34911d235875f11c6208c1.png"
+  },
+  {
+   "id": "giythuts",
+   "name": "Giày thuật sĩ",
+   "type": "Tốc độ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/114e22fe9d424beb6fe4aca5c456c5c35875f0f2d82ec1.png"
+  },
+  {
+   "id": "giykincng",
+   "name": "Giày kiên cường",
+   "type": "Tốc độ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3a856551539a716067add52f8fc65bc65875f0c7db9e51.png"
+  },
+  {
+   "id": "giyhv",
+   "name": "Giày hộ vệ",
+   "type": "Tốc độ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/0b2a528cdd009437b1635def58e353675875f09318ffd1.png"
+  },
+  {
+   "id": "giythp",
+   "name": "Giày thép",
+   "type": "Tốc độ",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/de8cb12606b2dd64c2a2ae53225453395875f0551a9091.png"
+  },
+  {
+   "id": "nhamthun",
+   "name": "Nham thuẫn",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icone5253595746abc893db9abe7568410315ef414f03aac11.png"
+  },
+  {
+   "id": "phchtrngsinh",
+   "name": "Phù chú trường sinh",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icond155d1aa807b4022dd22a16cfa171d5f5853665105cd41.png"
+  },
+  {
+   "id": "ochongbnggi",
+   "name": "Áo choàng băng giá",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon55eaf54151e5f99b1442aceb380cb3cf58536633305011.png"
+  },
+  {
+   "id": "giphmnh",
+   "name": "Giáp hộ mệnh",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon6b6c892834f3b9840bec892627dbeedb5b87c72793cd01.png"
+  },
+  {
+   "id": "hunchngtroy",
+   "name": "Huân chương Troy",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7c7e5cbc16a0a12b0363ffec0dd4bbe0583eb735ebea21.png"
+  },
+  {
+   "id": "gipgaia",
+   "name": "Giáp Gaia",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/9f2d442bf8b0f7597bd23de1af9c1ba9583eb6859264b1.png"
+  },
+  {
+   "id": "khinhuynthoi",
+   "name": "Khiên huyền thoại",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/22878b0202ea24b883044a9c642d5536583eb618cf2971.png"
+  },
+  {
+   "id": "khinthttruyn",
+   "name": "Khiên thất truyền",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/098ae164502918650b6334ce885d7d71583eb5aa4f7e31.png"
+  },
+  {
+   "id": "ochongthnra",
+   "name": "Áo choàng thần Ra",
+   "type": "Thủ",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconc412f57b9e56e33473ff1a7c87f64c3c5c8b6e31b77f71.png"
+  },
+  {
+   "id": "gipcungn",
+   "name": "Giáp cuồng nộ",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f1221bb1919f19d0ffd7aa3b9d521248583eb5022028c1.png"
+  },
+  {
+   "id": "herculethnhn",
+   "name": "Hercule thịnh nộ",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconce863be5ae7f9884727b453959c033e159eebee5cca801.png"
+  },
+  {
+   "id": "gipthngkh",
+   "name": "Giáp thống khổ",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/1daf820a0922c35d2b4dfe54082d35f2583eb43c655ad1.png"
+  },
+  {
+   "id": "giphips",
+   "name": "Giáp hiệp sĩ",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/8126b39e85bcfef53fad3131bafc2cd5583eb36918dac1.png"
+  },
+  {
+   "id": "gngbchkim",
+   "name": "Găng bạch kim",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f38b144529e66db02a901c175847440b583eb3271e7d01.png"
+  },
+  {
+   "id": "aikhngphp",
+   "name": "Đai kháng phép",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/72ed5eddefd9d571f0db1fc9527d2f22583eb2fa338c81.png"
+  },
+  {
+   "id": "timincubus",
+   "name": "Tim Incubus",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d0d241f0a2a236806b000ff5241f9802583eb2a658eed1.png"
+  },
+  {
+   "id": "gipchn",
+   "name": "Giáp chân",
+   "type": "Thủ",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b776c4c957f4e6f1e947e06686743a8c583eb243203f71.png"
+  },
+  {
+   "id": "dychuynhngngc",
+   "name": "Dây chuyền hồng ngọc",
+   "type": "Thủ",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconc297c6ca61d3e8715eea595918f2b1d15ef49a36db0c01.png"
+  },
+  {
+   "id": "bascmnh",
+   "name": "Bùa sức mạnh",
+   "type": "Thủ",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon9b4b623c7f5f3db68735401591039e6e59eec0dfee3aa1.png"
+  },
+  {
+   "id": "gnggicu",
+   "name": "Găng giác đấu",
+   "type": "Thủ",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon60c31461246a65b82f647310a13cc35b5ef41468c818d1.png"
+  },
+  {
+   "id": "gipnh",
+   "name": "Giáp nhẹ",
+   "type": "Thủ",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/1e01e847498a4e8ac12a56b22189783d583eb1929d05a1.png"
+  },
+  {
+   "id": "nhnhngngc",
+   "name": "Nhẫn hồng ngọc",
+   "type": "Thủ",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon84752d478c1737c85f2eb77a063cb11a5ef4145c956231.png"
+  },
+  {
+   "id": "xuyntmlnh",
+   "name": "Xuyên tâm lệnh",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a93be23a737e4619fa8539820f25a8725e453576be69c1.png"
+  },
+  {
+   "id": "bngnhnskadi",
+   "name": "Băng nhẫn Skadi",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ff28203912b57f6855013cad060d0f8f5e45355793b4d1.png"
+  },
+  {
+   "id": "qucubngsng",
+   "name": "Quả cầu băng sương",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconf30f58d64f6de018d472a24497b8e8475ef414dc8c8931.png"
+  },
+  {
+   "id": "mtnberith",
+   "name": "Mặt nạ Berith",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/722dfa95e17bc0ae4fca1370b39db24e583eb4a552d901.png"
+  },
+  {
+   "id": "trngbng",
+   "name": "Trượng băng",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/18a94ba7877043520ad478e08bc4b0bc583eb43f03b4d1.png"
+  },
+  {
+   "id": "thptkim",
+   "name": "Thập Tự Kiếm",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icona69219340114945bffc9ee0648b76df659eebed145bd21.png"
+  },
+  {
+   "id": "quyntrngrhea",
+   "name": "Quyền trượng Rhea",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2eabc8620f02b21582e3b88ea1f95f40583eb3ad4c2941.png"
+  },
+  {
+   "id": "ngciphps",
+   "name": "Ngọc đại pháp sư",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5e2bc1f8eb06b085df149928bb6db37f583eb34e349451.png"
+  },
+  {
+   "id": "vngminhecate",
+   "name": "Vương miện Hecate",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/29845a83cf9ddd3d17e0fcd07aabe61e583eb2e7b1a651.png"
+  },
+  {
+   "id": "trngbngn",
+   "name": "Trượng bùng nổ",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3cdbf8caaf2dc260fd962f5d31c074c5583eb2abdcb021.png"
+  },
+  {
+   "id": "schthnh",
+   "name": "Sách thánh",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/13b087b42ee35a7138a782d260cff7c9583eb099e321d1.png"
+  },
+  {
+   "id": "gmhintrit",
+   "name": "Gươm hiền triết",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a9f9ae5e132e65a1711d6c59bb616dff583eb0417f88d1.png"
+  },
+  {
+   "id": "gmtnth",
+   "name": "Gươm tận thế",
+   "type": "Phép",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fae96e865899f2e3e2cda185b58aee12583eafaae4a281.png"
+  },
+  {
+   "id": "schtruyhn",
+   "name": "Sách Truy Hồn",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c9420fcfd346612dd10cfc7cc3ca9b575965da11b6b361.png"
+  },
+  {
+   "id": "dychuynlcbo",
+   "name": "Dây chuyền lục bảo",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon8103b0d6e1a14ff19e46c13910e854115976f9749f2ac1.png"
+  },
+  {
+   "id": "trnghnmang",
+   "name": "Trượng hỗn mang",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconb1d589bb71a28a6cb2c3f9f5bbb2e5a05976f9dd872e81.png"
+  },
+  {
+   "id": "huyttrng",
+   "name": "Huyết trượng",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d9e5acef68f2f58e65fbb98a8be457ff583eb23412f3a1.png"
+  },
+  {
+   "id": "vngchnh",
+   "name": "Vòng đức hạnh",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/87e8108995142053f4c9404279233a20583eb207e77931.png"
+  },
+  {
+   "id": "phnghongl",
+   "name": "Phượng hoàng lệ",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/16bdc639fcd2451b890a545c4b09f6e1583eb1c5c672e1.png"
+  },
+  {
+   "id": "mtnmaqui",
+   "name": "Mặt nạ ma quái",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/77650eb45ea686167327f9128590dc53583eb194634c31.png"
+  },
+  {
+   "id": "gmnguynt",
+   "name": "Gươm nguyên tố",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/73bcd25e5a2f1139dec8c7b09c8b8650583eb15c7cce91.png"
+  },
+  {
+   "id": "smathut",
+   "name": "Sớ ma thuật",
+   "type": "Phép",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/585ee3fa8a1f94fd26d8e0336e534609583eb11f66eac1.png"
+  },
+  {
+   "id": "nhnmaphp",
+   "name": "Nhẫn ma pháp",
+   "type": "Phép",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/447da6386d8e761eea825726bd9bf224583eb1046a87b1.png"
+  },
+  {
+   "id": "schc",
+   "name": "Sách cổ",
+   "type": "Phép",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a1f23877567b4d9b450624aa7b6a99f9583eb0df82d641.png"
+  },
+  {
+   "id": "dychuynmathut",
+   "name": "Dây chuyền ma thuật",
+   "type": "Phép",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon43d3c483d428cf8f1e7a4b03fff7356b5ef4143e8db341.png"
+  },
+  {
+   "id": "nhnlapis",
+   "name": "Nhẫn Lapis",
+   "type": "Phép",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icona33a692bf196ac687212c8bd472e4a655ef4142a343721.png"
+  },
+  {
+   "id": "schphp",
+   "name": "Sách phép",
+   "type": "Phép",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/1108678613455e7b64ca9507065db8d5583eb07ed42e91.png"
+  },
+  {
+   "id": "cungbot",
+   "name": "Cung Bão Tố",
+   "type": "Đi rừng",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/8f835e52d8078207bb955bc2657867ba5ac48dd56f1791.png"
+  },
+  {
+   "id": "kimtruyhn",
+   "name": "Kiếm truy hồn",
+   "type": "Đi rừng",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/962f75587871dfe385b2eed0071fd80f5875efc662a801.png"
+  },
+  {
+   "id": "ruleviathan",
+   "name": "Rìu Leviathan",
+   "type": "Đi rừng",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5cbcea0c03cb8fbcffef6706943b59095875ef42bc1b91.png"
+  },
+  {
+   "id": "gmloki",
+   "name": "Gươm Loki",
+   "type": "Đi rừng",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e0c0df64d8c799425e512a41035121625875eeb337a461.png"
+  },
+  {
+   "id": "cunggilc",
+   "name": "Cung Gió Lốc",
+   "type": "Đi rừng",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/3e4d4da0fbaef18cc27b280233abd8585ac48ccdb8a361.png"
+  },
+  {
+   "id": "aotruykch",
+   "name": "Đao truy kích",
+   "type": "Đi rừng",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/65a0e3833daa8a27a33a72e7e4e7494e5875ed8cb51931.png"
+  },
+  {
+   "id": "rugnoll",
+   "name": "Rìu Gnoll",
+   "type": "Đi rừng",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/059cb0940752f504cfa9c07a88362cf45875ed3ea79971.png"
+  },
+  {
+   "id": "gmhint",
+   "name": "Gươm hiến tế",
+   "type": "Đi rừng",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/13ecad971cf548f39cbf6d46243665725875ecda3ef671.png"
+  },
+  {
+   "id": "rathsn",
+   "name": "Rựa thợ săn",
+   "type": "Đi rừng",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconfaba84adb480e565d9815a2b898bb8995bcd9218e940c1.jpg"
+  },
+  {
+   "id": "xnhtcung",
+   "name": "Xạ Nhật Cung",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon6bc7c27ebfd950b0fe16493db552c983658d55e7787b81.png"
+  },
+  {
+   "id": "thngxuynph",
+   "name": "Thương Xuyên Phá",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b3d3556b6bd3eaf5e90b966647b6d8a75976bb54845d91.png"
+  },
+  {
+   "id": "vuthungtn",
+   "name": "Vuốt Hung Tàn",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c65bf282a71890970ac6880b773460945965d91139a151.png"
+  },
+  {
+   "id": "cungtma",
+   "name": "Cung tà ma",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconcaa38dc0fdd84ce09ed77e83e1cfb2eb5ef414c91c8131.png"
+  },
+  {
+   "id": "thngkhungkim",
+   "name": "Thương khung kiếm",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/6db8867b63ea27f159d706fc6a85783e658d54fc54c591.png"
+  },
+  {
+   "id": "nanhfenrir",
+   "name": "Nanh Fenrir",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7ccbeb5a9d92d6616b38fb9f8a6d697f583eb0099ad9e1.png"
+  },
+  {
+   "id": "songaobotp",
+   "name": "Song đao bão táp",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/42d4233ea5d7ed2db0af6ae09c5686d9583eafd6a6f201.png"
+  },
+  {
+   "id": "gmsmst",
+   "name": "Gươm sấm sét",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f2ae054a4509ca5bfbf6c1246d6a0e7d583eaf9d711da1.png"
+  },
+  {
+   "id": "phchpkim",
+   "name": "Phức hợp kiếm",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2ed0a1b9762b0eaed6ef8c26f69fabb0583eaf5e888731.png"
+  },
+  {
+   "id": "qukim",
+   "name": "Quỷ Kiếm",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/dac326474d6d7eb4b8f77074edb8b8cf583eaefc61eff1.png"
+  },
+  {
+   "id": "kimmuramasa",
+   "name": "Kiếm Muramasa",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icone607457dda37172782dc9180e3cd036a59eebe79887cd1.png"
+  },
+  {
+   "id": "thnhkim",
+   "name": "Thánh kiếm",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon48a62735ee508f6a920e823fafd9b21159eebea8e613f1.png"
+  },
+  {
+   "id": "kimfafnir",
+   "name": "Kiếm Fafnir",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/96fd7b63339a3f0e510781f375eb356d583ead06b76221.png"
+  },
+  {
+   "id": "thnglonginus",
+   "name": "Thương Longinus",
+   "type": "Công",
+   "level": 3,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e31c3c90f650c04ebdb29ea2ca200265583eacda186ed1.png"
+  },
+  {
+   "id": "aotruyhn",
+   "name": "Đao Truy Hồn",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon39afcfcf7b6f28bebbf64b598f7f586b59f0056b0a4811.png"
+  },
+  {
+   "id": "limotmnh",
+   "name": "Liềm Đoạt Mệnh",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/6e4830c854d7f71dd8ad51b25d9abffd5965d8cb4027d1.png"
+  },
+  {
+   "id": "gmuriel",
+   "name": "Gươm Uriel",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icone8e8d84ac94fa585c3a9661cce80fbf159eebe5b292891.png"
+  },
+  {
+   "id": "phitiu",
+   "name": "Phi tiêu",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2621c9b1fed23acd4be27b91dfa78e38583eac94287361.png"
+  },
+  {
+   "id": "thngus",
+   "name": "Thương đấu sĩ",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/90f53ba831f13f5a01df70376b561701583eabc0c7d101.png"
+  },
+  {
+   "id": "songao",
+   "name": "Song đao",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a1f25b14e89dff8b8512abda77f54c3c583eab9aa21001.png"
+  },
+  {
+   "id": "chyc",
+   "name": "Chùy cổ",
+   "type": "Công",
+   "level": 2,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/184d423b3a6e763b0238f31b0f9b28f5583eab794ea9b1.png"
+  },
+  {
+   "id": "kimdi",
+   "name": "Kiếm dài",
+   "type": "Công",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/05beffe85dbc5379e596f4719db29918583eab4bd2b8b1.png"
+  },
+  {
+   "id": "chyxch",
+   "name": "Chùy xích",
+   "type": "Công",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a888ca6d4b74729819ffa78263621f7c583eab330ef401.png"
+  },
+  {
+   "id": "chymu",
+   "name": "Chùy máu",
+   "type": "Công",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon3b486c0c20f8e67265b3ccd88aa0cc615ef413d98e41b1.png"
+  },
+  {
+   "id": "gngtay",
+   "name": "Găng tay",
+   "type": "Công",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/iconad6ef58a9c119afbe9fce74b3025b1c95ef413c1a087b1.png"
+  },
+  {
+   "id": "daogm",
+   "name": "Dao găm",
+   "type": "Công",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d0892f500e089e6e24d02a65ba5fe048583eaaa57aa961.png"
+  },
+  {
+   "id": "kimngn",
+   "name": "Kiếm ngắn",
+   "type": "Công",
+   "level": 1,
+   "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/icon2e47616ebfaf6569b90f705b86600dc55ef41367e43541.png"
+  }
+ ]
+}

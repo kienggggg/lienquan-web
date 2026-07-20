@@ -22,7 +22,11 @@ from pathlib import Path
 
 BASE = "https://lienquan.garena.vn"
 ROSTER = f"{BASE}/hoc-vien/tuong-skin/"
+ITEMS_URL = f"{BASE}/hoc-vien/trang-bi/"
 DATA = Path(__file__).parent / "data"
+ITEM_TYPE = {"19": "Công", "20": "Phép", "21": "Thủ",
+             "22": "Tốc độ", "23": "Đi rừng", "24": "Trợ thủ"}
+ITEM_LVL = {"25": 1, "26": 2, "27": 3}
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"}
 
 # data-id nút lọc -> vai trò (khớp tên engine: Trợ thủ -> Hỗ trợ)
@@ -90,9 +94,38 @@ def parse_skills(html: str) -> list[dict]:
     return skills
 
 
+def parse_items(html: str) -> list[dict]:
+    """Toàn bộ trang bị: tên/loại/cấp/icon."""
+    out = []
+    for m in re.finditer(
+        r'st-items__item"\s+data-keyword="[^"]*"\s+data-type="(\d+)"\s+'
+        r'data-level="(\d+)"[^>]*>.*?<img src="([^"]+)"\s+alt="([^"]*)"',
+        html, re.DOTALL,
+    ):
+        t, lv, img, name = m.groups()
+        out.append({"id": _id_from_slug(name), "name": _html.unescape(name.strip()),
+                    "type": ITEM_TYPE.get(t, t), "level": ITEM_LVL.get(lv, 0),
+                    "icon": img.strip()})
+    return out
+
+
+def scrape_items() -> None:
+    items = parse_items(_get(ITEMS_URL))
+    (DATA / "garena_items.json").write_text(json.dumps({
+        "_note": "Trang bị cào từ lienquan.garena.vn/hoc-vien/trang-bi (chính thống). "
+                 "level: 1=cơ bản, 2=trung, 3=hoàn chỉnh.",
+        "source": ITEMS_URL, "scraped_at": time.strftime("%Y-%m-%d"),
+        "items": items,
+    }, ensure_ascii=False, indent=1), encoding="utf-8")
+    n3 = sum(1 for i in items if i["level"] == 3)
+    print(f"[OK] {len(items)} trang bị ({n3} Cấp 3) -> data/garena_items.json")
+
+
 def main() -> None:
     if sys.stdout.encoding and sys.stdout.encoding.lower() != "utf-8":
         sys.stdout.reconfigure(encoding="utf-8")
+    print("Tải trang bị...")
+    scrape_items()
     print("Tải roster...")
     roster = parse_roster(_get(ROSTER))
     print(f"  {len(roster)} tướng.")

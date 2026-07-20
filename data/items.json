@@ -1,5 +1,14 @@
 {
-  "_note": "Gợi ý trang bị theo NHÓM (tính từ loại sát thương + vai trò). Tên trang bị cụ thể tự điền cho khớp phiên bản hiện tại — site sẽ hiện tên nếu có, không thì hiện nhóm.",
+  "_note": "role_builds = bộ trang bị GỢI Ý theo vai trò (thứ tự = ưu tiên lên đồ), dùng TÊN THẬT khớp data/garena_items.json để lấy icon. Sửa thoải mái cho khớp meta. 'categories/builds' cũ giữ làm dự phòng khi tướng chưa có role_build.",
+  "role_builds": {
+    "Xạ thủ":  ["Xạ Nhật Cung", "Diệt thần cung", "Giày Hermes", "Cung tà ma", "Gươm sấm sét", "Nanh Fenrir"],
+    "Sát thủ": ["Rìu Leviathan", "Nanh Fenrir", "Kiếm Muramasa", "Giày du mục", "Quỷ Kiếm", "Thương Xuyên Phá"],
+    "Đấu sĩ":  ["Chùy băng sương", "Nanh Fenrir", "Quỷ Kiếm", "Giày kiên cường", "Giáp Gaia", "Áo choàng thần Ra"],
+    "Pháp sư": ["Trượng bùng nổ", "Xuyên tâm lệnh", "Giày phù thủy", "Vương miện Hecate", "Quyền trượng Rhea", "Mặt nạ Berith"],
+    "Đỡ đòn":  ["Nham thuẫn", "Giày kiên cường", "Giáp hộ mệnh", "Áo choàng thần Ra", "Huân chương Troy", "Giáp Gaia"],
+    "Hỗ trợ":  ["Đại địa thần khiên", "Giày hộ vệ", "Giáp hộ mệnh", "Áo choàng thần Ra", "Huân chương Troy", "Áo choàng băng giá"]
+  },
+  "phase_labels": ["Khởi đầu", "Cốt lõi", "Giày", "Nâng cấp", "Tùy biến", "Món 6"],
   "categories": {
     "pen_phys":   {"label": "Xuyên giáp vật lý", "items": []},
     "ad":         {"label": "Sát thương vật lý", "items": []},
