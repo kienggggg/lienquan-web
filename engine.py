@@ -89,7 +89,70 @@ def load_heroes() -> list[dict]:
 def load_meta() -> dict:
     """Metadata site: patch (phiên bản game của số liệu), nguồn số liệu..."""
     d = json.loads((DATA / "heroes.json").read_text(encoding="utf-8"))
-    return {"patch": d.get("patch", ""), "source": d.get("source", "")}
+    return {"patch": d.get("patch", ""), "source": d.get("source", ""),
+            "scraped_at": d.get("scraped_at", "")}
+
+
+# Phù hiệu gợi ý theo vai trò (theo HIỆU ỨNG — tên cụ thể điền theo phiên bản).
+ROLE_EMBLEM = {
+    "Sát thủ": "Cường công (tăng sát thương vật lý & xuyên giáp)",
+    "Xạ thủ": "Cường công / tốc đánh",
+    "Pháp sư": "Cường pháp (tăng sát thương phép)",
+    "Đấu sĩ": "Cường công + máu (đấu sĩ trâu)",
+    "Đỡ đòn": "Chống chịu (giáp / kháng phép / máu)",
+    "Hỗ trợ": "Hồi phục / chống chịu bảo kê đồng đội",
+}
+
+# Vị trí đứng trong giao tranh theo vai trò.
+POSITIONING = {
+    "Đỡ đòn": ("Tuyến đầu", "Đứng trước mở giao tranh, chắn sát thương cho chủ lực."),
+    "Đấu sĩ": ("Tuyến đầu / cạnh sườn", "Áp sát tuyến sau địch hoặc giữ sườn, vừa chịu vừa gây sát thương."),
+    "Xạ thủ": ("Tuyến sau", "Nấp sau tuyến đầu, giữ khoảng cách tối đa để xả sát thương an toàn."),
+    "Pháp sư": ("Tuyến sau / giữa", "Đứng tầm trung, nhả combo bùng nổ rồi lùi, tránh bị áp sát."),
+    "Sát thủ": ("Vòng sườn / đi rừng", "Vào giao tranh từ bên sườn hoặc sau lưng, nhắm thẳng chủ lực địch."),
+    "Hỗ trợ": ("Cạnh chủ lực", "Bám sát xạ thủ/pháp sư nhà để bảo kê, giải vây, khống chế."),
+}
+
+
+def emblem(hero: dict) -> str:
+    return ROLE_EMBLEM.get(primary_role(hero), ROLE_EMBLEM["Đấu sĩ"])
+
+
+def positioning(hero: dict) -> tuple[str, str]:
+    return POSITIONING.get(primary_role(hero), POSITIONING["Đấu sĩ"])
+
+
+def build_priority(hero: dict, items: dict) -> list[dict]:
+    """Trang bị theo THỨ TỰ ƯU TIÊN lên đồ (nhãn giai đoạn + nhóm)."""
+    steps = build(hero, items)
+    labels = ["Khởi đầu", "Cốt lõi", "Nâng cấp", "Tùy biến", "Giày", "Món 6"]
+    out = []
+    for i, s in enumerate(steps):
+        out.append({"order": i + 1, "phase": labels[i] if i < len(labels) else f"Món {i+1}",
+                    "label": s["label"], "items": s["items"]})
+    return out
+
+
+def _hero_theme(hero: dict) -> str:
+    """Lối chơi đội hình hợp NHẤT với 1 tướng (dựa thuộc tính riêng)."""
+    eng = _a(hero, "engage") + _a(hero, "cc")
+    rng = _a(hero, "range") * 1.5
+    dive = _a(hero, "mobility") + _a(hero, "burst")
+    best = max((eng, "Giao tranh tổng"), (rng, "Poke rỉa máu"),
+               (dive, "Lao vào bắt lẻ"), key=lambda x: x[0])
+    return best[1] if best[0] > 0 else "Đội hình cân bằng"
+
+
+def comps_with(hero: dict, roster: list[dict], limit: int = 3) -> list[dict]:
+    """Đội hình hợp tướng: ưu tiên đội CÓ MẶT tướng; không có thì gợi ý đội theo
+    lối chơi hợp tướng đó (đánh dấu suggested=True)."""
+    all_comps = team_comps(roster)
+    inside = [c for c in all_comps if any(m["id"] == hero["id"] for m in c["members"])]
+    if inside:
+        return inside[:limit]
+    theme = _hero_theme(hero)
+    return [dict(c, suggested=True) for c in all_comps if c["theme"] == theme][:limit] \
+        or [dict(c, suggested=True) for c in all_comps[:1]]
 
 
 def load_items() -> dict:
@@ -257,11 +320,22 @@ _THEME_TXT = {
         "con": "Không có điểm mạnh vượt trội để áp đặt lối chơi."}}
 
 
-def _lane_options(roster: list[dict]) -> dict:
+def _lane_fitness(h: dict) -> float:
+    """Điểm 'đáng chọn' của tướng cho đường — winrate thật > thuộc tính tổng."""
+    wr = h.get("winrate")
+    if wr is not None:
+        return float(wr)
+    return 40 + sum(_a(h, k) for k in ("burst", "dps", "cc", "engage", "tanky", "sustain"))
+
+
+def _lane_options(roster: list[dict], cap: int = 6) -> dict:
+    """Ứng viên mỗi đường, CHỈ giữ top `cap` (không thì 126 tướng -> hàng triệu tổ hợp)."""
     opt = {ln: [] for ln in LANES}
     for h in roster:
         if h.get("lane") in opt:
             opt[h["lane"]].append(h)
+    for ln in opt:
+        opt[ln] = sorted(opt[ln], key=_lane_fitness, reverse=True)[:cap]
     return opt
 
 
@@ -293,11 +367,19 @@ def _difficulty(team: list[dict]) -> str:
     return "Khó" if hard >= 3 else "Trung bình" if hard >= 1 else "Dễ"
 
 
+_COMPS_CACHE: list[dict] | None = None
+
+
 def team_comps(roster: list[dict], per_theme: int = 2) -> list[dict]:
-    """Ghép mọi tổ hợp 1 tướng/đường, chấm điểm phối hợp, lấy đội mạnh nhất theo từng theme."""
+    """Ghép tổ hợp 1 tướng/đường (top ứng viên mỗi đường), chấm điểm, lấy đội mạnh
+    nhất theo từng theme. Cache module-level (gọi lại cho từng tướng không tính lại)."""
+    global _COMPS_CACHE
+    if _COMPS_CACHE is not None:
+        return _COMPS_CACHE
     opt = _lane_options(roster)
     if any(not opt[ln] for ln in LANES):
-        return []
+        _COMPS_CACHE = []
+        return _COMPS_CACHE
     buckets: dict[str, list[dict]] = {}
     for combo in product(*[opt[ln] for ln in LANES]):
         team = list(combo)
@@ -317,4 +399,5 @@ def team_comps(roster: list[dict], per_theme: int = 2) -> list[dict]:
         comps.sort(key=lambda c: -c["score"])
         out.extend(comps[:per_theme])
     out.sort(key=lambda c: -c["score"])
+    _COMPS_CACHE = out
     return out

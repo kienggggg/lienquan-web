@@ -114,7 +114,31 @@ table.stats tr:hover td{background:var(--chip)}
 
 .picker{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:16px 0}
 #ctr-result .vs{font-size:19px;font-weight:800;margin:16px 0 4px}
-@media(max-width:720px){.grid2,.comp .why{grid-template-columns:1fr}}
+
+/* Khối kỹ năng chính thống (icon + tên + mô tả) */
+.skl{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin:8px 0}
+.skl img{width:46px;height:46px;border-radius:10px;flex:none;background:var(--chip)}
+.skl .nm{font-weight:700;font-size:14px}.skl .ds{color:var(--muted);font-size:13px;margin-top:3px}
+.skl .kind{font-size:11px;color:var(--accent);font-weight:700}
+/* Trang bị theo thứ tự ưu tiên */
+.prio{display:flex;gap:8px;flex-wrap:wrap;align-items:stretch}
+.prio .step{background:var(--chip);border:1px solid var(--line);border-radius:11px;padding:9px 12px;min-width:120px;position:relative}
+.prio .step .o{font-size:11px;color:var(--accent);font-weight:800}
+.prio .step .ph{font-weight:700;font-size:13px}.prio .step .lb{color:var(--muted);font-size:12px;margin-top:2px}
+.prio .arrow{align-self:center;color:var(--muted);font-size:18px}
+.posbox{display:flex;gap:14px;align-items:center}
+.posbox .tag{font-size:15px;font-weight:800;color:var(--accent)}
+.introbox{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:13px 16px;font-size:14px;margin:14px 0}
+.srcnote{font-size:11px;color:var(--muted);margin-top:8px;font-style:italic}
+
+/* Quảng cáo — vị trí kiểu MetaTFT (top banner + 2 rail dọc + xen nội dung) */
+.ad{background:repeating-linear-gradient(45deg,var(--chip),var(--chip) 10px,transparent 10px,transparent 20px);border:1px dashed var(--line);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:11px;letter-spacing:1px;text-transform:uppercase}
+.ad-top{height:90px;margin:14px 0}
+.ad-inline{height:110px;margin:16px 0}
+.ad-rail{position:fixed;top:120px;width:160px;height:600px;z-index:5;display:none}
+.ad-rail.left{left:12px}.ad-rail.right{right:12px}
+@media(min-width:1480px){.ad-rail{display:flex}}
+@media(max-width:720px){.grid2,.comp .why{grid-template-columns:1fr}.prio{flex-direction:column}.prio .arrow{transform:rotate(90deg)}}
 """
 
 _NAV = [("index.html", "tier", "Bảng xếp hạng"), ("stats.html", "stats", "Chỉ số tướng"),
@@ -148,12 +172,20 @@ def _footer(root: str = "") -> str:
             f'</div></footer>')
 
 
+def _ad(slot: str, cls: str) -> str:
+    """Ô quảng cáo — chèn mã AdSense vào giữa (giữ marker để dễ tìm & thay)."""
+    return (f'<!-- AD SLOT: {slot} — dán mã AdSense <ins class="adsbygoogle">…</ins> vào đây -->'
+            f'<div class="ad {cls}" data-ad="{slot}">Quảng cáo</div>')
+
+
 def _page(title: str, desc: str, nav_active: str, body: str, root: str = "") -> str:
+    rails = (_ad("rail-left", "ad-rail left") + _ad("rail-right", "ad-rail right"))
     return (f'<!doctype html><html lang="vi"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>{esc(title)}</title>'
             f'<meta name="description" content="{esc(desc)}">'
-            f'<style>{CSS}</style></head><body>{_nav(nav_active, root)}{body}'
+            f'<style>{CSS}</style></head><body>{_nav(nav_active, root)}{rails}'
+            f'<div class="wrap">{_ad("top-banner", "ad-top")}</div>{body}'
             f'{_footer(root)}</body></html>')
 
 
@@ -407,38 +439,81 @@ def _ul(items, cls) -> str:
     return f'<ul class="lst {cls}">' + "".join(f"<li>{esc(x)}</li>" for x in items) + "</ul>"
 
 
+_SKILL_KIND = ["Nội tại", "Chiêu 1", "Chiêu 2", "Chiêu cuối"]
+
+
+def _intro(h) -> str:
+    if h.get("intro"):
+        return h["intro"]
+    roles = " / ".join(h["roles"])
+    spike = SPIKE_TXT.get(h.get("spike", "mid"), "").lower()
+    tags = ", ".join(h.get("tags", [])[:3])
+    s = f'{h["name"]} là tướng {roles} đi đường {h["lane"]}, {spike}.'
+    if tags:
+        s += f' Nổi bật ở lối chơi: {tags}.'
+    return s
+
+
 def build_hero(h, roster, items) -> str:
     c = engine.counters(h, roster)
     syn = engine.synergies(h, roster)
-    bld = engine.build(h, items)
+    prio = engine.build_priority(h, items)
+    pos_tag, pos_note = engine.positioning(h)
+    fit = engine.comps_with(h, roster)
     t = engine.tier_of(h)
     wr = h.get("winrate")
 
-    build_html = "".join(
-        f'<span title="{esc(s["label"])}">{esc(", ".join(s["items"]) if s["items"] else s["label"])}</span>'
-        for s in bld)
     tags = "".join(f"<span>{esc(x)}</span>" for x in h.get("tags", []))
     winline = (f"Win {wr}% · Pick {h.get('pickrate','?')}% · " if wr is not None else "") \
         + esc(" · ".join(h["roles"])) + " · " + esc(h["lane"])
     combo = f'<span class="pill">Combo: {esc(h["combo"])}</span>' if h.get("combo") else ""
-    tmpl = ('<span class="pill" style="border-color:#ffd93d;color:#c99a00">Thuộc tính theo mẫu vai trò — chờ tinh chỉnh</span>'
+    tmpl = ('<span class="pill" style="border-color:#ffd93d;color:#c99a00">Số liệu chiến đấu theo mẫu vai trò — chờ tinh chỉnh</span>'
             if h.get("templated") else "")
 
-    # Kỹ năng (giáo án) — chỉ hiện khi đã nạp dữ liệu thật.
-    skills_html = ""
+    # 1) Kỹ năng chính thống (icon + tên + mô tả từ Garena).
     if h.get("skills"):
-        sk = "".join(
-            f'<div class="skill"><b>{esc(s.get("name",""))}</b>'
-            f'<p>{esc(s.get("desc",""))}</p>'
-            + (f'<p style="color:var(--accent)">→ {esc(s["note"])}</p>' if s.get("note") else "")
-            + '</div>' for s in h["skills"])
-        skills_html = f'<div class="panel" style="grid-column:1/-1"><h2>Phân tích bộ kỹ năng</h2>{sk}</div>'
+        rows = ""
+        for i, s in enumerate(h["skills"]):
+            kind = _SKILL_KIND[i] if i < len(_SKILL_KIND) else f"Chiêu {i}"
+            icon = (f'<img src="{esc(s["icon"])}" alt="" loading="lazy">'
+                    if s.get("icon") else '<div style="width:46px;height:46px;border-radius:10px;background:var(--chip)"></div>')
+            rows += (f'<div class="skl">{icon}<div><div class="kind">{kind}</div>'
+                     f'<div class="nm">{esc(s.get("name",""))}</div>'
+                     f'<div class="ds">{esc(s.get("desc",""))}</div></div></div>')
+        skills_html = (f'<div class="panel" style="grid-column:1/-1"><h2>Bộ kỹ năng</h2>{rows}'
+                       f'<div class="srcnote">Nguồn mô tả kỹ năng: Garena Liên Quân (hocvien.lienquan.garena.vn).</div></div>')
+    else:
+        skills_html = ('<div class="panel" style="grid-column:1/-1"><h2>Bộ kỹ năng</h2>'
+                       '<div class="empty">Chưa nạp được kỹ năng cho tướng này.</div></div>')
 
-    spellbox = (f'<div class="spellbox"><div class="subhead">Bổ trợ</div>'
+    # 2) Trang bị theo THỨ TỰ ƯU TIÊN.
+    steps = []
+    for s in prio:
+        names = ", ".join(s["items"]) if s["items"] else s["label"]
+        steps.append(f'<div class="step"><div class="o">Ưu tiên {s["order"]}</div>'
+                     f'<div class="ph">{esc(s["phase"])}</div><div class="lb">{esc(names)}</div></div>')
+    build_html = '<span class="arrow">→</span>'.join(steps)
+
+    # 3) Bổ trợ / Phù hiệu / Ngọc.
+    spellbox = (f'<div class="subhead">Bổ trợ</div><div class="spellbox">'
                 f'<span>{esc(h.get("spell",""))}</span>'
-                f'<span style="color:var(--muted)">Địch nhiều khống chế → Thanh Tẩy</span>'
-                f'<div class="subhead" style="margin-top:10px">Ngọc (theo loại chỉ số)</div>'
+                f'<span style="color:var(--muted)">Địch nhiều khống chế → Thanh Tẩy</span></div>'
+                f'<div class="subhead" style="margin-top:12px">Phù hiệu</div><div class="spellbox">'
+                f'<span>{esc(engine.emblem(h))}</span></div>'
+                f'<div class="subhead" style="margin-top:12px">Bảng ngọc (theo loại chỉ số)</div>'
+                f'<div class="spellbox">'
                 + "".join(f'<span>{esc(a)}</span>' for a in h.get("arcana", [])) + '</div>')
+
+    # 4) Đội hình phù hợp.
+    if fit:
+        cboxes = ""
+        for comp in fit:
+            note = " (gợi ý theo lối chơi)" if comp.get("suggested") else ""
+            mem = " · ".join(m["name"] for m in comp["members"])
+            cboxes += (f'<div class="mu"><a href="../comps.html">{esc(comp["theme"])}{note}</a>'
+                       f'<ul><li>{esc(mem)}</li><li style="color:var(--accent)">{esc(comp["play"])}</li></ul></div>')
+    else:
+        cboxes = '<div class="empty">Chưa tính ra đội hình phù hợp.</div>'
 
     lane_block = (f'<div class="subhead">⚔️ Khắc chế được (cùng đường)</div>'
                   f'{_mu_list(c["lane"]["khac_che"], "Không có đối thủ cùng đường bị khắc rõ.")}'
@@ -457,24 +532,32 @@ def build_hero(h, roster, items) -> str:
             f'<span class="pill" style="background:{TIER_COLOR[t]};color:#0e1420;border:0;font-weight:700">Tier {t}</span>'
             f'<span class="pill">{esc(SPIKE_TXT.get(h.get("spike","mid"),""))}</span>{combo}{tmpl}'
             f'<div class="tags">{tags}</div></div></div>'
+            # Giới thiệu
+            f'<div class="introbox">{esc(_intro(h))}</div>'
             f'<div class="grid2">'
             f'<div class="panel"><h2>Thuộc tính (từ bộ kỹ năng)</h2>{_attr_bar(h)}</div>'
-            f'<div class="panel"><h2>Cách vận hành</h2><div class="play">{esc(h.get("play",""))}</div></div>'
+            f'<div class="panel"><h2>Hướng dẫn chơi cơ bản</h2><div class="play">{esc(h.get("play",""))}</div></div>'
             f'{skills_html}'
+            + _ad("hero-mid", "ad-inline")
+            + f'<div class="panel" style="grid-column:1/-1"><h2>Trang bị (thứ tự ưu tiên lên đồ)</h2>'
+            f'<div class="prio">{build_html}</div>'
+            f'<div class="empty" style="margin-top:10px">Địch nhiều hồi máu → chèn <b>Kháng hồi máu</b>. '
+            f'Nhiều khống chế → <b>Giày kháng hiệu ứng</b>.</div></div>'
+            f'<div class="panel"><h2>Bổ trợ · Phù hiệu · Ngọc</h2>{spellbox}</div>'
+            f'<div class="panel"><h2>Vị trí trong đội hình</h2>'
+            f'<div class="posbox"><span class="tag">{esc(pos_tag)}</span></div>'
+            f'<div class="play" style="margin-top:8px">{esc(pos_note)}</div></div>'
             f'<div class="panel"><h2>✅ Ưu điểm</h2>{_ul(h.get("pros",[]),"pro")}</div>'
             f'<div class="panel"><h2>⚠️ Nhược điểm</h2>{_ul(h.get("cons",[]),"con")}</div>'
-            f'<div class="panel"><h2>Trang bị gợi ý</h2><div class="build">{build_html}</div>'
-            f'<div class="empty" style="margin-top:10px">Địch nhiều hồi máu → thêm <b>Kháng hồi máu</b>. '
-            f'Nhiều khống chế → <b>Giày kháng hiệu ứng</b>.</div></div>'
-            f'<div class="panel"><h2>Bổ trợ & Ngọc</h2>{spellbox}</div>'
             f'<div class="panel"><h2>Khắc chế — đi đường</h2>{lane_block}</div>'
             f'<div class="panel"><h2>Khắc chế — giao tranh</h2>{tf_block}</div>'
-            f'<div class="panel" style="grid-column:1/-1"><h2>🤝 Phối hợp đội hình</h2>'
+            f'<div class="panel"><h2>🤝 Phối hợp đội hình</h2>'
             f'{_mu_list(syn,"Chưa tính ra cặp phối hợp nổi bật.")}</div>'
+            f'<div class="panel"><h2>Đội hình phù hợp</h2>{cboxes}</div>'
             f'</div></div>')
-    return _page(f'{h["name"]} Liên Quân — khắc chế, trang bị, ngọc bổ trợ, cách chơi',
-                 f'Giáo án {h["name"]} Liên Quân Mobile: cách chơi, trang bị, ngọc, bổ trợ, '
-                 f'khắc chế cùng đường và giao tranh, đội hình phối hợp.', "", body, root="../")
+    return _page(f'{h["name"]} Liên Quân — kỹ năng, trang bị, ngọc, phù hiệu, khắc chế',
+                 f'Giáo án {h["name"]} Liên Quân Mobile: giới thiệu, bộ kỹ năng, hướng dẫn chơi, '
+                 f'trang bị theo thứ tự ưu tiên, phù hiệu, ngọc, vị trí, khắc chế, đội hình.', "", body, root="../")
 
 
 # ----------------------------------------------------------------------- SEO
