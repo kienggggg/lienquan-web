@@ -12,6 +12,7 @@ Chỉ dùng stdlib. AURA cập nhật meta = sửa data/heroes.json rồi chạy
 
 from __future__ import annotations
 
+import hashlib
 import html
 import json
 import shutil
@@ -20,7 +21,28 @@ from pathlib import Path
 
 import engine
 
-OUT = Path(__file__).parent / "docs"   # GitHub Pages phục vụ từ /docs
+ROOT = Path(__file__).parent
+OUT = ROOT / "docs"                     # GitHub Pages phục vụ từ /docs
+ASSETS = ROOT / "assets" / "img"        # ảnh đã tải local (download_assets.py)
+
+
+def _local_name(url: str) -> str:
+    """Khớp download_assets.local_name — map URL Garena -> tên file local."""
+    ext = ".png"
+    for e in (".png", ".jpg", ".jpeg", ".webp", ".gif"):
+        if e in url.lower():
+            ext = ".jpg" if e == ".jpeg" else e
+            break
+    return hashlib.md5(url.encode("utf-8")).hexdigest()[:16] + ext
+
+
+def _loc(url: str, root: str = "") -> str:
+    """URL ảnh -> đường dẫn LOCAL nếu đã tải; không thì giữ URL gốc (hotlink dự phòng)."""
+    if not url or not url.startswith("http"):
+        return url
+    if (ASSETS / _local_name(url)).is_file():
+        return f"{root}img/{_local_name(url)}"
+    return url
 SITE_URL = "https://kienggggg.github.io/lienquan"   # đổi khi có domain riêng
 TIERS = ["S", "A", "B", "C", "D", "?"]
 TIER_COLOR = {"S": "#ff5d73", "A": "#ff9f45", "B": "#ffd93d", "C": "#6ee7b7", "D": "#7aa2ff", "?": "#9fb0c3"}
@@ -34,10 +56,10 @@ ROLES = ["Sát thủ", "Xạ thủ", "Pháp sư", "Đấu sĩ", "Đỡ đòn", "
 LANES = ["Rừng", "Rồng", "Trung", "Tà Thần", "Hỗ trợ"]
 
 CSS = """
-:root{--bg:#0e1420;--card:#161f2e;--ink:#e8eef6;--muted:#9fb0c3;--accent:#4aa3ff;--line:#243347;--chip:#1e2a3d;--ok:#2fbf9f;--bad:#ff5d73}
-@media(prefers-color-scheme:light){:root{--bg:#f4f7fb;--card:#fff;--ink:#16202e;--muted:#5a6b7d;--accent:#0b6bd6;--line:#e2e9f1;--chip:#eef3f9;--ok:#0e9f6e;--bad:#d64550}}
+:root{--bg:#080b12;--card:#121a28;--card2:#0f1622;--ink:#eef3fa;--muted:#8393aa;--accent:#4ea8ff;--accent2:#7c5cff;--line:#1e2a3e;--chip:#161f30;--ok:#35d6a8;--bad:#ff5f6e;--gold:#ffcf5c}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font:15.5px/1.6 "Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+body{font:15.5px/1.6 "Segoe UI",system-ui,Arial,sans-serif;color:var(--ink);
+     background:radial-gradient(1100px 560px at 50% -8%,#16233f 0%,#0b1120 45%,#080b12 100%) fixed}
 a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 img.av,svg.av{border-radius:12px;object-fit:cover;display:block;flex:none}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
@@ -59,9 +81,9 @@ header{padding:26px 0 6px}h1{font-size:26px}
 .tierrow{display:flex;gap:14px;align-items:stretch;margin:12px 0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--card)}
 .tierbadge{width:56px;display:flex;align-items:center;justify-content:center;font-size:23px;font-weight:800;color:#0e1420;flex:none}
 .tierheroes{display:flex;gap:10px;flex-wrap:wrap;padding:12px}
-.htile{display:flex;gap:10px;align-items:center;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:8px 12px 8px 8px;min-width:150px}
-.htile:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px);transition:.12s}
-.htile .av{width:38px;height:38px}
+.htile{display:flex;gap:10px;align-items:center;background:var(--chip);border:1px solid var(--line);border-radius:10px;padding:8px 12px 8px 8px;min-width:150px;transition:.14s}
+.htile:hover{border-color:var(--accent);text-decoration:none;transform:translateY(-2px);box-shadow:0 6px 20px rgba(78,168,255,.18)}
+.htile .av{width:38px;height:38px;border:1px solid var(--line)}
 .htile .nm{font-weight:700;color:var(--ink);font-size:14px}
 .htile .ro{font-size:11px;color:var(--muted)}
 .htile .wr{font-size:11.5px;margin-top:2px}.htile .wr b{color:var(--accent)}
@@ -85,8 +107,8 @@ table.stats tr:hover td{background:var(--chip)}
 /* Unit detail kiểu MetaTFT: thẻ chân dung trái + chỉ số phải */
 .udetail{display:grid;grid-template-columns:340px 1fr;gap:16px;margin-bottom:16px}
 .usummary{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.usplash{position:relative;height:180px}
-.usplash img{width:100%;height:100%;object-fit:cover}
+.usplash{position:relative;height:190px}
+.usplash img{width:100%;height:100%;object-fit:cover;filter:saturate(1.12) contrast(1.06)}
 .usplash .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 40%,rgba(0,0,0,.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:12px 14px}
 .usplash .nm{font-size:26px;font-weight:800;color:#fff;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,.7)}
 .usplash .role{display:inline-block;width:fit-content;margin-top:5px;padding:3px 10px;border-radius:7px;font-size:12px;font-weight:700;color:#0e1420}
@@ -235,9 +257,9 @@ def _initials(name: str) -> str:
     return (parts[0][0] + parts[1][0]).upper() if len(parts) >= 2 else clean[:2].upper()
 
 
-def avatar(h: dict, size: int) -> str:
+def avatar(h: dict, size: int, root: str = "") -> str:
     if h.get("img"):
-        return f'<img class="av" src="{esc(h["img"])}" width="{size}" height="{size}" alt="{esc(h["name"])}">'
+        return f'<img class="av" src="{esc(_loc(h["img"], root))}" width="{size}" height="{size}" alt="{esc(h["name"])}" loading="lazy">'
     col = ROLE_COLOR.get(engine.primary_role(h), "#4aa3ff")
     fs = int(size * 0.42)
     return (f'<svg class="av" width="{size}" height="{size}" viewBox="0 0 {size} {size}">'
@@ -253,7 +275,7 @@ def _tile(h: dict, root: str = "") -> str:
     return (f'<a class="htile" href="{root}hero/{esc(h["id"])}.html" '
             f'data-role="{esc("|".join(h["roles"]))}" data-lane="{esc(h["lane"])}" '
             f'data-name="{esc(h["name"].lower())}">'
-            f'{avatar(h,38)}<div><div class="nm">{esc(h["name"])}</div>'
+            f'{avatar(h,38,root)}<div><div class="nm">{esc(h["name"])}</div>'
             f'<div class="ro">{esc(" · ".join(h["roles"]))} · {esc(h["lane"])}</div>{wr_html}</div></a>')
 
 
@@ -515,7 +537,7 @@ def build_hero(h, roster, items) -> str:
         rows = ""
         for i, s in enumerate(h["skills"]):
             kind = _SKILL_KIND[i] if i < len(_SKILL_KIND) else f"Chiêu {i}"
-            icon = (f'<img src="{esc(s["icon"])}" alt="" loading="lazy">'
+            icon = (f'<img src="{esc(_loc(s["icon"], "../"))}" alt="" loading="lazy">'
                     if s.get("icon") else '<div style="width:46px;height:46px;border-radius:10px;background:var(--chip)"></div>')
             rows += (f'<div class="skl">{icon}<div><div class="kind">{kind}</div>'
                      f'<div class="nm">{esc(s.get("name",""))}</div>'
@@ -529,7 +551,7 @@ def build_hero(h, roster, items) -> str:
     # 2) Trang bị theo THỨ TỰ ƯU TIÊN (icon + tên thật).
     steps = []
     for s in prio:
-        ic = (f'<img src="{esc(s["icon"])}" alt="" loading="lazy">'
+        ic = (f'<img src="{esc(_loc(s["icon"], "../"))}" alt="" loading="lazy">'
               if s.get("icon") else '<div class="ph2"></div>')
         steps.append(f'<div class="step"><div class="o">{s["order"]}</div>{ic}'
                      f'<div class="nm">{esc(s["name"])}</div>'
@@ -568,8 +590,8 @@ def build_hero(h, roster, items) -> str:
 
     # ---- Khối UnitDetail kiểu MetaTFT ----
     rc = ROLE_COLOR.get(engine.primary_role(h), "#4aa3ff")
-    splash_img = (f'<img src="{esc(h["img"])}" alt="{esc(h["name"])}">'
-                  if h.get("img") else avatar(h, 180))
+    splash_img = (f'<img src="{esc(_loc(h["img"], "../"))}" alt="{esc(h["name"])}" loading="lazy">'
+                  if h.get("img") else avatar(h, 180, "../"))
     traits = "".join(f'<span>{esc(x)}</span>' for x in h.get("tags", [])[:4])
     summary = (
         f'<div class="usummary"><div class="usplash">{splash_img}'
@@ -583,7 +605,7 @@ def build_hero(h, roster, items) -> str:
         feat = h["skills"][-1] if len(h["skills"]) >= 4 else h["skills"][0]
         fi = len(h["skills"]) - 1 if len(h["skills"]) >= 4 else 0
         kind = _SKILL_KIND[fi] if fi < len(_SKILL_KIND) else "Chiêu"
-        ic = (f'<img src="{esc(feat.get("icon",""))}" alt="">' if feat.get("icon")
+        ic = (f'<img src="{esc(_loc(feat.get("icon",""), "../"))}" alt="" loading="lazy">' if feat.get("icon")
               else '<div style="width:44px;height:44px;border-radius:10px;background:var(--chip)"></div>')
         summary += (f'<div class="uability"><div class="top">{ic}'
                     f'<div><div class="kind">{kind} · Kỹ năng chủ chốt</div>'
@@ -657,6 +679,11 @@ def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     (OUT / "hero").mkdir(parents=True)
+
+    # Ảnh local (nếu đã chạy download_assets.py) -> docs/img.
+    if ASSETS.is_dir():
+        shutil.copytree(ASSETS, OUT / "img")
+        print(f"  copy {sum(1 for _ in (OUT/'img').glob('*'))} ảnh -> docs/img")
 
     (OUT / ".nojekyll").write_text("", encoding="utf-8")
     (OUT / "index.html").write_text(build_index(roster, meta), encoding="utf-8")
