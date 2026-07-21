@@ -1,0 +1,629 @@
+/* Hallmark · macrostructure: Bento Grid · genre: atmospheric · theme: Midnight
+ * contrast: pass
+ */
+
+:root {
+  /* Hallmark Locked Tokens - Atmospheric Genre (Midnight) */
+  --color-paper: oklch(14% 0.02 260);
+  --color-paper-2: oklch(18% 0.02 260);
+  --color-paper-3: oklch(24% 0.02 260);
+  
+  --color-ink: oklch(92% 0.01 260);
+  --color-ink-sub: oklch(70% 0.02 260);
+  --color-ink-faint: oklch(50% 0.02 260);
+  
+  /* Accent: Neon Cyan */
+  --color-accent: oklch(75% 0.15 230);
+  --color-accent-hover: oklch(80% 0.15 230);
+  
+  /* Semantic */
+  --color-ok: oklch(75% 0.15 160);
+  --color-bad: oklch(65% 0.20 25);
+  --color-gold: oklch(80% 0.15 80);
+
+  --color-line: oklch(25% 0.02 260);
+  --color-focus: oklch(75% 0.15 230 / 50%);
+
+  --font-sans: "Inter", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Outfit", "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+
+html, body {
+  overflow-x: clip; /* Hallmark Responsive Non-negotiable */
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Typography Purity: No italic headers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: normal !important;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--color-accent-hover);
+}
+
+img.av, svg.av {
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  flex: none;
+}
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==========================================================================
+   Hallmark 8-State Interactive Baseline
+   (default, hover, focus, active, disabled, loading, error, success)
+   ========================================================================== */
+
+/* Universal Button / Interactive Tile base */
+.btn-interactive {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-paper-2);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+/* 1. Hover */
+.btn-interactive:hover, .btn-interactive.is-hover {
+  background: var(--color-paper-3);
+  border-color: var(--color-accent);
+}
+
+/* 2. Focus-visible */
+.btn-interactive:focus-visible, .btn-interactive.is-focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-focus);
+}
+
+/* 3. Active */
+.btn-interactive:active, .btn-interactive.is-active {
+  transform: scale(0.98);
+  background: var(--color-paper-2);
+}
+
+/* 4. Disabled */
+.btn-interactive:disabled, .btn-interactive[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 5. Loading */
+.btn-interactive[data-state="loading"] {
+  color: transparent;
+  position: relative;
+  pointer-events: none;
+}
+.btn-interactive[data-state="loading"]::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-ink-sub);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+/* 6. Error */
+.btn-interactive[data-state="error"] {
+  border-color: var(--color-bad);
+  background: color-mix(in oklch, var(--color-bad) 10%, transparent);
+}
+
+/* 7. Success */
+.btn-interactive[data-state="success"] {
+  border-color: var(--color-ok);
+  background: color-mix(in oklch, var(--color-ok) 10%, transparent);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   N5 Floating Pill Nav (Hallmark Archetype)
+   ========================================================================== */
+.navtop {
+  position: sticky;
+  top: 16px;
+  z-index: 50;
+  margin: 0 auto;
+  max-width: fit-content;
+  background: color-mix(in oklch, var(--color-paper-2) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-line);
+  border-radius: 40px;
+  padding: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.navtop .wrap {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 0;
+}
+
+.navtop .brand {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--color-ink);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.ng {
+  position: relative;
+}
+
+.ng > a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: 30px;
+  color: var(--color-ink-sub);
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.ng > a:hover, .ng.on > a {
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+/* Dropdown (menu con) — ẩn mặc định, hiện khi hover nhóm.
+   (Trước đây thiếu rule này nên các link con bị đổ hết ra thanh nav.) */
+.ng .dd {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  min-width: 210px;
+  background: color-mix(in oklch, var(--color-paper-2) 96%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  padding: 6px;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 60;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+/* Cầu nối trong suốt để rê chuột từ nhãn xuống menu không bị đóng */
+.ng::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+.ng:hover .dd {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.ng .dd a {
+  display: block;
+  padding: 9px 14px;
+  border-radius: 10px;
+  color: var(--color-ink-sub);
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.ng .dd a:hover {
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.navsub {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--color-line);
+}
+.navsub .wrap {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.navsub a {
+  color: var(--color-ink-sub);
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: 8px;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.navsub a:hover {
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.navsub a.on {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ==========================================================================
+   Page UI & Tiles
+   ========================================================================== */
+header { padding: 40px 0 20px; }
+h1 { font-size: 32px; letter-spacing: -0.02em; }
+.sub { color: var(--color-ink-sub); font-size: 16px; margin-top: 8px; max-width: 60ch; }
+
+.htile {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  padding: 10px 14px 10px 10px;
+  min-width: 160px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+  cursor: pointer;
+}
+
+.htile:hover, .htile:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-paper-3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px color-mix(in oklch, var(--color-accent) 15%, transparent);
+  text-decoration: none;
+}
+
+.htile:active {
+  transform: translateY(0);
+}
+
+.htile .av { width: 44px; height: 44px; border-radius: 8px; }
+.htile .nm { font-family: var(--font-display); font-weight: 700; color: var(--color-ink); font-size: 15px; }
+.htile .ro { font-size: 12px; color: var(--color-ink-sub); }
+.htile .wr { font-size: 12px; margin-top: 2px; }
+.htile .wr b { color: var(--color-accent); }
+
+.tierrow {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.tierbadge {
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  flex: none;
+  border-right: 1px solid var(--color-line);
+}
+
+.tierheroes {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+/* ==========================================================================
+   Responsive Grid (minmax(0, 1fr) discipline)
+   ========================================================================== */
+.igrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.icard {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.icard:hover {
+  border-color: var(--color-accent);
+  background: var(--color-paper-3);
+}
+
+.icard img {
+  width: 56px; height: 56px; border-radius: 12px; margin: 0 auto 12px; display: block;
+}
+.icard .inm { font-weight: 700; font-size: 14px; color: var(--color-ink); }
+.icard .ity { font-size: 12px; color: var(--color-ink-sub); margin-top: 4px; }
+
+/* Unit detail hero */
+.udetail {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.usummary {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.usplash {
+  position: relative;
+  height: 240px;
+}
+.usplash img { width: 100%; height: 100%; object-fit: cover; }
+.usplash .ov {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 20%, var(--color-paper-2) 100%);
+  display: flex; flex-direction: column; justify-content: flex-end; padding: 20px;
+}
+.usplash .nm { font-family: var(--font-display); font-size: 32px; font-weight: 800; color: var(--color-ink); }
+.usplash .role { margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.05em; }
+
+.spanel {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.spanel .t { font-size: 14px; font-weight: 700; color: var(--color-ink-sub); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
+
+@media (max-width: 768px) {
+  .udetail { grid-template-columns: minmax(0, 1fr); }
+  .navtop { top: 8px; border-radius: 24px; }
+  .navtop .brand { display: none; } /* Hide brand text on mobile pill */
+}
+
+/* Utility */
+.main-content { min-height: 100vh; }
+
+/* ==========================================================================
+   Hero Banner (T3)
+   ========================================================================== */
+.herobanner {
+  display: grid;
+  grid-template-columns: 62% 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 720px) {
+  .herobanner {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.hb-feature {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 280px;
+  padding: 24px;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center top;
+  border: 1px solid var(--color-line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s;
+}
+.hb-feature:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px color-mix(in oklch, var(--color-accent) 20%, transparent);
+}
+
+.hb-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 10%, color-mix(in oklch, var(--color-paper-2) 90%, black) 80%, var(--color-paper-2) 100%);
+  z-index: 1;
+}
+
+.hb-feature > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hb-feature .nm {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin: 4px 0;
+}
+
+.hb-feature .ro {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink-sub);
+  margin-bottom: 12px;
+}
+
+.hb-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 16px;
+}
+
+.hb-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--color-paper-3);
+  border: 1px solid var(--color-line);
+  color: var(--color-accent);
+}
+
+.hb-feature .hb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  background: var(--color-paper-3);
+  color: var(--color-ink);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  width: max-content;
+  transition: background 0.2s;
+}
+.hb-feature:hover .hb-btn {
+  background: var(--color-accent);
+  color: var(--color-paper);
+  border-color: var(--color-accent);
+}
+
+.hb-right {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.hb-right .rtitle {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-ink-sub);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hb-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.hb-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.hb-item:hover {
+  background: var(--color-paper-3);
+}
+
+.hb-item .av {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.hb-item .nbox {
+  flex: 1;
+  min-width: 0;
+}
+.hb-item .nm {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.hb-item .ro {
+  font-size: 12px;
+  color: var(--color-ink-sub);
+}
+
+.hb-item .rstats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.hb-item .s-tier {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+}
+.hb-item .s-win {
+  font-size: 12px;
+  color: var(--color-ink-sub);
+}

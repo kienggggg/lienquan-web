@@ -1,0 +1,80 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id          String      @id @default(cuid())
+  email       String      @unique
+  password    String
+  name        String
+  role        String      @default("USER") // USER, ADMIN
+  reputation  Int         @default(0)
+  createdAt   DateTime    @default(now())
+  articles    Article[]
+  comments    Comment[]
+  teams       Team[]
+  eventCodes  EventCode[]
+  codeRatings CodeRating[]
+}
+
+model Article {
+  id        String    @id @default(cuid())
+  title     String
+  content   String
+  authorId  String
+  author    User      @relation(fields: [authorId], references: [id])
+  createdAt DateTime  @default(now())
+  comments  Comment[]
+}
+
+model Comment {
+  id        String   @id @default(cuid())
+  content   String
+  authorId  String
+  articleId String
+  author    User     @relation(fields: [authorId], references: [id])
+  article   Article  @relation(fields: [articleId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model Team {
+  id          String   @id @default(cuid())
+  name        String
+  composition String   // JSON string of hero IDs
+  authorId    String
+  author      User     @relation(fields: [authorId], references: [id])
+  createdAt   DateTime @default(now())
+}
+
+model EventCode {
+  id          String       @id @default(cuid())
+  code        String
+  type        String       // "CHUNG_SUC", "BAN_BI", "SAN_THE", "KHAC"
+  title       String
+  description String?
+  isUsed      Boolean      @default(false)
+  authorId    String
+  author      User         @relation(fields: [authorId], references: [id])
+  copyCount   Int          @default(0)
+  createdAt   DateTime     @default(now())
+  ratings     CodeRating[]
+}
+
+model CodeRating {
+  id        String    @id @default(cuid())
+  stars     Int
+  comment   String?
+  authorId  String
+  author    User      @relation(fields: [authorId], references: [id])
+  codeId    String
+  code      EventCode @relation(fields: [codeId], references: [id], onDelete: Cascade)
+  createdAt DateTime  @default(now())
+
+  // Chống farm uy tín: 1 người chỉ đánh giá 1 mã ĐÚNG 1 lần.
+  @@unique([authorId, codeId])
+}
