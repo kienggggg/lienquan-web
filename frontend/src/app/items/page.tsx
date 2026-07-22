@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import ItemsClient from './items-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -20,27 +21,12 @@ export default async function ItemsPage() {
 
   return (
     <div className="hwrap">
-      <header>
+      <header style={{ marginBottom: '24px' }}>
         <h1>Trang bị Liên Quân</h1>
-        <div className="sub">Danh sách trang bị tổng hợp từ hệ thống.</div>
+        <div className="sub">Danh sách trang bị tổng hợp từ hệ thống, hỗ trợ tra cứu và lọc theo loại.</div>
       </header>
 
-      {items.length === 0 ? (
-        <div className="empty" style={{ marginTop: 20 }}>
-          Chưa có dữ liệu trang bị.
-        </div>
-      ) : (
-        <div className="igrid">
-          {items.map((it: any, i: number) => (
-            <div className="icard" key={it.id || i}>
-              <img src={it.icon} alt={it.name} />
-              <div className="inm">{it.name}</div>
-              <div className="ity">{it.type}</div>
-              {it.level && <div className="ilv">Cấp {it.level}</div>}
-            </div>
-          ))}
-        </div>
-      )}
+      <ItemsClient items={items} />
     </div>
   );
 }

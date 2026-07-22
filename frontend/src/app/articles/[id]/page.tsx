@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { prisma } from '@/lib/prisma';
 import { getSession } from '@/lib/auth';
 import CommentForm from './comment-form';
+import VoteButton from '../vote-button';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,16 +14,30 @@ export default async function ArticleDetail({ params }: { params: Promise<{ id: 
     where: { id },
     include: {
       author: true,
+      votes: true,
       comments: { orderBy: { createdAt: 'asc' }, include: { author: true } },
+      _count: { select: { votes: true } },
     },
   });
   if (!article) notFound();
 
+  const initiallyVoted = session ? article.votes.some((v: any) => v.userId === session.userId) : false;
+
   return (
     <div className="hwrap article" style={{ maxWidth: 820, margin: '0 auto' }}>
       <div className="crumbs"><Link href="/articles">← Cẩm nang</Link></div>
-      <h1>{article.title}</h1>
-      <div className="am" style={{ color: 'var(--muted)', fontSize: 13, marginBottom: 16 }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px', flexWrap: 'wrap' }}>
+        <h1 style={{ flex: 1, margin: 0 }}>{article.title}</h1>
+        <div style={{ marginTop: '8px' }}>
+          <VoteButton
+            articleId={article.id}
+            initialVotes={article._count.votes}
+            initiallyVoted={initiallyVoted}
+            isLoggedIn={!!session}
+          />
+        </div>
+      </div>
+      <div className="am" style={{ color: 'var(--muted)', fontSize: 13, marginBottom: 16, marginTop: 8 }}>
         ✍️ {article.author.name} · 🏅 {article.author.reputation} uy tín ·{' '}
         {new Date(article.createdAt).toLocaleDateString('vi-VN')}
       </div>

@@ -20,6 +20,8 @@ model User {
   teams       Team[]
   eventCodes  EventCode[]
   codeRatings CodeRating[]
+  votes       Vote[]
+  itemBuilds  ItemBuild[]
 }
 
 model Article {
@@ -30,6 +32,7 @@ model Article {
   author    User      @relation(fields: [authorId], references: [id])
   createdAt DateTime  @default(now())
   comments  Comment[]
+  votes     Vote[]
 }
 
 model Comment {
@@ -77,4 +80,25 @@ model CodeRating {
 
   // Chống farm uy tín: 1 người chỉ đánh giá 1 mã ĐÚNG 1 lần.
   @@unique([authorId, codeId])
+}
+
+model Vote {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  @@unique([userId, articleId])
+}
+
+model ItemBuild {
+  id        String   @id @default(cuid())
+  authorId  String
+  author    User     @relation(fields: [authorId], references: [id])
+  heroId    String
+  title     String
+  itemIds   String
+  note      String?
+  createdAt DateTime @default(now())
 }
