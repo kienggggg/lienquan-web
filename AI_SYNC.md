@@ -21,9 +21,13 @@
 | T2 | Làm giàu trang `/comps` & `/items` (đang cơ bản) — thêm lọc, icon, bố cục đẹp | Gemini | TB | 🔲 TODO |
 | T3 | Trang chủ: thêm HERO BANNER (tướng nổi bật / tier nóng) cho bớt trống — **SPEC ở mục 7 bên dưới** | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT 6/6 |
 | T4 | Áp phong cách skill **Hallmark** để UI bớt "generic AI" (xem AURA/AI_TECH_RESEARCH.md) | Gemini | Thấp | 🔲 TODO |
-| T5 | Team Builder (kéo tướng vào 5 đường, lưu bảng `Team`) — Phase 3 | Gemini | TB | 🔲 TODO |
-| T6 | Deploy Vercel + đổi DB Postgres — SPEC mục 8. **Phần A (code) Claude XONG**, còn Phần B (tài khoản) chờ User | User | Cao | 🔄 A✅ · chờ B (User) |
+| T5 | Team Builder — **SPEC mục 9**. Tính năng lá cờ đầu, dùng model Team sẵn có | **Gemini** | **Cao** | 🔄 SPEC READY → Gemini |
+| T6 | Deploy Vercel + đổi DB Postgres — SPEC mục 8. **Phần A (code) Claude XONG**, còn Phần B (tài khoản) chờ User | User+Claude | Cao | ✅ DONE — LIVE: lienquan-web-zeta.vercel.app (Claude nghiệm thu ĐẠT) |
 | T7 | Nạp win/pick THẬT vào `data/heroes.json` (chạy lại `scrape_*`/merge) | User cấp số | Cao | ⏸ CHỜ user |
+
+| T8 | Trình tạo BỘ TRANG BỊ tự do (user chọn món cho tướng, lưu/chia sẻ) | Gemini | TB | 🔲 TODO |
+| T9 | Vote bài vi/build cộng đồng — **SPEC mục 10** | **Gemini** | **Cao** | 🔄 SPEC READY → Gemini |
+| T10 | Board "Thảo luận" (forum nhẹ, tái dùng Article/Comment) | Gemini | Thấp | 🔲 TODO |
 
 *(Chỉ huy cập nhật bảng này mỗi phiên. Trạng thái: 🔲 TODO · 🔄 DOING · ✅ DONE · ⏸ CHỜ.)*
 
@@ -227,3 +231,89 @@ Trang chủ đang trống trải (chỉ có 2 ô bento + list tier). Thêm 1 **H
 - **🔴 Chặn được 1 lỗi deploy-killer:** `npm run build` FAIL ở type-check `page.tsx:130` (`h` implicit any) — Antigravity CHƯA từng chạy `npm run build` thật (next dev không type-check). Đã vá `(h: any)`. Build giờ PASS (15 route đều Dynamic, không cần DB lúc build).
 - **CÒN LẠI = Phần B (chỉ User làm được):** tạo Neon Postgres → DATABASE_URL; tạo repo GitHub + push frontend; Vercel New Project (Root=frontend) + set env JWT_SECRET & DATABASE_URL; sau deploy chạy `prisma db push` lên DB đám mây tạo bảng.
 - **⚠️ Lưu ý cho Gemini:** local dev từ giờ CẦN DATABASE_URL Postgres (dùng chính URL Neon là được, Neon chạy từ localhost). SQLite `dev.db` cũ bỏ đi.
+
+**[21/07/2026 - Claude (Chỉ huy)] - T6 XONG: web LIVE trên Vercel**
+- User deploy thành công: **https://lienquan-web-zeta.vercel.app**. Nghiệm thu live: mọi route 200, trang chủ có hero banner (Lauriel), /players & /articles query Neon OK (không 500) → DATABASE_URL + JWT_SECRET trên Vercel đúng.
+- **Workflow cập nhật từ giờ:** sửa code → `git push` → Vercel TỰ redeploy (CI/CD). Không cần thao tác tay trên Vercel nữa.
+- **Web KHÔNG cần máy user bật** — chạy 24/7 trên cloud Vercel + DB Neon.
+- Việc tiếp (Command Board): T2 (làm giàu comps/items), T5 (Team Builder), T7 (nạp win/pick thật). T4 Hallmark đã áp 1 phần.
+
+---
+
+## 9. SPEC CHI TIẾT — T5: TEAM BUILDER (Chỉ huy Claude giao Gemini)
+
+> **File tạo:** `frontend/src/app/team-builder/page.tsx` (+ client component + server action). Thêm link nav "Tạo đội hình" vào layout (nhóm Tướng dropdown). Xong đổi T5=✅ + ghi Work Log.
+
+### 🎯 Mục tiêu
+Trang cho người dùng TỰ ghép đội hình 5 tướng (1 mỗi đường), đặt tên, LƯU vào DB (model `Team` đã có sẵn: `id/name/composition/authorId`). Là tính năng tương tác lá cờ đầu (mọi web meta game đều có — MetaTFT có "Team Builder").
+
+### 📦 Dữ liệu & Model (đã có sẵn)
+- Đọc tướng từ `data/heroes.json` (như `page.tsx` đang làm) — mỗi tướng có `id`, `name`, `img`, `lane` (1 trong: `Rừng`/`Rồng`/`Trung`/`Tà Thần`/`Hỗ trợ`), `roles`.
+- Model Prisma `Team { id, name, composition (String - JSON), authorId }` ĐÃ CÓ. `composition` = chuỗi JSON mảng 5 hero id, vd `["murad","violet","lauriel","thane","alice"]`.
+
+### 🎨 Layout
+- **5 ô đường** (Rừng · Rồng · Trung · Tà Thần · Hỗ trợ) nằm ngang. Mỗi ô: bấm vào → hiện danh sách tướng CỦA ĐÚNG ĐƯỜNG ĐÓ (lọc `h.lane === lane`) để chọn; chọn xong ô hiện avatar+tên tướng, có nút ✕ bỏ chọn.
+- Ô input **tên đội hình** + nút **"💾 Lưu đội hình"** (chỉ bật khi đã chọn đủ/đăng nhập).
+- Dưới cùng: **"Đội hình của tôi"** — list các Team user đã lưu (nếu đăng nhập), mỗi cái hiện tên + 5 avatar nhỏ.
+- Chưa đăng nhập: vẫn ghép/xem được, nhưng bấm Lưu → nhắc đăng nhập (link /login).
+
+### 🧩 Kỹ thuật
+- Trang chọn tướng = **client component** (`'use client'`, dùng `useState` giữ 5 lựa chọn). Truyền danh sách tướng (đã lọc gọn: id/name/img/lane) từ Server Component cha xuống props.
+- **Server action** `saveTeam(name, composition)` ở `src/app/actions/teams.ts`: guard đăng nhập (`getSession`), validate name>=2 + composition có ít nhất 1 tướng, `prisma.team.create`. `revalidatePath`.
+- List "đội hình của tôi": query `prisma.team.findMany({ where:{authorId}, orderBy:{createdAt:'desc'} })` ở Server Component; parse `composition` JSON → map ra avatar (tra id trong heroes.json).
+- Nav: thêm `<a href="/team-builder">Tạo đội hình</a>` vào dropdown nhóm **Tướng** trong `layout.tsx`.
+
+### ✅ Tiêu chí nghiệm thu (Chỉ huy review)
+1. `npm run build` PASS (❗nhớ: mọi param map phải có kiểu, tránh lỗi implicit-any như T3 — build mới bắt).
+2. Chọn được 1 tướng/đường (đúng tướng theo lane), bỏ chọn được.
+3. Đăng nhập → lưu đội hình → hiện trong "Đội hình của tôi" (lưu thật vào Neon).
+4. Chưa đăng nhập → bấm Lưu nhắc đăng nhập, KHÔNG crash.
+5. Vanilla CSS (thêm class mới nếu cần), Server Action, không Tailwind.
+6. Trang `/team-builder` phải có `export const dynamic = 'force-dynamic'` (vì query DB) — nếu không build sẽ cố prerender + nối Neon lúc build → fail.
+
+### ⚠️ Nhắc quan trọng (rút từ T3)
+- CHẠY `npm run build` TRƯỚC KHI BÀN GIAO (không chỉ `npm run dev`) — dev không bắt lỗi type, build mới bắt. Deploy Vercel = chạy build, sai type là fail.
+
+**[21/07/2026 - Claude (Chỉ huy)] - Seed 15 bài hướng dẫn mẫu (thay vì cào Học viện)**
+- User muốn cào Học viện lấy build/lối chơi làm mẫu. Chỉ huy quyết KHÔNG cào (Học viện render JS khó cào + prose là bản quyền người viết → AdSense reject). THAY BẰNG: seed từ chính data engine mình (play/pros/cons/combo tính từ bộ kỹ năng — 100% gốc).
+- Tạo user hệ thống `AURA` (email aura@lienquan.system, không login được) làm tác giả; seed 15 bài "Hướng dẫn chơi [Tướng]" vào Neon (script chạy 1 lần, idempotent — xóa bài AURA cũ rồi seed lại). Đã verify hiện trên live /articles.
+- Ý đồ: có mẫu ngay cho web đỡ trống; sau này bài user đánh giá cao (qua T9 vote) nổi lên thay dần. Thêm task T8/T9/T10 cho hướng "tự do như MetaTFT" + forum nhẹ.
+- **Nhắc:** nếu chạy lại seed hoặc reset DB, bài AURA sẽ tạo lại; đừng seed trùng.
+
+---
+
+## 10. SPEC CHI TIẾT — T9: VOTE bài viết / build cộng đồng (Chỉ huy Claude giao Gemini)
+
+> **Mục tiêu:** cho user "vote" (thích/hữu ích) bài viết → bài điểm cao nổi lên đầu = "meta do cộng đồng chọn". Đây là cốt lõi để bài mẫu AURA bị bài hay của user thay dần.
+
+### 📦 Model MỚI (thêm vào schema.prisma rồi `npx prisma db push` + generate)
+```prisma
+model Vote {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  articleId String
+  article   Article  @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  @@unique([userId, articleId])   // 1 người vote 1 bài đúng 1 lần (chống farm)
+}
+```
+- Thêm quan hệ ngược: model `User` thêm `votes Vote[]`; model `Article` thêm `votes Vote[]`.
+
+### ⚙️ Server action `src/app/actions/votes.ts`
+- `toggleVote(articleId)`: guard đăng nhập; nếu đã vote → xoá (bỏ vote), nếu chưa → tạo. Trả `{ voted: bool, count: number }`. `revalidatePath`.
+- Cộng/trừ 1 uy tín cho TÁC GIẢ bài mỗi lần vote/bỏ vote (không cộng nếu tự vote bài mình — như logic comment đã có).
+
+### 🎨 UI
+- Trang `/articles` + trang chi tiết `/articles/[id]`: nút **👍 số-vote** (client component nhỏ), bấm toggle, hiện trạng thái đã-vote (đổi màu). Dùng `useActionState`/`useTransition`.
+- `/articles`: thêm nút sắp xếp **"🔥 Nổi bật"** (sort theo số vote desc) vs "Mới nhất" (createdAt). Đếm vote qua `_count: { select: { votes: true } }`.
+
+### ✅ Tiêu chí nghiệm thu (Chỉ huy review)
+1. `npm run build` PASS (❗nhớ type đủ, tránh implicit-any).
+2. Đăng nhập → vote 1 bài → số tăng, nút đổi trạng thái; vote lại → bỏ vote (toggle). Vote lần 2 KHÔNG farm được (schema @@unique + toggle).
+3. Sort "Nổi bật" đẩy bài nhiều vote lên đầu.
+4. Chưa login → bấm vote nhắc đăng nhập, không crash.
+5. `prisma db push` chạy trên Neon (DATABASE_URL trong .env) — báo Chỉ huy nếu cần.
+6. Vanilla CSS, Server Action, không Tailwind.
+
+### ⚠️ Nhắc: chạy `npm run build` TRƯỚC khi bàn giao (dev không bắt lỗi type). Xong đổi T9=✅ + ghi Work Log.

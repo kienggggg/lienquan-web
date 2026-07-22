@@ -1,7 +1,7 @@
 {
  "_note": "DỮ LIỆU MẪU. attr(0-3) mã hóa từ bộ kỹ năng. spike=thời điểm mạnh (early/mid/late). winrate/pickrate là số MẪU. img rỗng -> site tự sinh avatar theo vai trò; điền đường dẫn ảnh thật để thay. skills=[{name,desc,note}] nạp dần theo giáo án; spell/arcana bỏ trống -> mặc định theo vai trò.",
- "patch": "Bản mẫu (chưa nạp số liệu mùa)",
- "source": "https://lienquan.garena.vn/hoc-vien/tuong-skin/",
+ "patch": "Số liệu THẬT từ Bảng Phân Bậc Tướng (Garena, OCR)",
+ "source": "Win/pick/ban: chính thống trong game Garena",
  "scraped_at": "2026-07-20",
  "heroes": [
   {
@@ -33,7 +33,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2026/04/SeaTalk_IMG_20260420_183319-1.png",
      "desc": "Flowborn duy trì dẫn dắt một luồng sáng gây sát thương liên tục lên các mục tiêu bị liên kết. Khi bắt đầu, luồng sáng sẽ gây thêm sát thương và làm chậm mục tiêu 1 giây. Có thể tiêu hao 5 tầng “Dòng chảy” để thi triển thêm Dòng chảy hủy diệt đồng thời trong thời gian duy trì có thể sử dụng các chiêu khác."
     }
-   ]
+   ],
+   "winrate": 53.6,
+   "pickrate": 3.69,
+   "banrate": 2.35
   },
   {
    "id": "dyadia",
@@ -63,7 +66,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2026/01/SeaTalk_IMG_20260119_104151.png",
      "desc": "Dyadia phóng đàn tinh linh theo hướng chọn: - Đồng minh trúng: nhận Lương Duyên + hồi máu. - Kẻ địch trúng: bị Ác Duyên + sát thương phép. Đối với mục tiêu đã có hiệu ứng: - Đồng minh: làm mới Lương Duyên, hồi thêm máu + tăng tốc 2s. - Kẻ địch: làm mới Ác Duyên, chịu thêm sát thương + trói 1s. Nội tại chiêu: Mỗi 1 vàng Dyadia kiếm từ bộ chiêu tăng hồi máu và sát thương phép cho Chiêu 3."
     }
-   ]
+   ],
+   "winrate": 53.29,
+   "pickrate": 2.55,
+   "banrate": 7.84
   },
   {
    "id": "11596",
@@ -93,7 +99,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/6.png",
      "desc": "Ngay khoảnh khắc học được chiêu 4, Edras kích hoạt sức mạnh báo thù cuồng nộ và chuyển sang hình thái Hắc ám. Dạng bán thần Hắc ám Nội tại – Ma khí Hắc ám: Sau khi Edras đánh thường, tinh thần hắc ám cũng sẽ thực hiện thêm một đòn đánh thường bổ sung. Edras gây sát thương vật lý, tinh thần hắc ám cũng gây sát thương vật lý. Khi ở trạng thái này, Edras được tăng tốc chạy. Khi ở trạng thái Quang minh, mỗi tốc đánh thêm sẽ giúp bản thân tăng xuyên giáp. Trong trạng thái Hắc ám, mỗi công vật lý thêm giúp tăng tốc đánh. Chiêu 1 – Khát vọng thôn phệ: Edras tụ lực xung phong, xóa làm chậm bản thân và tăng tốc chạy đồng thời mỗi 0.5 giây hồi máu; suốt thời gian tụ lực để xung phong bản thân còn được miễn khống. Nếu tụ lực quá 1 giây, Edras sẽ được tăng thêm tốc đánh trong 3 giây đồng thời tốc chạy tụ lực giảm dần trong vòng 2 giây. Mỗi lần đánh thường trúng địch đều giúp giảm 1 giây hồi chiêu . Chiêu 2 – Ám dạ cuồng trảm: Edras chém ra luồng kiếm khí theo hướng chỉ định gây sát thương vật lý và làm chậm địch trong 2 giây đồng thời khiến chúng chịu hiệu ứng xé toạc. Mục tiêu có hiệu ứng này sẽ phải chịu thêm sát thương vật lý từ các đòn đánh thường của Edras. Nếu mục tiêu là tướng địch, Edras sẽ được hồi máu. Chiêu 3 – Hỗn mang hủy diệt: Edras phóng ra một pháp trận thần bí, thoáng chốc sau pháp trận sẽ bùng nổ gây sát thương vật lý và hất tung những nạn nhân trong phạm vi trong 0.75 giây. Chiêu 4 – Thánh quang xuất thế: Edras áp chế sức mạnh hắc ám trong cơ thể và đổi sang hình thái Quang minh, quá trình này không thể bị đánh ngắt."
     }
-   ]
+   ],
+   "winrate": 49.18,
+   "pickrate": 4.32,
+   "banrate": 0.98
   },
   {
    "id": "goverra",
@@ -123,7 +132,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2025/07/SeaTalk_IMG_20250708_111726.png",
      "desc": "Goverra phóng một thiết bị tín hiệu về phía mục tiêu chỉ định, gây choáng và đánh dấu mục tiêu. Trong thời gian bị đánh dấu, cứ mỗi 0,5 giây mục tiêu sẽ chịu sát thương phép và bị làm chậm. Khi thời gian đánh dấu kết thúc, thiết bị sẽ phát nổ và gây sát thương phép. Khi kích hoạt chiêu cuối, các Thiết vệ trong khu vực sẽ được tăng tốc đánh và tốc chạy, đồng thời lập tức lao vào tấn công mục tiêu. Nếu mục tiêu là tướng địch có dấu ấn và bị hạ gục trong thời gian hiệu lực, Goverra sẽ lập tức được tự động triệu hồi 3 Thiết vệ. Thiết bị tín hiệu có thể đánh dấu lên công trình nhưng sẽ không gây choáng."
     }
-   ]
+   ],
+   "winrate": 51.65,
+   "pickrate": 6.92,
+   "banrate": 18.96
   },
   {
    "id": "heino",
@@ -153,7 +165,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2025/04/heino-4.png",
      "desc": "Heino sẽ ghi nhớ lại vị trí tại thời điểm cuối cùng trong trạng thái đánh xa trước đó. Heino triển khai pháp trận và nhận tỷ lệ miễn thương đồng thời hồi máu cho bản thân (trong thời gian này bản thân không thể di chuyển và được miễn khống). Sau 1.5 giây, pháp trận nổ tung gây sát thương phép lên kẻ địch trong phạm vi (tối đa 5 tướng địch) và Heino dịch chuyển thời không quay ngược về điểm đã ghi nhớ. Nếu trong pháp trận có trụ phe ta thì trụ đó sẽ quay về trạng thái 8 giây trước (thậm chí kể cả khi trụ vừa bị phá hủy). Bản thân máu Heino càng thấp thì hiệu quả hồi phục càng cao, tối đa hồi máu gấp 2 lần. Sau khi Heino và Dolia đều đạt cấp 15, nếu Dolia dùng chiêu cuối, chiêu cuối của Heino sẽ được làm mới. Trong vòng 5 giây, chiêu cuối của Heino sẽ được thay thế bằng chiêu thức hợp kích. --- Thiên mệnh thời không (hợp kích) Mô tả chiêu: Heino sẽ ghi nhớ lại vị trí tại thời điểm cuối cùng trong trạng thái đánh xa trước đó. Sau đó Heino triển khai pháp trận và sau 1.5 giây vùng này sẽ bùng nổ gây sát thương phép và tạo một kết giới thời không kéo dài 3 giây: Trong kết giới, Heino được tự do hành động và gây sát thương.Tất cả mục tiêu khác đều rơi vào trạng thái đình trệ – không thể di chuyển và miễn nhiễm với toàn bộ sát thương, ngoại trừ từ Heino Kết thúc chiêu, Heino trở về vị trí tại điểm đã ghim lúc trước."
     }
-   ]
+   ],
+   "winrate": 49.58,
+   "pickrate": 9.0,
+   "banrate": 4.31
   },
   {
    "id": "billow",
@@ -183,7 +198,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2025/01/SeaTalk_IMG_20250124_115350.png",
      "desc": "Billow làm chậm mục tiêu rồi lướt về phía trước đẩy lùi kẻ địch đến điểm cuối đồng thời gây sát thương. Trạng thái Hải quái: Lập tức lướt về phía trước và đẩy lùi nạn nhân kèm theo gây sát thương"
     }
-   ]
+   ],
+   "winrate": 49.88,
+   "pickrate": 10.73,
+   "banrate": 5.31
   },
   {
    "id": "boltbaron",
@@ -303,7 +321,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/07/4-removebg-preview.png",
      "desc": "Chiêu khởi đầu: Vẽ lên những đường kiếm ảnh gây sát thương vật lý cho mục tiêu và làm chậm chúng, đồng thời nhận miễn khống và miễn thương."
     }
-   ]
+   ],
+   "winrate": 46.71,
+   "pickrate": 0.47,
+   "banrate": 0.1
   },
   {
    "id": "tachi",
@@ -364,7 +385,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fca1ebc235843a3a92a8fcb89f08c8465e16e37f40d491.png",
      "desc": "Dirak gọi ra một tấm chắn năng lượng chặn đứng mọi phát đạn của kẻ địch và sau đó giúp hắn thi triển Pháo tử quang. Pháo tử quang: Gây sát thương cực lớn cho kẻ địch trên phạm vi bắn thẳng."
     }
-   ]
+   ],
+   "winrate": 51.99,
+   "pickrate": 2.02,
+   "banrate": 0.13
   },
   {
    "id": "qi",
@@ -394,7 +418,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4ed221dbe5cdfd8dd50aa63a30e6bc435d56860fb9b191.png",
      "desc": "Qi xuất chưởng về phía trước gây sát thương vật lý và đánh lui địch. Kẻ địch bị đánh lui va vào địa hình sẽ phải chịu thêm sát thương vật lý và choáng. Sau đó Qi có thể lướt tiếp theo hướng chỉ định, gây sát thương vật lý lên những kẻ địch trên đường lướt."
     }
-   ]
+   ],
+   "winrate": 50.53,
+   "pickrate": 4.14,
+   "banrate": 0.1
   },
   {
    "id": "erin",
@@ -484,7 +511,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4.png",
      "desc": "Gọi ra thần địa sa thú để điều khiển theo hướng chỉ định, nhận miễn khống. Khi trúng địa hình, tướng địch hoặc tài kích hoạt chiêu này, Bijan sẽ dừng lại, gây sát thương vật lý, hất tung địch đồng thời giảm giáp của chúng. Bijan có thể chở 1 đồng đội khi dùng chiêu này."
     }
-   ]
+   ],
+   "winrate": 49.09,
+   "pickrate": 7.36,
+   "banrate": 1.7
   },
   {
    "id": "bonnie",
@@ -514,7 +544,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/876bb07811f01246993623de236949b2658d4e8093c0b1.png",
      "desc": "Bonnie tung thỏ tím đến vị trí chỉ định gây sát thương phép trong phạm vi và hút địch về trung tâm. Sau đó, Thỏ tím sẽ nổ gây sát thương và làm choáng địch."
     }
-   ]
+   ],
+   "winrate": 49.25,
+   "pickrate": 5.05,
+   "banrate": 1.14
   },
   {
    "id": "teeri",
@@ -544,7 +577,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/8d252fcdf3a791146c9b7013a65aed1f658d49284b5c01.png",
      "desc": "Tung Thần Khí Song LUân theo quỹ đạo chỉ định. Mỗi lần trúng tướng địch, thần khí sẽ bay thêm rồi quay về gây sát thương cho các mục tiêu trên đường bay và khiến chúng lộ diện."
     }
-   ]
+   ],
+   "winrate": 49.6,
+   "pickrate": 3.32,
+   "banrate": 0.1
   },
   {
    "id": "yue",
@@ -604,7 +640,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/feb702cd4e7e030035b78c12e8d563c7658d4c124bbf41.png",
      "desc": "Yan giải phóng toàn bộ phong ấn và nhận miễn khống đồng thời miễn thương. Sau 1 giây, Yan gây sát thương lên kẻ địch trong phạm vi và khiên giai đoạn 2 của chiêu cuối tiến vào trạng thái cường hóa."
     }
-   ]
+   ],
+   "winrate": 47.82,
+   "pickrate": 3.51,
+   "banrate": 0.1
   },
   {
    "id": "aya",
@@ -665,7 +704,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/56979016c5face439d6e9312fbb2de8b610005ba6d24e1.png",
      "desc": "Aoi bay lên trời (không bị chọn làm mục tiêu), cắm long trảo vào kẻ địch và gây sát thương vật lý dồng thời làm chậm. Sau đó trong thoáng chốc, Aoi lướt về phía sau đồng thời thu hồi song trảo và gây máu mục tiêu đã mất thành sát thương vật lý lên phạm vi lớn."
     }
-   ]
+   ],
+   "winrate": 49.4,
+   "pickrate": 1.96,
+   "banrate": 0.32
   },
   {
    "id": "iggy",
@@ -695,7 +737,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fb50e93ba4a478abc1c5e778a0e4fa6960fefeeed958d1.png",
      "desc": "Sau khi vận chiêu, Iggy tung đôi mắt hủy diệt oanh kích vào vị trí kẻ địch. Chiêu thức sau khi bùng nổ gây sát thương phép trong phạm vi. Chiêu có thể tích lũy, mỗi lần tung chiêu sẽ mất 1 thời gian giãn cách và chịu ảnh hưởng cơ chế hồi chiêu."
     }
-   ]
+   ],
+   "winrate": 49.45,
+   "pickrate": 3.77,
+   "banrate": 0.18
   },
   {
    "id": "bright",
@@ -725,7 +770,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fd97222b24eca727ce3461cbb388f55e5fc55a57a25201.png",
      "desc": "Sau khi bật Bất tử thánh thân, tất cả sát thương phải chịu sẽ bị dịch chuyển thời gian sau 3 giây mới bộc phát (cấm dùng chiêu 1). Nếu Bright hạ được kẻ gây sát thương, bản thân sẽ không phải chịu sát thương đến từ kẻ địch đó. Chiêu này kéo dài 6 giây. Mỗi đòn đánh thường xa sẽ mang tính xuyên thấu và đánh dấu lên kẻ địch trong phạm vi. Mỗi đòn đánh thường cận chiến sẽ gây sát thương trong phạm vi và gây X chuyển thành sát thương chuẩn."
     }
-   ]
+   ],
+   "winrate": 47.7,
+   "pickrate": 3.47,
+   "banrate": 0.1
   },
   {
    "id": "lorion",
@@ -755,7 +803,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5a6fe56cbba50d6110269af2597dbd5d5fc55731d213d1.png",
      "desc": "Sau 2 giây tụ lực, hắc lôi cầu bùng nổ và gây sát thương phép trong phạm vi đồng thời khiến kẻ địch bị khóa trên không trung."
     }
-   ]
+   ],
+   "winrate": 51.96,
+   "pickrate": 5.79,
+   "banrate": 1.14
   },
   {
    "id": "dextra",
@@ -785,7 +836,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b3620cf9d75a371b0955aa971a71765f5fc554cedd8ef1.png",
      "desc": "Thời gian hồi chiêu 70s - 10s/cấp chiêu Dextra giải trừ khống chế, miễn nhiễm sát thương trong 2.5 giây và chuyển hóa 20% sát thương nhận vào thành hồi máu. Khi nhận sát thương chí tử, nếu chiêu chưa trong thời gian hồi thì Dextra sẽ tự động kích hoạt chiêu và đưa chiêu vào trạng thái hồi."
     }
-   ]
+   ],
+   "winrate": 48.77,
+   "pickrate": 0.27,
+   "banrate": 0.1
   },
   {
    "id": "sinestrea",
@@ -815,7 +869,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/89e44aa63095d912e088158a57d2771a5fa19f60bc8421.png",
      "desc": "Sinestrea tiến vào trạng thái đánh xa và mỗi đòn đánh thường trong thời gian này sẽ bắn ra 3 huyết tiễn đồng thời bản thân nhận 10 - 20% hiệu ứng hút máu vật lý kèm tăng 30% tốc chạy và miễn làm chậm."
     }
-   ]
+   ],
+   "winrate": 50.66,
+   "pickrate": 8.73,
+   "banrate": 19.83
   },
   {
    "id": "thorne",
@@ -845,7 +902,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/306ffc0357c3704743973c1cb597b070610009c6795b91.png",
      "desc": "horne tụ lực 1 giây rồi gây 300 (+1.25 công vật lý) sát thương vật lý lên các mục tiêu trong phạm vi. Kẻ địch đứng trong trung tâm khu vực bị công kích sẽ phải chịu gấp đôi sát thương."
     }
-   ]
+   ],
+   "winrate": 53.42,
+   "pickrate": 2.82,
+   "banrate": 0.1
   },
   {
    "id": "allain",
@@ -876,7 +936,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c3339f412a7e0b1cb93b049ac24712165ef1fa73195831-1.png",
      "desc": "Allain lập tức biến mất và khóa 1 tướng địch. Sau 1.5 giây, hắn phóng xuống vị trí kẻ địch và gây sát thương chuẩn trong phạm vi."
     }
-   ]
+   ],
+   "winrate": 50.13,
+   "pickrate": 9.8,
+   "banrate": 1.92
   },
   {
    "id": "zata",
@@ -937,7 +1000,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/0c86300a463a31a080d075cc95f363ea5eb1401d102031.png",
      "desc": "Rouie triệu hồi Thần vực tại vị trí chỉ định gây sát thương phép lên kẻ địch trong phạm vi đồng thời tất cả đồng đội trên bản đồ có thể trong 8 giây truyền tống đến vị trí Thần vực 1 lần. Ngoài ra tất cả đồng đội đều được tăng tốc đánh khi đứng trong Thần vực."
     }
-   ]
+   ],
+   "winrate": 46.66,
+   "pickrate": 4.63,
+   "banrate": 14.97
   },
   {
    "id": "laville",
@@ -968,7 +1034,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/215bd4a1b6d3fb2d95d4eb49cac578485eb137d1a09a01.png",
      "desc": "Laville kết hợp đôi súng thần quang bắn ra phát đạn ánh sáng có thể bay xuyên bản đồ gây sát thương vật lý bùng nổ trong phạm vi lên tướng địch và khiến chúng bị choáng. Tướng địch trực tiếp trúng chiêu này sẽ bị choáng."
     }
-   ]
+   ],
+   "winrate": 51.31,
+   "pickrate": 6.78,
+   "banrate": 0.11
   },
   {
    "id": "paine",
@@ -998,7 +1067,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d5c7ac666880b55ee8cbdc99d61633a55e8ae106d998b1.png",
      "desc": "Sau khi tụ lực, Paine trong thời gian ngắn nhận miễn thương và lao đến điểm chỉ định đồng thời gây sát thương phép. Ngoài ra những kẻ địch đứng trên đường lao sẽ phải chịu thêm sát thương phép."
     }
-   ]
+   ],
+   "winrate": 48.04,
+   "pickrate": 9.25,
+   "banrate": 1.73
   },
   {
    "id": "ata",
@@ -1028,7 +1100,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/adb8e14105515c873579f40bf98380e55fc557b35bcb01.png",
      "desc": "Ata triệu hồi ra con thuyền khổng lồ trong 4 giây khiến các tướng hai phe không thể vượt qua và lập tức gây sát thương vật lý lên những kẻ địch trước mặt. Khi tung chiêu Ata sẽ miễn khống chế, và kích hoạt lần nữa sẽ huỷ chiêu."
     }
-   ]
+   ],
+   "winrate": 48.23,
+   "pickrate": 0.66,
+   "banrate": 0.1
   },
   {
    "id": "keera",
@@ -1089,7 +1164,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/234c0c620162c0e98103c774edfdd8b55df217f2bc7051.png",
      "desc": "Ishar triệu hồi 1 lồng ma thuật khiến hình thành 1 kết giới giam giữ kẻ địch. Tí Nị: Lập tức nhảy vào mục tiêu trong lồng ma thuật, khi đáp đất gây sát thương phép."
     }
-   ]
+   ],
+   "winrate": 47.27,
+   "pickrate": 4.08,
+   "banrate": 0.48
   },
   {
    "id": "elandorr",
@@ -1119,7 +1197,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/72e446ddf742b9e01586cdfc00c5f0655db17700f0a121.png",
      "desc": "Eland'orr thức tỉnh đèn tinh linh đẩy lùi kẻ địch gây sát thương phép sau đó linh hồn trong đèn phá kén bay thẳng tiếp theo hướng đánh"
     }
-   ]
+   ],
+   "winrate": 47.02,
+   "pickrate": 3.46,
+   "banrate": 0.11
   },
   {
    "id": "krizzix",
@@ -1150,7 +1231,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4aba50a38444a537adec3718c4e1fcee5daec619d7b621.png",
      "desc": "Krizzix sử dụng huyết mạch thiên phú giúp đồng đội lân cận được tăng tốc chạy, rồi 1 giây sau cùng nhau tiến vào trạng thái ngụy trang. Sau khi tung chiêu Krizzix nhận được thêm tầm nhìn của một tướng địch gần nhất."
     }
-   ]
+   ],
+   "winrate": 50.22,
+   "pickrate": 1.94,
+   "banrate": 2.25
   },
   {
    "id": "volkath",
@@ -1180,7 +1264,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e7e996a58f8e328e7109d1bf45d14b345d9477eee21181.png",
      "desc": "Volkath triệu hồi sức mạnh hỗn mang giúp thoát khỏi các trạng thái khống chế đang gánh chịu và nhận miễn thương, đồng thời trở thành kỵ sĩ, khiến các đòn đánh thường gây thêm sát thương vật lý trong phạm vi hình tròn. Suốt thời gian này Volkath có thể tái kích hoạt chiêu để đẩy lui địch xung quanh và gây sát thương vật lý đồng thời biến thành Chúa tể hắc ám. Sau khi biến thân Volkath được tăng tốc đánh, tốc chạy và được bất tử. Khi bất tử kết thúc Volkath sẽ được hồi máu. Ma uy: trong trạng thái kỵ sĩ, mỗi đòn đánh thường trúng tướng địch sẽ cộng dồn 1 tầng ma uy, tối đa 3 tầng. Mỗi tầng ma uy sẽ giúp Volkath kéo dài thời gian bất tử."
     }
-   ]
+   ],
+   "winrate": 53.26,
+   "pickrate": 6.22,
+   "banrate": 64.9
   },
   {
    "id": "celica",
@@ -1210,7 +1297,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b897a4073f69695d5018c472e5d4c6965d6fa88110b851.png",
      "desc": "Celia mở trạng thái pháo giàn, tăng giáp và giáp phép nhưng không thể di chuyển. Mỗi đòn bắn thường lên địch trong trung tâm phạm vi gây sát thương vật lý, tổng cộng có thể bắn 7 lần. Kích hoạt lại chiêu sẽ hủy trạng thái pháo giàn."
     }
-   ]
+   ],
+   "winrate": 48.0,
+   "pickrate": 0.48,
+   "banrate": 0.1
   },
   {
    "id": "zip",
@@ -1240,7 +1330,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/22707a803789fdd00fb1e8de70d7cd645d3ac93b562d31.png",
      "desc": "Zip biến thành trái cầu thịt, tăng tốc di chuyển lên tối đa và được miễn khống chế đồng thời lăn theo hướng chỉ định. Trong khi lăn Zip gây sát thương phép lên kẻ địch trên đường lăn và hất tung. Khi kết thúc giảm tốc chạy của địch xung quanh. Nếu lăn trúng vách cản sẽ lăn ngược lại và tăng thêm tốc lăn. Kích hoạt thêm một lần sẽ khiến dừng lăn, thời gian hồi chiêu được tính theo thời gian đã lăn."
     }
-   ]
+   ],
+   "winrate": 51.16,
+   "pickrate": 1.55,
+   "banrate": 2.92
   },
   {
    "id": "enzo",
@@ -1270,7 +1363,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d1888bf81be1273552f4cac4a5295a225d149bd225f791.png",
      "desc": "Enzo lướt cực nhanh theo tỏa liêm hiện phía sau lưng địch bị dính Câu hồn, gây sát thương vật lý lên các mục tiêu trên đường lướt; trong quá trình lướt Enzo được miễn thương; Hành quyết chỉ có thể dùng khi mục tiêu bị dính Câu hồn. Nội tại: Enzo diệt hoặc phụ diệt tướng địch đều kích hoạt trạng thái máy chém tăng tốc chạy, tốc đánh."
     }
-   ]
+   ],
+   "winrate": 49.15,
+   "pickrate": 10.62,
+   "banrate": 22.79
   },
   {
    "id": "yena",
@@ -1301,7 +1397,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/605c29916ce0ffee01a7cfbb4a240da35cfe2083765691.png",
      "desc": "Song đao - Mãn nguyệt trảm: Yena ghép cặp vũ khí thành Viên đao, gây sát thương vật lý lên các kẻ địch lân cận, đồng thời tăng công vật lý liên tục. Sau khi kích hoạt, Yena chuyển 3 chiêu hiện tại thành bộ chiêu mới sử dụng Nguyệt đao. Nguyệt đao - Hoành nguyệt trảm: Yena tách vũ khí thành cặp Loan đao chém ngang bốn phía, gây sát thương vật lý lên các nạn nhân lân cận, đồng thời tự tăng tốc đánh liên tục 5 giây. Sau khi kích hoạt, Yena chuyển 3 chiêu hiện tại thành bộ chiêu mới sử dụng Song đao."
     }
-   ]
+   ],
+   "winrate": 47.86,
+   "pickrate": 4.46,
+   "banrate": 0.13
   },
   {
    "id": "errol",
@@ -1331,7 +1430,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/691835535f456061c988ffde20962b815ccac615847471.png",
      "desc": "Errol phóng lên không trung và trở nên bất tử trong 2 giây, suốt thời gian này hắn có thể tự do chọn điểm rơi. Khi kết thúc, Errol hóa thành vòng xoáy xuyên thủng mặt đất gây sát thương vật lý và hất tung địch."
     }
-   ]
+   ],
+   "winrate": 47.92,
+   "pickrate": 7.74,
+   "banrate": 0.41
   },
   {
    "id": "capheny",
@@ -1362,7 +1464,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5e7274ee9583f2f80e7545611af8fa795ca5c8fe28dec1.png",
      "desc": "Capheny xả 15 đợt mưa đạn liên tục theo hình nón phía trước gây sát thương vật lý. Kẻ địch trúng chiêu sẽ bị giảm giáp; hiệu ứng có cộng dồn. Suốt thời gian này Capheny vẫn có thể di chuyển, bù lại bị giảm tốc chạy."
     }
-   ]
+   ],
+   "winrate": 47.61,
+   "pickrate": 7.28,
+   "banrate": 0.15
   },
   {
    "id": "hayate",
@@ -1423,7 +1528,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/864b099e9a6463ecacab419d5b8918a75c61057cbe9031.png",
      "desc": "D'Arcry tạo ra một Ma trận thứ nguyên tại điểm đã chọn, tất cả kẻ địch trúng chiêu sẽ phải chịu sát thương phép và chịu dấu ấn thứ nguyên. Sau 2 giây tất cả nạn nhân đang phải chịu dấu ấn sẽ bị cưỡng ép truyền tống về Ma trận và trúng choáng thoáng chốc (thời gian hồi chiêu bắt đầu tính từ lúc này). Đặc biệt trong vòng 6 giây sau khi tung chiêu, D'Arcy có thể kích hoạt lần nữa để tự truyền tống bản thân về tâm Ma trận và gây sát thương phép"
     }
-   ]
+   ],
+   "winrate": 47.51,
+   "pickrate": 0.9,
+   "banrate": 0.1
   },
   {
    "id": "veres",
@@ -1453,7 +1561,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/f149592ccc6dbf1684036a929df81c245c3f0827e0e9e1.png",
      "desc": "Veres nhảy đến phía trước triệu hồi vô số xích trồi lên từ mặt đất tấn công những kẻ địch trong vùng ảnh hưởng, gây máu đã mất của mục tiêu sát thương chuẩn Tung chiêu trúng tướng địch giúp Veres tiến vào trạng thái Cuồng huyết: tăng tốc đánh, công vật lý, xuyên giáp trong 4 giây (nếu kết liễu tướng địch sẽ tăng thành 10 giây). Suốt thời gian này nếu nội tại được kích hoạt tung Huyết xích trúng một tướng địch sẽ giúp tăng thêm 2 giây trạng thái Cuồng huyết"
     }
-   ]
+   ],
+   "winrate": 49.51,
+   "pickrate": 5.69,
+   "banrate": 0.13
   },
   {
    "id": "florentino",
@@ -1514,7 +1625,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/023e5341f5aef87afda1047c7ffbaa565c1361d5ef1891-1.png",
      "desc": "Sephera hòa mình vào dòng nước khiến bản thân không thể bị chọn làm mục tiêu trong 1.7 giây, đồng thời giúp hồimáu cho các đồng minh lân cận, và gây sát thương phép lên những kẻ địch cạnh bên."
     }
-   ]
+   ],
+   "winrate": 48.8,
+   "pickrate": 1.26,
+   "banrate": 0.1
   },
   {
    "id": "quillen",
@@ -1576,7 +1690,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a2d1f0696fe65c174f293e7bef5fdd905be3c6b17b5fb1.png",
      "desc": "Wiro vận sức tung rìu gây sát thương vật lý kèm 1 giây hất tung lên kẻ địch xung quanh. Tụ lực càng lâu, phạm vi ảnh hưởng và sát thương càng lớn. Mỗi nạn nhân rơi xuống sẽ gây 50% sát thương chiêu thức lên kẻ địch lân cận (nạn nhân rơi không chịu thêm sát thương này). Wiro có thể di chuyển khi tung chiêu, và hồi chiêu sẽ giảm đi 80% nếu huỷ chiêu. Nội tại: Khi Wiro tung chiêu hoặc cường hoá đánh thường sẽ tạo lốc xoáy xung quanh bản thân trong 3 giây, gây sát thương phép mỗi giây lên mọi kẻ địch, kể cả công trình."
     }
-   ]
+   ],
+   "winrate": 50.34,
+   "pickrate": 0.42,
+   "banrate": 0.1
   },
   {
    "id": "richter",
@@ -1602,7 +1719,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/53aa742633412d7f3d765fe2ccab4f065bd7d8cfcf6121.png",
      "desc": "Richter tung chiêu, khắc dấu ấn diệt quỷ lên kẻ địch lân cận, đồng thời tạo ra một vùng gây sát thương chuẩn và làm chậm mỗi 0.5 giây trong 5 giây. Các nạn nhân trúng dấu ấn nếu chịu 5 đợt sát thương từ chiêu thức này sẽ nhận sát thương chuẩn, đồng thời bị câm lặng 1 giây."
     }
-   ]
+   ],
+   "winrate": 46.96,
+   "pickrate": 3.81,
+   "banrate": 0.16
   },
   {
    "id": "elsu",
@@ -1633,7 +1753,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/a51dfc36484425637ae76ef9a70d9bea5bc98ed0545bb1.png",
      "desc": "Elsu lộn ra phía sau rồi lập tức bắn về phía trước gây sát thương vật lý và làm chậm tốc chạy của nạn nhân. Khi đáp đất Elsu được tăng tốc chạy trong 2 giây, nhưng nếu tung chiêu hoặc đánh thường sẽ lập tức giải trừ hiệu ứng này"
     }
-   ]
+   ],
+   "winrate": 48.79,
+   "pickrate": 12.6,
+   "banrate": 23.58
   },
   {
    "id": "ybneth",
@@ -1664,7 +1787,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d78f18dc73aa1928fed16bfd5c28a8d85b9a11812f63e1.png",
      "desc": "Y'bneth rơi vào giấc mộng ngàn thu, tự bao phủ bản thân trong một lớp lá chắn giúp chặn sát thương, đồng thời tạo ra một vùng đất thần bí khiến tất cả kẻ địch trong tầm ảnh hưởng bị giảm tốc chạy. Suốt thời gian này, Y'bneth miễn nhiễm khống chế và gieo rắc tối đa 20 đợt hạt giống gây sát thương vật lý trong vùng chỉ định. Nếu có tướng địch trúng chiêu sẽ giúp bản thân hồi máu. Đặc biệt nạn nhân trúng 8 đợt công kích sẽ bị choáng."
     }
-   ]
+   ],
+   "winrate": 53.57,
+   "pickrate": 9.6,
+   "banrate": 16.45
   },
   {
    "id": "amily",
@@ -1695,7 +1821,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/95c375987886101d4dac08d25d0dc72e5b88bdbb4f3dd1.png",
      "desc": "Sau 1 giây vận công, Amily gây sát thương phép diện rộng và cường hoá bản thân giúp tăng công vật lý, tốc chạy cùng miễn thương. Suốt thời gian cường hoá Amily gây sát thương phép lên kẻ địch lân cận mỗi giây; hiệu ứng kéo dài 8 giây"
     }
-   ]
+   ],
+   "winrate": 49.08,
+   "pickrate": 2.34,
+   "banrate": 0.1
   },
   {
    "id": "annette",
@@ -1726,7 +1855,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/annette4.png",
      "desc": "Annette bay đến địa điểm chỉ định tạo ra một cơn bão hất văng kẻ địch lân cận và gây sát thương phép, đồng thời tạo thành một bức tường gió ngăn kẻ địch vượt qua trong 3.5 giây. Các tướng đồng minh bên trong bức tường gió được tăng tốc chạy và tốc đánh. Khi tung chiêu này Annette sẽ được hoá giải mọi trạng thái khống chế hiện tại đang phải gánh chịu."
     }
-   ]
+   ],
+   "winrate": 49.25,
+   "pickrate": 9.4,
+   "banrate": 31.03
   },
   {
    "id": "baldum",
@@ -1757,7 +1889,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/849f814ac016a6f58c8526b5c7a088175b6ace58c141b1.png",
      "desc": "Sau 0.5 giây, Baldum tạo ra một vùnglàm giảm tốc độ di chuyển trong 0.6 giây trước khi mặt đất sụp đổ và giam giữ kẻ địch trong 3 giây, suốt thời gian này nạn nhân không thể thực hiện bất cứ hành động nào và không thể bị chọn. Khi hết thời gian giam giữ, nạn nhân sẽ phải chịu sát thương vật lý và giảm tốc chạy trong 1.5 giây."
     }
-   ]
+   ],
+   "winrate": 47.49,
+   "pickrate": 2.81,
+   "banrate": 0.99
   },
   {
    "id": "roxie",
@@ -1788,7 +1923,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/10709eb686383432a953a9eb7e851f5e5b5ebddd65b7d1.png",
      "desc": "Agnie bay đến lôi mục tiêu đầu tiên tóm được về phía bản thân trong 2.5 giây, đồng thời giúp Roxie làm mới lại thời gian hồi Patin lửa, khắc dấu ấn Cuốc lửa lên nạn nhân và gây sát thương phép sau khi chiêu kết thúc. Suốt thời gian này Roxie đi đâu nạn nhân sẽ bị kéo theo đó, thậm chí có thể kéo vượt địa hình, nhưng bù lại nạn nhân miễn nhiễm với tất cả các khống chế khác. Không có tác dụng lên quái khủng. Đồng thời chiêu cuối khi trúng Tướng có thể hồi thời gian hồi chiêu của chiêu 1 và 2. Keo lửa sẽ không thể bị giảm thời gian tồn tại nhờ Kháng hiệu ứng"
     }
-   ]
+   ],
+   "winrate": 50.88,
+   "pickrate": 1.09,
+   "banrate": 0.2
   },
   {
    "id": "marja",
@@ -1818,7 +1956,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/06a960d2ce2c338df790364d743aabbb5b2a1a867e2d61.png",
      "desc": "Marja trở nên không bị chọn làm mục tiêu, xóa mọi trạng thái tiêu cực và nhận hiệu ứng tăng tốc. Khi kích hoạt và hủy trạng thái này, tướng sẽ gây sát thương cho kẻ địch lân cận"
     }
-   ]
+   ],
+   "winrate": 52.96,
+   "pickrate": 9.77,
+   "banrate": 15.33
   },
   {
    "id": "rourke",
@@ -1848,7 +1989,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5f23033261c44b644d0ec19e1b20e8135b1915f35a57e1.png",
      "desc": "Rourke loại bỏ mọi trạng thái khống chế hiện tại, đồng thời tự tạo lá chắn giúp chặn sát thương. Chừng nào lá chắn còn tồn tại, Rourke còn được miễn nhiễm các trạng thái khống chế, và khiến mọi đòn đánh hoặc chiêu thức chuyển hóa 1 phần sát thương gây ra thành giá trị cộng thêm cho lá chắn (20% hiệu lực lên lính và quái); tối đa lên đến 150% giá trị lá chắn gốc. Đặc biệt ngay tại thời điểm tung chiêu Rourke còn được tăng Công vật lý và Giáp; hiệu ứng kéo dài 6 giây."
     }
-   ]
+   ],
+   "winrate": 53.03,
+   "pickrate": 1.2,
+   "banrate": 0.1
   },
   {
    "id": "arum",
@@ -1878,7 +2022,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c415b718b520b76b0a9f023faa7357bf5afeaa52160bc1-1.png",
      "desc": "Arum lướt đến trói buộc mục tiêu trong thời gian ngắn, đồng thời lập tức triệu hồi 3 linh thú vờn quanh bản thân. Suốt thời gian này cả Arum lẫn nạn nhân đều bất động hoàn toàn dưới tác động của mối liên kết không thể bị phá vỡ, đặc biệt mọi sát thương bất kỳ ai trong cả hai gánh chịu đều sẽ được truyền đến người còn lại."
     }
-   ]
+   ],
+   "winrate": 49.79,
+   "pickrate": 3.9,
+   "banrate": 20.43
   },
   {
    "id": "wisp",
@@ -1939,7 +2086,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/1f3550ad239ebc98101e46028ffbddd25ad971a5cca0c1.png",
      "desc": "The Flash chạy vòng quanh tạo nên một cơn lốc chân không giúp bản thân không bị chọn làm mục tiêu và gây sát thương phép lên những kẻ địch trong phạm vi ảnh hưởng, bù lại tự giảm tốc chạy của bản thân trong 2 giây. Sau 2 giây The Flash dừng lại đột ngột khiến kẻ địch bị hút về tâm bão, gây sát thương phép và gây thêm 1 giây giảm tốc."
     }
-   ]
+   ],
+   "winrate": 46.77,
+   "pickrate": 0.55,
+   "banrate": 0.16
   },
   {
    "id": "max",
@@ -1969,7 +2119,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7736387e470db99ef985b7c3a581b6b05abdefc6721d01.png",
      "desc": "Max kích hoạt Ra-đa quét kẻ địch, giúp phát hiện mọi tướng địch đồng thời ngắt quãng quá trình biến về của chúng. Kích hoạt lần 2 để chọn mục tiêu tướng địch. Sau đấy, Max liền cất cánh bay vút đến tấn công nạn nhân, gây sát thương vật lý kèm hiệu ứng đẩy lùi. Sau khi đáp xuống Max nhận lá chắn điện từ giúp tăng miễn thương và kháng hiệu ứng, đồng thời tạo ra một vùng Điện Tích khiến những kẻ địch lân cận liên tục chịu ảnh hưởng trạng thái này. Suốt quá trình bay Max có thể kích hoạt lần nữa để hạ cánh, vẫn hưởng lá chắn điện từ\""
     }
-   ]
+   ],
+   "winrate": 52.28,
+   "pickrate": 0.96,
+   "banrate": 0.1
   },
   {
    "id": "liliana",
@@ -2000,7 +2153,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/03995e250cf160fa4a152a4413ee93e75aa0ffb9c5b5a1.png",
      "desc": "\"Dạng người: Liliana lướt đi và hóa thành hồ ly gây sát thương phép lên những kẻ địch trúng chiêu, đồng thời làm chậm tốc chạy trong 2 giây. Khi lướt Liliana không thể bị chọn làm mục tiêu, đồng thời tăng giáp và giáp phép cùng công phép trong 2.5 giây. Dạng cáo: Liliana lướt đi và hóa thành người đồng thời để lại pháp trận tại điểm đến và đi khiến các kẻ địch bên trong bị giảm tốc chạy. Sau 1 giây, pháp trận nổ tung gây sát thương phép. Suốt thời gian lướt đi, Liliana không thể bị chọn làm mục tiêu đồng thời tăng công phép trong 2.5 giây.\""
     }
-   ]
+   ],
+   "winrate": 48.74,
+   "pickrate": 10.67,
+   "banrate": 0.37
   },
   {
    "id": "tulen",
@@ -2031,7 +2187,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/eed8944ca08fc1101b58873a37d164de5a871b26923b31.png",
      "desc": "Tulen có thể vừa di chuyển, vừa tung chiêu triệu hồi một chú chim điện tấn công mục tiêu chỉ định gây sát thương phép, đồng thời tự tăng cho bản thân 1 dấu ấn Lôi điện. Nếu chim điện trực tiếp hạ gục tướng địch sẽ lập tức kích hoạt nội tại Lôi điện, đồng thời giảm mạnh thời gian hồi Lôi điểu. Chim điện có thể bị cản lại bởi những tướng địch khác, còn đối với các đơn vị không phải tướng sẽ phải chịu sát thương và chịu đẩy lùi."
     }
-   ]
+   ],
+   "winrate": 49.0,
+   "pickrate": 9.16,
+   "banrate": 0.39
   },
   {
    "id": "omen",
@@ -2061,7 +2220,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7d539aa98abcafd9934a9183fd8c30da5a7426ec141521.png",
      "desc": "Omen lao đến tướng địch đầu tiên trúng chiêu gây sát thương vật lý, đồng thời tạo ra một đấu trường tử vong khiến mục tiêu bị giảm sát thương gây ra, và không thể trốn thoát trong 5 giây."
     }
-   ]
+   ],
+   "winrate": 49.24,
+   "pickrate": 4.88,
+   "banrate": 0.4
   },
   {
    "id": "lindis",
@@ -2092,7 +2254,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4dc8f451d8703c7444fa829f9e81e3b75a61c15bc637d1.png",
      "desc": "Lindis triệu hồi ảo ảnh tấn công kẻ địch, gây sát thương vật lý kèm các hiệu ứng trên đòn đánh. Lindis có thể dự trữ tối đa 5 ảo ảnh, và thời gian hồi giữa hai lần dùng ảo ảnh liên tiếp là 2 giây."
     }
-   ]
+   ],
+   "winrate": 48.52,
+   "pickrate": 3.67,
+   "banrate": 0.7
   },
   {
    "id": "teemee",
@@ -2122,7 +2287,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/efe767e37dba520e1a005d3644f575cf5a4dfbde43c2c1.png",
      "desc": "TeeMee tạo ra một vùng ma trận phục sinh bao phủ bản thân và đồng minh thấp máu nhất (vẫn có thể tung chiêu khi bị khống chế) sau 3 giây. Suốt thời gian hiệu lực, khi bản thân hoặc tướng muc tiêu đồng minh bị hạ gục sẽ đươc hồi sinh sau 2 giây với 1 lượng máu. Đơn vị khi sống lại sẽ gây sát thương phép và làm chậm tốc chạy trong 2 giây lên các kẻ địch lân cận"
     }
-   ]
+   ],
+   "winrate": 49.93,
+   "pickrate": 1.66,
+   "banrate": 1.96
   },
   {
    "id": "moren",
@@ -2152,7 +2320,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/SeaTalk_IMG_20260119_141619.png",
      "desc": "Moren nhảy lên không trung nhận hiệu ứng miễn khống thoáng chốc đồng thời khóa một tướng địch và bắn 5 quả rocket định vị về phía nạn nhân. Mỗi viên đạn sẽ phát nổ trong phạm vi mục tiêu và gây máu mục tiêu đã mất thành sát thương vật lý. Tướng địch trúng nhiều rocket sẽ khiến sát thương từ viên thứ 2 giảm còn 25%; tối đa có thể chia 1 rocket cho một tướng địch khác."
     }
-   ]
+   ],
+   "winrate": 54.7,
+   "pickrate": 12.33,
+   "banrate": 4.23
   },
   {
    "id": "kilgroth",
@@ -2182,7 +2353,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/d54e0da837d2dc76e49b451dd47f0fc05a292cab9ec8f1.png",
      "desc": "Kil’Groth lập tức nhận 5 điểm cộng dồn nội tại Áp suất biển sâu, loại bỏ mọi trạng thái khống chế và được tăng tốc chạy giảm dần. Chưa hết, trong 4 giây kế tiếp, hắn được miễn nhiễm hoàn toàn khỏi mọi trạng thái khống chế. Mỗi đòn đánh thường trúng tướng địch kéo dài trạng thái này thêm thời gian hiệu quả, tối đa 3 giây."
     }
-   ]
+   ],
+   "winrate": 47.94,
+   "pickrate": 3.81,
+   "banrate": 0.53
   },
   {
    "id": "xeniel",
@@ -2212,7 +2386,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2d430e7572c6a3d6f5aba143ce46f42b5a17a06fbde3c1.png",
      "desc": "Xeniel chọn một tướng đồng minh để tặng lá chắn. Sau khi tặng lá chắn, Xeniel sẽ niệm chú rồi phòng lên trời bay đến mục tiêu sau một thời gian ngắn. Khi Xeniel giáng trần, hắn gây sát thương phép và giúp đồng mình được chọn hồi một phần máu tối đa. Nếu lá chắn mà Xeniel tặng cho đồng minh bị phá vỡ hoặc hết thời gian, bản thân lá chắn sẽ gây sát thương phép lên kẻ địch trong phạm vi."
     }
-   ]
+   ],
+   "winrate": 50.11,
+   "pickrate": 0.73,
+   "banrate": 0.1
   },
   {
    "id": "wonderwoman",
@@ -2242,7 +2419,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/461014df38f770824080ac3db72e35d35a0e6d3abb89a1.png",
      "desc": "\"Wonder Woman chắp tay phóng sóng năng lượng gây sát thương vật lý và làm choáng những kẻ địch trước mặt. Đồng thời khiến bản thân và đồng minh phía sau nhận lá chắn chặn sát thương. Tất cả các mục tiêu trong vùng hiệu lực được tăng tốc chạy. Suốt thời gian tung chiêu Wonder Woman được tăng miễn thương.\""
     }
-   ]
+   ],
+   "winrate": 50.07,
+   "pickrate": 0.27,
+   "banrate": 0.1
   },
   {
    "id": "superman",
@@ -2272,7 +2452,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e76cd16ed2ecab3a4890240819ff5f5b5a02b7ebee1cb1.png",
      "desc": "Superman hấp thu năng lượng mặt trời , giúp tăng tốc độ nạp siêu năng trong thời gian tiếp theo. Nếu tung chiêu trong trạng thái phi hành, anh bay đến đẩy lùi nạn nhân, gây sát thương vật lý và tăng 100% tốc độ nạp siêu năng."
     }
-   ]
+   ],
+   "winrate": 46.3,
+   "pickrate": 0.32,
+   "banrate": 0.29
   },
   {
    "id": "telannas",
@@ -2365,7 +2548,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c4a08f0a9a741a2054f4306f5d92591059e0232482e571.png",
      "desc": "Astrid tập trung sức mạnh trong 2 giây giúp miễn nhiễm mọi sát thương và khống chế. Sau đó, cô vung kiếm gây sát thương chuẩn (tối đa 1000 với quái và lính) và làm choáng tất cả nạn nhân trúng phải. Sát thương chuẩn trúng tướng địch sẽ kèm hút máu."
     }
-   ]
+   ],
+   "winrate": 55.23,
+   "pickrate": 2.03,
+   "banrate": 0.1
   },
   {
    "id": "ryoma",
@@ -2426,7 +2612,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/36d7c694111060366927a9a8c48c672a65af7a66ecde81.png",
      "desc": "Stuart lướt đến mục tiêu, làm chậm và gây sát thương hắn."
     }
-   ]
+   ],
+   "winrate": 48.74,
+   "pickrate": 8.45,
+   "banrate": 3.52
   },
   {
    "id": "arduin",
@@ -2456,7 +2645,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/8633bfab8234064c0e52dca73f52587859bb7e9b23bb41.png",
      "desc": "\"Arduin phóng rìu lên phía trước gây sát thương vật lý diện rộng và làm choáng kẻ địch trúng chiêu đầu tiên. Sau đó, hắn phóng đến vị trí chiếc rìu, gây sát thương vật lý lên các kẻ địch lân cận. Khi Câu hồn rìu được kích hoạt, các trạng thái khống chế sẽ không thể cản Arduin hoàn tất chiêu.\""
     }
-   ]
+   ],
+   "winrate": 48.33,
+   "pickrate": 2.67,
+   "banrate": 0.1
   },
   {
    "id": "zill",
@@ -2487,7 +2679,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/670350a2da1c94dbe0f35ffd38c90fb259966ebdb623b1.png",
      "desc": "Zill hóa thân thành một luồng phong ba bão tố, tấn công liên tục 5 lần lên những kẻ địch lân cận, gây sát thương phép mỗi đợt. Kẻ địch trúng nhiều đòn sẽ chỉ phải chịu ít sát thương hơn từ đòn thứ hai trở đi. Suốt khoảng thời gian này Zill không thể bị công kích hoặc chọn làm mục tiêu. Đòn chém đầu tiên luôn gây câm lặng 1 giây."
     }
-   ]
+   ],
+   "winrate": 51.16,
+   "pickrate": 5.53,
+   "banrate": 0.22
   },
   {
    "id": "murad",
@@ -2579,7 +2774,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/df40e86b54272541af06fa2918b66b105970de097e1101.png",
      "desc": "Ignis vẽ ra một pháp trận rực cháy, thoáng chốc sau đó những kẻ địch trong vùng ảnh hưởng sẽ phải chịu sát thương phép. Nếu mục tiêu trúng chiêu đang dính phải hiệu ứng Hỏa hồn, nạn nhân sẽ chịu sát thương chuẩn."
     }
-   ]
+   ],
+   "winrate": 48.61,
+   "pickrate": 4.09,
+   "banrate": 0.37
   },
   {
    "id": "zuka",
@@ -2610,7 +2808,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/0beb67ad3bb69a788afda77e97ac6283596c766121e3a1.png",
      "desc": "Zuka phóng vút lên không rồi nện xuống mặt đất, gây sát thương vật lý lên các nạn nhân trong vùng ảnh hưởng, đồng thời làm choáng trúng trong 1 giây. Đòn đánh thường kế tiếp của Zuka được cường hóa, gây thêm sát thương vật lý lên những kẻ địch lân cận."
     }
-   ]
+   ],
+   "winrate": 48.58,
+   "pickrate": 18.69,
+   "banrate": 1.56
   },
   {
    "id": "airi",
@@ -2671,7 +2872,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/e766c1f71e21dcce88f20bd12f4de20a65af7977e96321-1.png",
      "desc": "Lướt về trước và gây sát thương trên đường di chuyển. Kaine được miễn khống và không bị khóa mục tiêu khi đang lướt."
     }
-   ]
+   ],
+   "winrate": 49.78,
+   "pickrate": 6.14,
+   "banrate": 11.18
   },
   {
    "id": "lauriel",
@@ -2732,8 +2936,9 @@
     "bùng nổ",
     "sát thương chuẩn"
    ],
-   "winrate": 52.4,
-   "pickrate": 8.0
+   "winrate": 48.4,
+   "pickrate": 6.16,
+   "banrate": 1.49
   },
   {
    "id": "raz",
@@ -2764,7 +2969,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/65594eb93b7c5b165371bc69cbaace01591e6ea53e9ec1.png",
      "desc": "\"Raz ủi người về phía trước tung ra một cú đấm bộc phá, gây sát thương phép, kèm hiệu ứng đẩy lùi lên kẻ trúng chiêu Chiêu trúng đích giúp hồi nội năng.\""
     }
-   ]
+   ],
+   "winrate": 46.68,
+   "pickrate": 17.59,
+   "banrate": 2.47
   },
   {
    "id": "skud",
@@ -2794,7 +3002,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4fbacaad88dd3c4267d8fa603c76e8d15915330381a6b1.png",
      "desc": "\"Nội tại: Hạ lính và quái rừng sẽ giúp bản thân hồi máu dựa theo máu đã mất. Skud tụ lực trong thoáng chốc rồi huơ găng hất tung tất cả kẻ địch lân cận, gây sát thương vật lý và đẩy lùi kẻ trúng phải.\""
     }
-   ]
+   ],
+   "winrate": 49.59,
+   "pickrate": 1.9,
+   "banrate": 0.1
   },
   {
    "id": "preyta",
@@ -2824,7 +3035,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/4318a8dd0536d490049f0be5b0ab776b590bf4db0b69b1.png",
      "desc": "\"Preyta tiến vào trạng thái Siêu khuẩn, tạo lá chắn, làm mới hồi chiêu và cường hóa Hơi độc hại và Bom hoại tử kế tiếp. Trong thời gian hiệu lực, Preyta còn được tăng tầm đánh, tốc chạy, tốc đánh và khiến đòn đánh thường gây thêm sát thương phép diện rộng.\""
     }
-   ]
+   ],
+   "winrate": 54.99,
+   "pickrate": 0.45,
+   "banrate": 0.1
   },
   {
    "id": "ilumia",
@@ -2855,7 +3069,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/6c19a40b93ffb1153f05d84fae59665d5902c6513069e1.png",
      "desc": "Ilumia triệu hồi pháp trận chứa đầy sức mạnh thần thánh ngay vị trí hiện tại của tất cả tướng địch, làm hiện hình chúng trong thời gian ngắn, gây sát thương phép và làm choáng các nạn nhân."
     }
-   ]
+   ],
+   "winrate": 51.14,
+   "pickrate": 3.63,
+   "banrate": 0.15
   },
   {
    "id": "slimz",
@@ -2886,7 +3103,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/17f2e75a90ee62f88942f245934ff47658f97e22495511.png",
      "desc": "Kích hoạt: Đòn đánh thường gây thêm máu tối đa của mục tiêu thành sát thương vật lý. Đồng thời, Slimz được tăng tốc chạy trong 1 thời gian (hiệu ứng tăng thêm thời gian với mỗi điểm hạ hoặc phụ hạ)."
     }
-   ]
+   ],
+   "winrate": 50.03,
+   "pickrate": 6.06,
+   "banrate": 0.1
   },
   {
    "id": "arthur",
@@ -2978,7 +3198,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/60bf568276cfa9e91a00dd2aa172667558e7136958fe01.png",
      "desc": "Kriknak đập cánh bay lên không giúp tăng tốc chạy trong một thời gian, bù lại trong trạng thái này hắn không thể tung đòn đánh hoặc các chiêu thức khác ngoại trừ Ấu trùng quỷ. Tái kích hoạt lần nữa để đáp đất, gây sát thương vật lý, kèm hiệu ứng giảm tốc chạy lên các nạn nhân trúng chiêu."
     }
-   ]
+   ],
+   "winrate": 48.86,
+   "pickrate": 2.16,
+   "banrate": 0.1
   },
   {
    "id": "ngokhong",
@@ -3070,8 +3293,9 @@
     "khống chế",
     "đấu sĩ trâu"
    ],
-   "winrate": 51.0,
-   "pickrate": 6.1
+   "winrate": 48.92,
+   "pickrate": 14.34,
+   "banrate": 1.75
   },
   {
    "id": "helen",
@@ -3101,7 +3325,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/helen-skill-1.png",
      "desc": "Helen hồi máu cho đồng đội lân cận thấp máu nhất và tăng giáp cùng giáp phép"
     }
-   ]
+   ],
+   "winrate": 50.93,
+   "pickrate": 2.4,
+   "banrate": 1.43
   },
   {
    "id": "jinna",
@@ -3131,7 +3358,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/81b66a014676c487418fec2d8efa9ae258ae5acfa10001.png",
      "desc": "\"Jinna tạo ra một kết giới bằng những viên xá lợi bay quanh bản thân gây sát thương phép mỗi đợt, tổng cộng 10 đợt. Ngay tại thời điểm kích hoạt kết giới, Jinna lập tức nhận được giảm thương, với mỗi tướng địch cạnh bên sẽ khiến Jinna nhận thêm giảm thương trong thời gian hiệu lực. Ngoài ra, Jinna còn được tăng tốc chạy giảm dần trong thời gian ngắn.\""
     }
-   ]
+   ],
+   "winrate": 48.93,
+   "pickrate": 1.62,
+   "banrate": 0.56
   },
   {
    "id": "cresht",
@@ -3162,7 +3392,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2777a5439a03995f4ec18587bbf7eeae5886bbe451c711.png",
      "desc": "\"Khi đạt đủ Nộ, Cresht có thể hóa thành bản thể Thủy thần giúp nhận một lớp bảo hộ hùng mạnh, đồng thời tạo ra một cơn đại hồng thủy đẩy lùi kẻ địch và gây sát thương vật lý. Khi lướt trên cơn sóng này, hắn được tăng tốc độ di chuyển.\""
     }
-   ]
+   ],
+   "winrate": 51.52,
+   "pickrate": 5.23,
+   "banrate": 0.45
   },
   {
    "id": "natalya",
@@ -3254,7 +3487,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/fd854ecf2e82d85fcd8f1cc67f4512545875b89f098dc1.png",
      "desc": "Lumburr nổi thịnh nộ tạo ra một cơn động đất hất văng kẻ địch, gây sát thương vật lý. Khe nứt tồn tại trong 1 thời gian, khiến những nạn nhân còn bên trong sẽ bị làm chậm và chịu sát thương vật lý."
     }
-   ]
+   ],
+   "winrate": 52.5,
+   "pickrate": 0.78,
+   "banrate": 0.1
   },
   {
    "id": "fennik",
@@ -3285,7 +3521,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/227792039c96a09c5264216583dcac1d5860e634403501.png",
      "desc": "\"Fennik ném vũ khí đến nơi chỉ định tạo ra cơn bão siêu thanh gây sát thương vật lý. Bão này tồn tại 1 thời gian, mỗi 0.5 giây gây sát thương vật lý, làm chậm và tích lũy kíp nổ lên người nạn nhân trong phạm vi. Sát thương vùng trung tâm bão sẽ tăng gấp đôi so với vùng ngoài.\""
     }
-   ]
+   ],
+   "winrate": 51.08,
+   "pickrate": 6.29,
+   "banrate": 0.7
   },
   {
    "id": "aleister",
@@ -3316,7 +3555,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ef7d4848fde0bd0f11bf1a278eb6ffd458609d2ade5f41.png",
      "desc": "Aleister bẫy kẻ địch trong nhà tù ma thuật, gây sát thương phép mỗi lượt trong 2.5 giây. Chiêu thức cần niệm chú để thực hiện, tối đa dài 3 giây, tuy nhiên sau 0.7 giây đầu nếu thực hiện các thao tác khác có thể hủy."
     }
-   ]
+   ],
+   "winrate": 48.41,
+   "pickrate": 4.56,
+   "banrate": 41.25
   },
   {
    "id": "nakroth",
@@ -3408,7 +3650,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/cd3129805ce41ebfd3a5e298eb2d78cc5840e7201f8591.png",
      "desc": "Taara sử dụng hết tiềm năng của mình giúp phục hồi 8% máu tối đa mỗi giây trong 1 thời gian, đồng thời tăng tốc chạy bản thân."
     }
-   ]
+   ],
+   "winrate": 51.41,
+   "pickrate": 10.17,
+   "banrate": 5.99
   },
   {
    "id": "toro",
@@ -3500,7 +3745,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/6d9603dd33ea12aaecc52ad81a480907583f97b0364911.png",
      "desc": "\"Yorn bắn một mũi tên cường hóa đến một mục tiêu gây sát thương vật lý lên tướng địch đầu tiên trúng phải, kèm theo lượng máu đã mất của mục tiêu thành sát thương phép thuật (tối đa 1000 sát thương lên quái). Đòn đánh sau đó kích hoạt nội tại Vô tận tên.\""
     }
-   ]
+   ],
+   "winrate": 49.81,
+   "pickrate": 8.37,
+   "banrate": 0.26
   },
   {
    "id": "alice",
@@ -3592,7 +3840,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/2-1.png",
      "desc": "Azzen'Ka tung Thần trảo trừng phạt theo hướng chỉ định đẩy lùi kẻ địch trên đường đi và gây sát thương phép. Khi chiêu thức kết thúc tại điểm cuối, nó sẽ tạo thành một vùng cát lún sa lầy gây sát thương phép cho kẻ địch trong phạm vi và làm chậm tốc chạy của chúng."
     }
-   ]
+   ],
+   "winrate": 54.12,
+   "pickrate": 7.44,
+   "banrate": 0.94
   },
   {
    "id": "ormarr",
@@ -3623,7 +3874,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/14c941885a33d2eb215d55f85d10943e583f9b287569b1-2.png",
      "desc": "Vũ khí trên tay Ormarr xoay vòng cực nhanh gây sát thương vật lý mỗi đợt lên kẻ địch trúng chiêu. Nếu có tướng địch trúng chiêu sẽ khiến Ormarr được hồi 2% máu tối đa của bản thân. Suốt thời gian này Ormarr không thể bị ngắt quãng chiêu và có thể sử dụng Búa cuồng, nhưng vẫn có thể bị làm chậm."
     }
-   ]
+   ],
+   "winrate": 47.7,
+   "pickrate": 1.14,
+   "banrate": 0.1
   },
   {
    "id": "butterfly",
@@ -3746,7 +4000,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/b6a0ace14b74a33e038ff259c57c7e2f583f94fb4c0d01.png",
      "desc": "\"Chaugnar gọi ra một luồng năng lượng hỗn độn giúp hóa giải mọi hiệu ứng khống chế trên đồng minh. Kỹ năng này còn tăng kháng hiệu ứng, miễn thương và tăng tốc chạy trong 1 giây cho đồng minh, 3 giây cho bản thân. Đồng thời giảm thời gian hồi chiêu của Nước xoáy còn 1 giây, kéo dài 6 giây và sử dụng không tốn năng lượng.\""
     }
-   ]
+   ],
+   "winrate": 49.61,
+   "pickrate": 2.82,
+   "banrate": 0.6
   },
   {
    "id": "dieuthuyen",
@@ -3776,7 +4033,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/5dd0ed7d03c4e8950b2ac677f84ac99d5df33f6c51e161.png",
      "desc": "\"Điêu Thuyền gọi ra một trận bão tuyết tấn công những kẻ thù trong phạm vi, gây sát thương phép và làm chậm tốc chạy của nạn nhân. Đồng thời, cô được tăng thêm giáp. Chiêu thức này cần niệm chiêu để thực hiện, tối đa kéo dài 5.3 giây, tuy nhiên sau 0.6 giây đầu nếu di chuyển hoặc ấn chiêu lần nữa thì có thể hủy.\""
     }
-   ]
+   ],
+   "winrate": 49.63,
+   "pickrate": 5.49,
+   "banrate": 0.42
   },
   {
    "id": "zephys",
@@ -3837,8 +4097,9 @@
     "mở giao tranh",
     "hất tung"
    ],
-   "winrate": 52.0,
-   "pickrate": 6.7
+   "winrate": 50.19,
+   "pickrate": 7.82,
+   "banrate": 0.12
   },
   {
    "id": "kahlii",
@@ -3869,7 +4130,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/9a917293b0324ed65ab89625da69f728583f935c54e4f1.png",
      "desc": "Trong vòng 5 giây, cô triệu hồi 55 đợt hồn ma liên tục tấn công kẻ địch phía trước, gây sát thương phép. Kỹ năng này gây sát thương thêm 10% sát thương lên đơn vị không phải tướng"
     }
-   ]
+   ],
+   "winrate": 52.02,
+   "pickrate": 4.29,
+   "banrate": 0.25
   },
   {
    "id": "omega",
@@ -3900,7 +4164,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/7335d47f572b8741da6cbc124def537d583f92a544c171.png",
      "desc": "Omega mở rộng hai cánh tay, liên tục tấn công những kẻ thù gần đó và gây sát thương vật lý mỗi lượt đồng thời đẩy lui chúng."
     }
-   ]
+   ],
+   "winrate": 51.36,
+   "pickrate": 1.86,
+   "banrate": 0.59
   },
   {
    "id": "trieuvan",
@@ -3930,7 +4197,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/df3478164b28aa86cd357861f3bce209583f9214701d31.png",
      "desc": "\"Triệu Vân nện thương lên mục tiêu, gây sát thương chuẩn kèm hiệu ứng hất văng thoáng chốc. Ngoài ra Triệu Vân còn nhận miễn thương, đặc biệt các đòn đánh thường gây thêm sát thương chuẩn. Hiệu ứng kéo dài 5 giây.\""
     }
-   ]
+   ],
+   "winrate": 51.21,
+   "pickrate": 15.51,
+   "banrate": 0.94
   },
   {
    "id": "mganga",
@@ -3960,7 +4230,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/8f8bcd98cbc147e2db8a3c86c8411530583f900623aeb1.png",
      "desc": "Mganga kích nổ tất cả dấu ấn lân cận gây sát thương phép lên kẻ địch và hồi máu cho tướng đồng minh. Mỗi dấu ấn cộng dồn gây thêm sát thương phép và tăng thêm 50% hiệu lực hồi phục."
     }
-   ]
+   ],
+   "winrate": 47.24,
+   "pickrate": 3.94,
+   "banrate": 0.18
   },
   {
    "id": "krixi",
@@ -4021,8 +4294,9 @@
     "làm chậm",
     "rỉa máu"
    ],
-   "winrate": 50.7,
-   "pickrate": 5.9
+   "winrate": 48.29,
+   "pickrate": 15.04,
+   "banrate": 0.35
   },
   {
    "id": "mina",
@@ -4052,7 +4326,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/23cc07dc227dc8e80a2f506c00ca87525840ec99405da1.png",
      "desc": "\"Mina khiêu khích những kẻ thù gần đó, làm cho chúng tấn công cô trong 2 giây. Sát thương gây ra bởi những kẻ thù bị khiêu khích lên Mina giảm đi đáng kể.\""
     }
-   ]
+   ],
+   "winrate": 50.39,
+   "pickrate": 7.62,
+   "banrate": 0.69
   },
   {
    "id": "lubo",
@@ -4083,7 +4360,10 @@
      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/470890bc984393b1c7b2e54fcc0c5635583ea08f285451.png",
      "desc": "Lữ Bố cường hóa bản thân, xoá bỏ mọi trạng thái khống chế và hồi 1 phấn máu đã mất, tăng công vật lý và kháng hiệu ứng. Mỗi lần dùng đòn đánh thường hoặc kỹ năng trúng mục tiêu sẽ hồi máu cho bản thân, kéo dài trong 1 thời gian."
     }
-   ]
+   ],
+   "winrate": 49.72,
+   "pickrate": 4.28,
+   "banrate": 0.46
   },
   {
    "id": "veera",
@@ -4175,8 +4455,9 @@
     "mở giao tranh",
     "tuyến đầu"
    ],
-   "winrate": 50.1,
-   "pickrate": 7.5
+   "winrate": 48.47,
+   "pickrate": 2.7,
+   "banrate": 0.18
   },
   {
    "id": "valhein",
@@ -4237,8 +4518,9 @@
     "xả sát thương",
     "dễ chơi"
    ],
-   "winrate": 48.9,
-   "pickrate": 10.5
+   "winrate": 47.82,
+   "pickrate": 18.98,
+   "banrate": 2.76
   },
   {
    "id": "grakk",
@@ -4266,8 +4548,8 @@
     "khống chế cứng",
     "mở giao tranh"
    ],
-   "winrate": 50.9,
-   "pickrate": 5.4,
+   "winrate": 47.68,
+   "pickrate": 9.75,
    "combo": "Rình bụi > móc kéo chủ lực địch > đội dồn mục tiêu bị kéo",
    "pros": [
     "Móc kéo bắt lẻ cực mạnh",
@@ -4279,7 +4561,8 @@
     "Sát thương thấp",
     "Phụ thuộc đồng đội theo sau móc"
    ],
-   "play": "Nấp bụi rình móc chủ lực địch cho đội dồn. Móc trúng là thắng giao tranh, nên kiên nhẫn chọn thời điểm."
+   "play": "Nấp bụi rình móc chủ lực địch cho đội dồn. Móc trúng là thắng giao tranh, nên kiên nhẫn chọn thời điểm.",
+   "banrate": 37.4
   }
  ]
 }

@@ -1,0 +1,713 @@
+{
+ "_note": "Win/pick/ban CHÍNH THỐNG từ Bảng Phân Bậc Tướng trong app Garena (user chụp, OCR).",
+ "source": "in-game Garena",
+ "heroes": [
+  {
+   "name": "Astrid",
+   "tier": "T4",
+   "win": 55.23,
+   "pick": 2.03,
+   "ban": 0.1
+  },
+  {
+   "name": "đầu những tướng này",
+   "tier": "T3",
+   "win": 55.04,
+   "pick": 3.71,
+   "ban": 0.1
+  },
+  {
+   "name": "Preyta",
+   "tier": "T4",
+   "win": 54.99,
+   "pick": 0.45,
+   "ban": 0.1
+  },
+  {
+   "name": "Moren",
+   "tier": "T2",
+   "win": 54.7,
+   "pick": 12.33,
+   "ban": 4.23
+  },
+  {
+   "name": "Azzen'Ka",
+   "tier": "T2",
+   "win": 54.12,
+   "pick": 7.44,
+   "ban": 0.94
+  },
+  {
+   "name": "Flowborn",
+   "tier": "T3",
+   "win": 53.6,
+   "pick": 3.69,
+   "ban": 2.35
+  },
+  {
+   "name": "Y'bneth",
+   "tier": "T2",
+   "win": 53.57,
+   "pick": 9.6,
+   "ban": 16.45
+  },
+  {
+   "name": "Thorne",
+   "tier": "T3",
+   "win": 53.42,
+   "pick": 2.82,
+   "ban": 0.1
+  },
+  {
+   "name": "Dyadia",
+   "tier": "T3",
+   "win": 53.29,
+   "pick": 2.55,
+   "ban": 7.84
+  },
+  {
+   "name": "Volkath",
+   "tier": "T1",
+   "win": 53.26,
+   "pick": 6.22,
+   "ban": 64.9
+  },
+  {
+   "name": "Rourke",
+   "tier": "T4",
+   "win": 53.03,
+   "pick": 1.2,
+   "ban": 0.1
+  },
+  {
+   "name": "Marja",
+   "tier": "T2",
+   "win": 52.96,
+   "pick": 9.77,
+   "ban": 15.33
+  },
+  {
+   "name": "Lumburr",
+   "tier": "T4",
+   "win": 52.5,
+   "pick": 0.78,
+   "ban": 0.1
+  },
+  {
+   "name": "Max",
+   "tier": "T4",
+   "win": 52.28,
+   "pick": 0.96,
+   "ban": 0.1
+  },
+  {
+   "name": "Kahlii",
+   "tier": "T3",
+   "win": 52.02,
+   "pick": 4.29,
+   "ban": 0.25
+  },
+  {
+   "name": "Dirak",
+   "tier": "T4",
+   "win": 51.99,
+   "pick": 2.02,
+   "ban": 0.13
+  },
+  {
+   "name": "Lorion",
+   "tier": "T2",
+   "win": 51.96,
+   "pick": 5.79,
+   "ban": 1.14
+  },
+  {
+   "name": "Goverra",
+   "tier": "T2",
+   "win": 51.65,
+   "pick": 6.92,
+   "ban": 18.96
+  },
+  {
+   "name": "Cresht",
+   "tier": "T2",
+   "win": 51.52,
+   "pick": 5.23,
+   "ban": 0.45
+  },
+  {
+   "name": "Taara",
+   "tier": "T2",
+   "win": 51.41,
+   "pick": 10.17,
+   "ban": 5.99
+  },
+  {
+   "name": "Omega",
+   "tier": "T4",
+   "win": 51.36,
+   "pick": 1.86,
+   "ban": 0.59
+  },
+  {
+   "name": "Laville",
+   "tier": "T2",
+   "win": 51.31,
+   "pick": 6.78,
+   "ban": 0.11
+  },
+  {
+   "name": "Triệu Vân",
+   "tier": "T1",
+   "win": 51.21,
+   "pick": 15.51,
+   "ban": 0.94
+  },
+  {
+   "name": "Zip",
+   "tier": "T4",
+   "win": 51.16,
+   "pick": 1.55,
+   "ban": 2.92
+  },
+  {
+   "name": "Zill",
+   "tier": "T2",
+   "win": 51.16,
+   "pick": 5.53,
+   "ban": 0.22
+  },
+  {
+   "name": "Ilumia",
+   "tier": "T3",
+   "win": 51.14,
+   "pick": 3.63,
+   "ban": 0.15
+  },
+  {
+   "name": "Fennik",
+   "tier": "T2",
+   "win": 51.08,
+   "pick": 6.29,
+   "ban": 0.7
+  },
+  {
+   "name": "Helen",
+   "tier": "T4",
+   "win": 50.93,
+   "pick": 2.4,
+   "ban": 1.43
+  },
+  {
+   "name": "Roxie",
+   "tier": "T4",
+   "win": 50.88,
+   "pick": 1.09,
+   "ban": 0.2
+  },
+  {
+   "name": "Sinestrea",
+   "tier": "T2",
+   "win": 50.66,
+   "pick": 8.73,
+   "ban": 19.83
+  },
+  {
+   "name": "Qi",
+   "tier": "T3",
+   "win": 50.53,
+   "pick": 4.14,
+   "ban": 0.1
+  },
+  {
+   "name": "Mina",
+   "tier": "T2",
+   "win": 50.39,
+   "pick": 7.62,
+   "ban": 0.69
+  },
+  {
+   "name": "Wiro",
+   "tier": "T4",
+   "win": 50.34,
+   "pick": 0.42,
+   "ban": 0.1
+  },
+  {
+   "name": "Krizzix",
+   "tier": "T4",
+   "win": 50.22,
+   "pick": 1.94,
+   "ban": 2.25
+  },
+  {
+   "name": "Zephys",
+   "tier": "T2",
+   "win": 50.19,
+   "pick": 7.82,
+   "ban": 0.12
+  },
+  {
+   "name": "Allain",
+   "tier": "T2",
+   "win": 50.13,
+   "pick": 9.8,
+   "ban": 1.92
+  },
+  {
+   "name": "Xeniel",
+   "tier": "T4",
+   "win": 50.11,
+   "pick": 0.73,
+   "ban": 0.1
+  },
+  {
+   "name": "Wonder Woman",
+   "tier": "T4",
+   "win": 50.07,
+   "pick": 0.27,
+   "ban": 0.1
+  },
+  {
+   "name": "slimz",
+   "tier": "T2",
+   "win": 50.03,
+   "pick": 6.06,
+   "ban": 0.1
+  },
+  {
+   "name": "TeeMee",
+   "tier": "T4",
+   "win": 49.93,
+   "pick": 1.66,
+   "ban": 1.96
+  },
+  {
+   "name": "Billow",
+   "tier": "T2",
+   "win": 49.88,
+   "pick": 10.73,
+   "ban": 5.31
+  },
+  {
+   "name": "Yorn",
+   "tier": "T2",
+   "win": 49.81,
+   "pick": 8.37,
+   "ban": 0.26
+  },
+  {
+   "name": "Arum",
+   "tier": "T3",
+   "win": 49.79,
+   "pick": 3.9,
+   "ban": 20.43
+  },
+  {
+   "name": "Kaine",
+   "tier": "T2",
+   "win": 49.78,
+   "pick": 6.14,
+   "ban": 11.18
+  },
+  {
+   "name": "Lữ Bố",
+   "tier": "T3",
+   "win": 49.72,
+   "pick": 4.28,
+   "ban": 0.46
+  },
+  {
+   "name": "Điêu Thuyền",
+   "tier": "T2",
+   "win": 49.63,
+   "pick": 5.49,
+   "ban": 0.42
+  },
+  {
+   "name": "Chaugnar",
+   "tier": "T3",
+   "win": 49.61,
+   "pick": 2.82,
+   "ban": 0.6
+  },
+  {
+   "name": "Teeri",
+   "tier": "T3",
+   "win": 49.6,
+   "pick": 3.32,
+   "ban": 0.1
+  },
+  {
+   "name": "Skud",
+   "tier": "T4",
+   "win": 49.59,
+   "pick": 1.9,
+   "ban": 0.1
+  },
+  {
+   "name": "Heino",
+   "tier": "T2",
+   "win": 49.58,
+   "pick": 9.0,
+   "ban": 4.31
+  },
+  {
+   "name": "Veres",
+   "tier": "T2",
+   "win": 49.51,
+   "pick": 5.69,
+   "ban": 0.13
+  },
+  {
+   "name": "Iggy",
+   "tier": "T3",
+   "win": 49.45,
+   "pick": 3.77,
+   "ban": 0.18
+  },
+  {
+   "name": "Aoi",
+   "tier": "T4",
+   "win": 49.4,
+   "pick": 1.96,
+   "ban": 0.32
+  },
+  {
+   "name": "Bonnie",
+   "tier": "T3",
+   "win": 49.25,
+   "pick": 5.05,
+   "ban": 1.14
+  },
+  {
+   "name": "Annette",
+   "tier": "T2",
+   "win": 49.25,
+   "pick": 9.4,
+   "ban": 31.03
+  },
+  {
+   "name": "Omen",
+   "tier": "T3",
+   "win": 49.24,
+   "pick": 4.88,
+   "ban": 0.4
+  },
+  {
+   "name": "Edras",
+   "tier": "T3",
+   "win": 49.18,
+   "pick": 4.32,
+   "ban": 0.98
+  },
+  {
+   "name": "Enzo",
+   "tier": "T2",
+   "win": 49.15,
+   "pick": 10.62,
+   "ban": 22.79
+  },
+  {
+   "name": "Bijan",
+   "tier": "T2",
+   "win": 49.09,
+   "pick": 7.36,
+   "ban": 1.7
+  },
+  {
+   "name": "Amily",
+   "tier": "T4",
+   "win": 49.08,
+   "pick": 2.34,
+   "ban": 0.1
+  },
+  {
+   "name": "Tulen",
+   "tier": "T2",
+   "win": 49.0,
+   "pick": 9.16,
+   "ban": 0.39
+  },
+  {
+   "name": "Tamyn",
+   "tier": "T3",
+   "win": 48.98,
+   "pick": 3.25,
+   "ban": 2.98
+  },
+  {
+   "name": "Jinna",
+   "tier": "T4",
+   "win": 48.93,
+   "pick": 1.62,
+   "ban": 0.56
+  },
+  {
+   "name": "Maloch",
+   "tier": "T1",
+   "win": 48.92,
+   "pick": 14.34,
+   "ban": 1.75
+  },
+  {
+   "name": "Kriknak",
+   "tier": "T4",
+   "win": 48.86,
+   "pick": 2.16,
+   "ban": 0.1
+  },
+  {
+   "name": "Sephera",
+   "tier": "T4",
+   "win": 48.8,
+   "pick": 1.26,
+   "ban": 0.1
+  },
+  {
+   "name": "Elsu",
+   "tier": "T1",
+   "win": 48.79,
+   "pick": 12.6,
+   "ban": 23.58
+  },
+  {
+   "name": "Dextra",
+   "tier": "T4",
+   "win": 48.77,
+   "pick": 0.27,
+   "ban": 0.1
+  },
+  {
+   "name": "Liliana",
+   "tier": "T2",
+   "win": 48.74,
+   "pick": 10.67,
+   "ban": 0.37
+  },
+  {
+   "name": "Stuart",
+   "tier": "T2",
+   "win": 48.74,
+   "pick": 8.45,
+   "ban": 3.52
+  },
+  {
+   "name": "Ignis",
+   "tier": "T3",
+   "win": 48.61,
+   "pick": 4.09,
+   "ban": 0.37
+  },
+  {
+   "name": "Zuka",
+   "tier": "T1",
+   "win": 48.58,
+   "pick": 18.69,
+   "ban": 1.56
+  },
+  {
+   "name": "Lindis",
+   "tier": "T3",
+   "win": 48.52,
+   "pick": 3.67,
+   "ban": 0.7
+  },
+  {
+   "name": "Thane",
+   "tier": "T3",
+   "win": 48.47,
+   "pick": 2.7,
+   "ban": 0.18
+  },
+  {
+   "name": "Aleister",
+   "tier": "T2",
+   "win": 48.41,
+   "pick": 4.56,
+   "ban": 41.25
+  },
+  {
+   "name": "Lauriel",
+   "tier": "T2",
+   "win": 48.4,
+   "pick": 6.16,
+   "ban": 1.49
+  },
+  {
+   "name": "Arduin",
+   "tier": "T3",
+   "win": 48.33,
+   "pick": 2.67,
+   "ban": 0.1
+  },
+  {
+   "name": "Krixi",
+   "tier": "T1",
+   "win": 48.29,
+   "pick": 15.04,
+   "ban": 0.35
+  },
+  {
+   "name": "Ata",
+   "tier": "T4",
+   "win": 48.23,
+   "pick": 0.66,
+   "ban": 0.1
+  },
+  {
+   "name": "Paine",
+   "tier": "T2",
+   "win": 48.04,
+   "pick": 9.25,
+   "ban": 1.73
+  },
+  {
+   "name": "Celica",
+   "tier": "T4",
+   "win": 48.0,
+   "pick": 0.48,
+   "ban": 0.1
+  },
+  {
+   "name": "Kil'Groth",
+   "tier": "T3",
+   "win": 47.94,
+   "pick": 3.81,
+   "ban": 0.53
+  },
+  {
+   "name": "Errol",
+   "tier": "T2",
+   "win": 47.92,
+   "pick": 7.74,
+   "ban": 0.41
+  },
+  {
+   "name": "Yena",
+   "tier": "T3",
+   "win": 47.86,
+   "pick": 4.46,
+   "ban": 0.13
+  },
+  {
+   "name": "Yan",
+   "tier": "T3",
+   "win": 47.82,
+   "pick": 3.51,
+   "ban": 0.1
+  },
+  {
+   "name": "Valhein",
+   "tier": "T1",
+   "win": 47.82,
+   "pick": 18.98,
+   "ban": 2.76
+  },
+  {
+   "name": "Ormarr",
+   "tier": "T4",
+   "win": 47.7,
+   "pick": 1.14,
+   "ban": 0.1
+  },
+  {
+   "name": "Bright",
+   "tier": "T3",
+   "win": 47.7,
+   "pick": 3.47,
+   "ban": 0.1
+  },
+  {
+   "name": "Grakk",
+   "tier": "T1",
+   "win": 47.68,
+   "pick": 9.75,
+   "ban": 37.4
+  },
+  {
+   "name": "Capheny",
+   "tier": "T2",
+   "win": 47.61,
+   "pick": 7.28,
+   "ban": 0.15
+  },
+  {
+   "name": "D'Arcy",
+   "tier": "T4",
+   "win": 47.51,
+   "pick": 0.9,
+   "ban": 0.1
+  },
+  {
+   "name": "Baldum",
+   "tier": "T3",
+   "win": 47.49,
+   "pick": 2.81,
+   "ban": 0.99
+  },
+  {
+   "name": "Ishar",
+   "tier": "T3",
+   "win": 47.27,
+   "pick": 4.08,
+   "ban": 0.48
+  },
+  {
+   "name": "Mganga",
+   "tier": "T3",
+   "win": 47.24,
+   "pick": 3.94,
+   "ban": 0.18
+  },
+  {
+   "name": "Eland'orr",
+   "tier": "T3",
+   "win": 47.02,
+   "pick": 3.46,
+   "ban": 0.11
+  },
+  {
+   "name": "Richter",
+   "tier": "T3",
+   "win": 46.96,
+   "pick": 3.81,
+   "ban": 0.16
+  },
+  {
+   "name": "The Flash",
+   "tier": "T4",
+   "win": 46.77,
+   "pick": 0.55,
+   "ban": 0.16
+  },
+  {
+   "name": "Charlotte",
+   "tier": "T4",
+   "win": 46.71,
+   "pick": 0.47,
+   "ban": 0.1
+  },
+  {
+   "name": "Raz",
+   "tier": "T1",
+   "win": 46.68,
+   "pick": 17.59,
+   "ban": 2.47
+  },
+  {
+   "name": "Rouie",
+   "tier": "T2",
+   "win": 46.66,
+   "pick": 4.63,
+   "ban": 14.97
+  },
+  {
+   "name": "Superman",
+   "tier": "T4",
+   "win": 46.3,
+   "pick": 0.32,
+   "ban": 0.29
+  }
+ ]
+}
