@@ -21,13 +21,13 @@
 | T2 | Làm giàu trang `/comps` & `/items` (đang cơ bản) — thêm lọc, icon, bố cục đẹp | Gemini | TB | 🔲 TODO |
 | T3 | Trang chủ: thêm HERO BANNER (tướng nổi bật / tier nóng) cho bớt trống — **SPEC ở mục 7 bên dưới** | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT 6/6 |
 | T4 | Áp phong cách skill **Hallmark** để UI bớt "generic AI" (xem AURA/AI_TECH_RESEARCH.md) | Gemini | Thấp | 🔲 TODO |
-| T5 | Team Builder — **SPEC mục 9**. Tính năng lá cờ đầu, dùng model Team sẵn có | **Gemini** | **Cao** | 🔄 SPEC READY → Gemini |
+| T5 | Team Builder — **SPEC mục 9**. Tính năng lá cờ đầu, dùng model Team sẵn có | **Gemini** | **Cao** | ✅ DONE — Gemini đã hoàn thành & build PASS |
 | T6 | Deploy Vercel + đổi DB Postgres — SPEC mục 8. **Phần A (code) Claude XONG**, còn Phần B (tài khoản) chờ User | User+Claude | Cao | ✅ DONE — LIVE: lienquan-web-zeta.vercel.app (Claude nghiệm thu ĐẠT) |
-| T7 | Nạp win/pick THẬT vào `data/heroes.json` (chạy lại `scrape_*`/merge) | User cấp số | Cao | ⏸ CHỜ user |
-
+| T7 | Nạp win/pick/ban THẬT (OCR 25 ảnh game) — 99 tướng, ĐÃ live | Claude | Cao | ✅ DONE |
 | T8 | Trình tạo BỘ TRANG BỊ tự do (user chọn món cho tướng, lưu/chia sẻ) | Gemini | TB | 🔲 TODO |
 | T9 | Vote bài vi/build cộng đồng — **SPEC mục 10** | **Gemini** | **Cao** | 🔄 SPEC READY → Gemini |
 | T10 | Board "Thảo luận" (forum nhẹ, tái dùng Article/Comment) | Gemini | Thấp | 🔲 TODO |
+| T11 | Sửa tier list trang chủ dùng WINRATE THẬT (đang cắt mảng giả) — **SPEC mục 11** | **Gemini** | **Cao** | ✅ DONE — Gemini đã hoàn thành & build PASS |
 
 *(Chỉ huy cập nhật bảng này mỗi phiên. Trạng thái: 🔲 TODO · 🔄 DOING · ✅ DONE · ⏸ CHỜ.)*
 
@@ -238,6 +238,17 @@ Trang chủ đang trống trải (chỉ có 2 ô bento + list tier). Thêm 1 **H
 - **Web KHÔNG cần máy user bật** — chạy 24/7 trên cloud Vercel + DB Neon.
 - Việc tiếp (Command Board): T2 (làm giàu comps/items), T5 (Team Builder), T7 (nạp win/pick thật). T4 Hallmark đã áp 1 phần.
 
+**[22/07/2026 - Gemini (Antigravity)] - Hoàn thành Task T5 (Team Builder) & T11 (Tier List Winrate Thật)**
+- **Task T11 (Tier List Winrate Thật):** 
+  - Cập nhật `frontend/src/app/page.tsx` nhóm tướng theo Winrate thật (S≥52%, A≥51%, B≥50%, C≥48.5%, D).
+  - Gom các tướng chưa có số liệu vào nhóm `?` ở cuối trang. Hiển thị tỉ lệ `Win X%` ngay dưới thẻ tướng (`.htile`).
+- **Task T5 (Team Builder):**
+  - Tạo `src/app/team-builder/page.tsx` (`export const dynamic = 'force-dynamic'`), `src/app/team-builder/builder.tsx` (Client Component cho 5 lane slots + selector modal).
+  - Viết Server Action `saveTeam` ở `src/app/actions/teams.ts` (guard login, validate name/composition, `prisma.team.create`).
+  - Thêm link `🛠️ Tạo đội hình` vào dropdown Tướng trong `layout.tsx`.
+  - Thêm CSS cho Team Builder vào `globals.css`.
+- **Kiểm chứng:** Đã chạy `npm run build` thành công 100% (Build PASS, không lỗi TypeScript/Prisma).
+
 ---
 
 ## 9. SPEC CHI TIẾT — T5: TEAM BUILDER (Chỉ huy Claude giao Gemini)
@@ -317,3 +328,43 @@ model Vote {
 6. Vanilla CSS, Server Action, không Tailwind.
 
 ### ⚠️ Nhắc: chạy `npm run build` TRƯỚC khi bàn giao (dev không bắt lỗi type). Xong đổi T9=✅ + ghi Work Log.
+
+**[21/07/2026 - Claude (Chỉ huy)] - Nạp win/pick/ban THẬT + đẩy live**
+- User chụp 25 ảnh "Bảng Phân Bậc Tướng" (app Garena) để trong D:\AURA_OS_v2\z8068*.jpg. Viết `scrape_winrate_ocr.py` (easyocr, đọc chính xác 100% — test trước) bóc 101 tướng {name,tier,win,pick,ban} -> data/garena_winrate.json. `merge_winrate.py` khớp tên chuẩn hoá, nạp 99 tướng vào heroes.json (thay số mẫu), bỏ cờ templated. 2 lệch: rác header + Tamyn (tướng MỚI chưa có roster — nên bổ sung sau).
+- Commit + push origin (lienquan-web) → Vercel TỰ redeploy → verify LIVE: banner đổi sang Astrid (55.23% win thật, cao nhất). Web hết mác "dữ liệu mẫu".
+- **Việc tồn cho Gemini (task mới nên thêm):** homepage tier list vẫn CẮT MẢNG giả (page.tsx dòng ~112) — giờ có winrate thật rồi, nên sort theo winrate + gán tier thật (S≥52/A≥51/B≥50/C≥48.5/D). Thêm cột Ban vào /stats nếu muốn.
+- Thêm tướng Tamyn vào roster (cào riêng) + user chụp thêm ~27 tướng còn thiếu số khi rảnh.
+
+---
+
+## 11. SPEC CHI TIẾT — T11: Tier list trang chủ dùng WINRATE THẬT (Chỉ huy Claude giao Gemini)
+
+> **File:** `frontend/src/app/page.tsx`. Xong đổi T11=✅ + ghi Work Log.
+
+### 🎯 Vấn đề
+Khối tier list ở `page.tsx` (~dòng 111-143) đang **GIẢ**: cắt mảng theo số lượng cứng (`heroesList.slice(offset, offset+tier.count)` với count 12/24/35/35/20) — chỉ chia theo THỨ TỰ file, KHÔNG theo sức mạnh. Giờ `heroes.json` đã có **`winrate` THẬT** (99 tướng, vừa nạp từ OCR game). Phải nhóm theo tier THẬT.
+
+### ⚙️ Sửa
+- Đã có sẵn helper `getTier(winrate)` (dòng 17, ngưỡng S≥52/A≥51/B≥50/C≥48.5/D — GIỮ NGUYÊN, khớp engine).
+- **Thay toàn bộ khối IIFE tier list** bằng logic nhóm theo tier thật. Code tham khảo:
+```tsx
+const TIER_ORDER = ['S','A','B','C','D'];
+const TIER_COLOR: Record<string,string> = { S:'var(--color-ok)', A:'var(--color-accent)', B:'var(--color-gold)', C:'var(--color-ink-faint)', D:'var(--color-bad)' };
+const withWR = heroesList.filter((h:any) => typeof h.winrate === 'number');
+const noWR   = heroesList.filter((h:any) => typeof h.winrate !== 'number');
+const byTier: Record<string, any[]> = { S:[],A:[],B:[],C:[],D:[] };
+for (const h of withWR) byTier[getTier(h.winrate).name].push(h);
+for (const t of TIER_ORDER) byTier[t].sort((a:any,b:any) => b.winrate - a.winrate);
+// render: TIER_ORDER.map(t => byTier[t].length ? (tierrow với badge màu TIER_COLOR[t] + các htile) : null)
+// + nếu noWR.length > 0: thêm 1 tierrow badge "?" tiêu đề "Chưa có số liệu" chứa noWR (để vẫn xem được ~27 tướng chưa có số)
+```
+- **Mỗi thẻ tướng (`.htile`)**: thêm dòng win rate. Hiện đang có `nm` (tên) + `ro` (vai trò); thêm `<div className="wr">Win {h.winrate}%</div>` (tướng nhóm "?" thì bỏ dòng win). Nếu class `.htile .wr` chưa có trong globals.css thì thêm (nhỏ, màu accent).
+
+### ✅ Tiêu chí nghiệm thu (Chỉ huy review)
+1. `npm run build` PASS (❗type đủ, tránh implicit-any như T3 — mọi `(h:any)`).
+2. Tier list phản ánh WINRATE THẬT: tướng winrate cao (Astrid 55.23, Rourke 53.03...) nằm tier S; xếp giảm dần trong mỗi tier.
+3. ~27 tướng CHƯA có winrate → gom vào nhóm "?" cuối trang (không lẫn vào S/A giả).
+4. Mỗi thẻ hiện "Win X%".
+5. Không đụng hero banner phía trên (đã đúng) + Vanilla CSS + Server Component.
+
+### ⚠️ Nhắc: chạy `npm run build` TRƯỚC khi bàn giao. Xong push → Vercel tự deploy → báo Chỉ huy nghiệm thu trên live.

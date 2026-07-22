@@ -25,6 +25,7 @@ export default async function RootLayout({
               <Link href="/">Tướng ▾</Link>
               <div className="dd">
                 <Link href="/">Bảng xếp hạng Tướng</Link>
+                <Link href="/team-builder">🛠️ Tạo đội hình</Link>
                 <Link href="/comps">Đội hình Meta</Link>
                 <Link href="/items">Trang bị</Link>
               </div>

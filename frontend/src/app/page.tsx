@@ -109,37 +109,72 @@ export default async function Home() {
       </div>
 
       {(() => {
-        const tiers = [
-          { name: 'S', color: 'var(--color-ok)', count: 12 },
-          { name: 'A', color: 'var(--color-accent)', count: 24 },
-          { name: 'B', color: 'var(--color-gold)', count: 35 },
-          { name: 'C', color: 'var(--color-ink-faint)', count: 35 },
-          { name: 'D', color: 'var(--color-bad)', count: 20 }
-        ];
-        let offset = 0;
-        return tiers.map(tier => {
-          const tierHeroes = heroesList.slice(offset, offset + tier.count);
-          offset += tier.count;
-          if (tierHeroes.length === 0) return null;
-          return (
-            <div className="tierrow" key={tier.name}>
-              <div className="tierbadge" style={{ color: tier.color, borderRight: `2px solid color-mix(in oklch, ${tier.color} 30%, transparent)` }}>
-                {tier.name}
+        const TIER_ORDER = ['S', 'A', 'B', 'C', 'D'];
+        const TIER_COLOR: Record<string, string> = {
+          S: 'var(--color-ok)',
+          A: 'var(--color-accent)',
+          B: 'var(--color-gold)',
+          C: 'var(--color-ink-faint)',
+          D: 'var(--color-bad)'
+        };
+        const withWR = heroesList.filter((h: any) => typeof h.winrate === 'number');
+        const noWR = heroesList.filter((h: any) => typeof h.winrate !== 'number');
+        
+        const byTier: Record<string, any[]> = { S: [], A: [], B: [], C: [], D: [] };
+        for (const h of withWR) {
+          const t = getTier(h.winrate).name;
+          if (byTier[t]) byTier[t].push(h);
+        }
+        for (const t of TIER_ORDER) {
+          byTier[t].sort((a: any, b: any) => b.winrate - a.winrate);
+        }
+
+        return (
+          <>
+            {TIER_ORDER.map(t => {
+              const tierHeroes = byTier[t];
+              if (!tierHeroes || tierHeroes.length === 0) return null;
+              return (
+                <div className="tierrow" key={t}>
+                  <div className="tierbadge" style={{ color: TIER_COLOR[t], borderRight: `2px solid color-mix(in oklch, ${TIER_COLOR[t]} 30%, transparent)` }}>
+                    {t}
+                  </div>
+                  <div className="tierheroes">
+                    {tierHeroes.map((h: any) => (
+                      <Link href={`/hero/${h.id}`} key={h.id} className="htile">
+                        <img src={h.img} alt={h.name || h.id} className="av" />
+                        <div>
+                          <div className="nm">{h.name || h.id}</div>
+                          <div className="ro">{h.roles?.[0] || 'Unknown'}</div>
+                          <div className="wr">Win <b>{h.winrate}%</b></div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+
+            {noWR.length > 0 && (
+              <div className="tierrow" key="unranked">
+                <div className="tierbadge" style={{ color: 'var(--color-ink-sub)', borderRight: '2px solid var(--color-line)' }}>
+                  ?
+                </div>
+                <div className="tierheroes">
+                  {noWR.map((h: any) => (
+                    <Link href={`/hero/${h.id}`} key={h.id} className="htile">
+                      <img src={h.img} alt={h.name || h.id} className="av" />
+                      <div>
+                        <div className="nm">{h.name || h.id}</div>
+                        <div className="ro">{h.roles?.[0] || 'Unknown'}</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
               </div>
-              <div className="tierheroes">
-                {tierHeroes.map((h: any) => (
-                  <Link href={`/hero/${h.id}`} key={h.id} className="htile">
-                    <img src={h.img} alt={h.name} className="av" />
-                    <div>
-                      <div className="nm">{h.name || h.id}</div>
-                      <div className="ro">{h.roles?.[0] || 'Unknown'}</div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          );
-        });
+            )}
+          </>
+        );
       })()}
     </div>
   );
