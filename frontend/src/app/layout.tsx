@@ -6,6 +6,9 @@ import { getSession } from "@/lib/auth";
 export const metadata: Metadata = {
   title: "Liên Quân Tổng Hợp",
   description: "Trang tổng hợp meta Liên Quân Mobile / Arena of Valor",
+  verification: {
+    google: "5s4XsTshbh_BqEpbcePMkaDhbjCpwDxoeHq945pOLgI",
+  },
 };
 
 export default async function RootLayout({
