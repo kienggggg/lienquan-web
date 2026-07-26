@@ -9,7 +9,10 @@ export default function RegisterPage() {
         <h1>Tạo tài khoản</h1>
         <p className="auth-subtitle">Tham gia cộng đồng Liên Quân ngay hôm nay</p>
 
-        <form action={register} className="auth-form">
+        <form action={async (fd) => {
+          'use server';
+          await register(fd);
+        }} className="auth-form">
           <div className="input-group">
             <input type="text" name="name" placeholder="Tên hiển thị" required className="glass-input" />
           </div>

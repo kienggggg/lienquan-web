@@ -21,7 +21,7 @@ export default async function ChungSucPage({ searchParams }: PageProps) {
     whereCondition.type = currentType;
   }
 
-  const codes = await prisma.eventCode.findMany({
+  const codesRaw = await prisma.eventCode.findMany({
     where: whereCondition,
     orderBy: { createdAt: 'desc' },
     take: 50,
@@ -33,6 +33,12 @@ export default async function ChungSucPage({ searchParams }: PageProps) {
       },
     },
   });
+
+  const codes = codesRaw.map(c => ({
+    ...c,
+    author: { ...c.author, name: c.author.name || 'Vô danh' },
+    ratings: c.ratings.map(r => ({ ...r, author: { ...r.author, name: r.author.name || 'Vô danh' } }))
+  }));
 
   return (
     <div className="hwrap">

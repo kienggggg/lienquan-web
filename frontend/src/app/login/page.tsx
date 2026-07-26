@@ -28,7 +28,10 @@ export default function LoginPage() {
           <span>HOẶC</span>
         </div>
 
-        <form action={login} className="auth-form">
+        <form action={async (fd) => {
+          'use server';
+          await login(fd);
+        }} className="auth-form">
           <div className="input-group">
             <input type="email" name="email" placeholder="Email" required className="glass-input" />
           </div>

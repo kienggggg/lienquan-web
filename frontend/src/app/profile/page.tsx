@@ -27,11 +27,11 @@ export default async function ProfilePage() {
           width: 72, height: 72, borderRadius: 16, background: 'var(--accent)', color: '#0e1420',
           display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 30, fontWeight: 800, flex: 'none',
         }}>
-          {user.name.slice(0, 1).toUpperCase()}
+          {(user.name || 'Vô danh').slice(0, 1).toUpperCase()}
         </div>
         <div style={{ flex: 1, minWidth: 200 }}>
           <h1 style={{ fontSize: 24 }}>
-            {user.name}
+            {user.name || 'Vô danh'}
             {user.role === 'ADMIN' && (
               <span className="tbadge" style={{ background: 'var(--accent)', marginLeft: 8 }}>ADMIN</span>
             )}
