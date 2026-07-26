@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import { getSession } from "@/lib/auth";
+import MobileNav from "./comps/MobileNav";
 
 export const metadata: Metadata = {
   title: "Liên Quân Tổng Hợp",
@@ -71,6 +72,7 @@ export default async function RootLayout({
             Liên Quân Mobile là thương hiệu của chủ sở hữu tương ứng.
           </div>
         </footer>
+        <MobileNav />
       </body>
     </html>
   );

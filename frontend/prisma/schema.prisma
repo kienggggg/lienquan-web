@@ -14,6 +14,7 @@ model User {
   name        String
   role        String      @default("USER") // USER, ADMIN
   reputation  Int         @default(0)
+  gameRank    String      @default("UNRANKED") // BRONZE, SILVER, GOLD, PLATINUM, DIAMOND, VETERAN, MASTER, CONQUEROR
   createdAt   DateTime    @default(now())
   articles    Article[]
   comments    Comment[]
@@ -29,6 +30,8 @@ model Article {
   title     String
   content   String
   authorId  String
+  heroId    String?
+  tierVote  String?
   author    User      @relation(fields: [authorId], references: [id])
   createdAt DateTime  @default(now())
   comments  Comment[]
@@ -84,6 +87,7 @@ model CodeRating {
 
 model Vote {
   id        String   @id @default(cuid())
+  value     Int      @default(1) // 1 for upvote, -1 for downvote
   userId    String
   user      User     @relation(fields: [userId], references: [id])
   articleId String

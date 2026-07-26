@@ -22,11 +22,17 @@ export default async function ArticlesPage({
     },
   });
 
+  // Tính netVotes cho từng bài
+  const articlesWithNetVotes = articles.map(a => ({
+    ...a,
+    netVotes: a.votes.reduce((acc: number, v: any) => acc + v.value, 0)
+  }));
+
   // Sắp xếp
   if (sortBy === 'hot') {
-    articles.sort((a, b) => b._count.votes - a._count.votes);
+    articlesWithNetVotes.sort((a, b) => b.netVotes - a.netVotes);
   } else {
-    articles.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+    articlesWithNetVotes.sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
   }
 
   return (
@@ -71,12 +77,13 @@ export default async function ArticlesPage({
         </Link>
       </div>
 
-      {articles.length === 0 ? (
+      {articlesWithNetVotes.length === 0 ? (
         <div className="empty" style={{ marginTop: 20 }}>Chưa có bài viết nào. Hãy là người đầu tiên!</div>
       ) : (
         <div className="alist">
-          {articles.map((a) => {
-            const initiallyVoted = session ? a.votes.some((v: any) => v.userId === session.userId) : false;
+          {articlesWithNetVotes.map((a) => {
+            const userVote = session ? a.votes.find((v: any) => v.userId === session.userId) : null;
+            const initialVoteValue = userVote ? userVote.value : 0;
             return (
               <div className="acard" key={a.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                 <div style={{ flex: 1 }}>
@@ -89,8 +96,8 @@ export default async function ArticlesPage({
                 <div>
                   <VoteButton
                     articleId={a.id}
-                    initialVotes={a._count.votes}
-                    initiallyVoted={initiallyVoted}
+                    initialNetVotes={a.netVotes}
+                    initialVoteValue={initialVoteValue}
                     isLoggedIn={!!session}
                   />
                 </div>

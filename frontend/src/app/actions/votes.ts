@@ -4,9 +4,8 @@ import { prisma } from '@/lib/prisma';
 import { getSession } from '@/lib/auth';
 import { revalidatePath } from 'next/cache';
 
-// Toggle vote: nếu đã vote -> xoá vote, nếu chưa -> thêm vote.
-// Đồng thời cộng/trừ 1 uy tín cho TÁC GIẢ bài viết (không tự cộng bài mình).
-export async function toggleVote(articleId: string) {
+// value: 1 (Upvote), -1 (Downvote)
+export async function submitVote(articleId: string, value: number) {
   const session = await getSession();
   if (!session?.userId) {
     return { error: 'Bạn cần đăng nhập để vote.' };
@@ -22,7 +21,6 @@ export async function toggleVote(articleId: string) {
   }
 
   try {
-    // Check if user has already voted
     const existingVote = await prisma.vote.findUnique({
       where: {
         userId_articleId: {
@@ -33,48 +31,59 @@ export async function toggleVote(articleId: string) {
     });
 
     if (existingVote) {
-      // Unvote
-      await prisma.vote.delete({
-        where: {
-          userId_articleId: {
-            userId,
-            articleId,
+      if (existingVote.value === value) {
+        // Unvote (Bỏ vote nếu nhấn lại nút cũ)
+        await prisma.vote.delete({
+          where: {
+            userId_articleId: { userId, articleId },
           },
-        },
-      });
-
-      // Trừ 1 uy tín cho tác giả bài (không tự trừ bài mình)
-      if (article.authorId !== userId) {
-        await prisma.user.update({
-          where: { id: article.authorId },
-          data: { reputation: { decrement: 1 } },
         });
-      }
 
-      revalidatePath('/articles');
-      revalidatePath(`/articles/${articleId}`);
-      return { voted: false };
+        // Hoàn trả uy tín (nếu rút upvote thì trừ 1, rút downvote thì cộng 1)
+        if (article.authorId !== userId) {
+          await prisma.user.update({
+            where: { id: article.authorId },
+            data: { reputation: { decrement: value } },
+          });
+        }
+      } else {
+        // Thay đổi Vote (đang up thành down, hoặc down thành up)
+        await prisma.vote.update({
+          where: { userId_articleId: { userId, articleId } },
+          data: { value },
+        });
+
+        // Bù trừ uy tín (từ -1 sang 1 thì lệch 2, từ 1 sang -1 thì lệch -2)
+        const diff = value - existingVote.value;
+        if (article.authorId !== userId) {
+          await prisma.user.update({
+            where: { id: article.authorId },
+            data: { reputation: { increment: diff } },
+          });
+        }
+      }
     } else {
-      // Vote
+      // Vote mới
       await prisma.vote.create({
         data: {
           userId,
           articleId,
+          value,
         },
       });
 
-      // Cộng 1 uy tín cho tác giả bài (không tự cộng bài mình)
+      // Cộng hoặc trừ uy tín theo value
       if (article.authorId !== userId) {
         await prisma.user.update({
           where: { id: article.authorId },
-          data: { reputation: { increment: 1 } },
+          data: { reputation: { increment: value } },
         });
       }
-
-      revalidatePath('/articles');
-      revalidatePath(`/articles/${articleId}`);
-      return { voted: true };
     }
+
+    revalidatePath('/articles');
+    revalidatePath(`/articles/${articleId}`);
+    return { success: true };
   } catch (err: any) {
     return { error: err?.message || 'Có lỗi xảy ra khi thực hiện vote.' };
   }

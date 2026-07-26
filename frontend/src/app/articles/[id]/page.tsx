@@ -4,6 +4,8 @@ import { prisma } from '@/lib/prisma';
 import { getSession } from '@/lib/auth';
 import CommentForm from './comment-form';
 import VoteButton from '../vote-button';
+import fs from 'fs';
+import path from 'path';
 
 export const dynamic = 'force-dynamic';
 
@@ -16,55 +18,97 @@ export default async function ArticleDetail({ params }: { params: Promise<{ id: 
       author: true,
       votes: true,
       comments: { orderBy: { createdAt: 'asc' }, include: { author: true } },
-      _count: { select: { votes: true } },
     },
   });
+  
   if (!article) notFound();
 
-  const initiallyVoted = session ? article.votes.some((v: any) => v.userId === session.userId) : false;
+  const netVotes = article.votes.reduce((acc: number, v: any) => acc + v.value, 0);
+  const userVote = session ? article.votes.find((v: any) => v.userId === session.userId) : null;
+  const initialVoteValue = userVote ? userVote.value : 0;
+
+  // Resolve hero name
+  let heroName = article.heroId;
+  let heroImg = null;
+  if (article.heroId) {
+    const filePath = path.join(process.cwd(), '..', 'data', 'heroes.json');
+    try {
+      const fileContent = fs.readFileSync(filePath, 'utf-8');
+      const data = JSON.parse(fileContent);
+      const heroes = Array.isArray(data.heroes) ? data.heroes : Object.entries(data.heroes || data).map(([id, d]: any) => ({ id, ...d }));
+      const h = heroes.find((h: any) => h.id === article.heroId);
+      if (h) {
+        heroName = h.name || h.id;
+        heroImg = h.img;
+      }
+    } catch(e) {}
+  }
+
+  const TIER_COLORS: any = {
+    S: 'var(--color-ok)',
+    A: 'var(--color-accent)',
+    B: 'var(--color-gold)',
+    C: 'var(--color-ink-faint)',
+    D: 'var(--color-bad)'
+  };
 
   return (
     <div className="hwrap article" style={{ maxWidth: 820, margin: '0 auto' }}>
       <div className="crumbs"><Link href="/articles">← Cẩm nang</Link></div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '16px', flexWrap: 'wrap' }}>
-        <h1 style={{ flex: 1, margin: 0 }}>{article.title}</h1>
+        <div style={{ flex: 1 }}>
+          <h1 style={{ margin: 0, marginBottom: '12px' }}>{article.title}</h1>
+          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '16px' }}>
+            {article.heroId && (
+              <Link href={`/hero/${article.heroId}`} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'var(--color-paper-2)', padding: '4px 12px 4px 4px', borderRadius: '20px', border: '1px solid var(--color-line)', color: 'var(--color-ink)', textDecoration: 'none' }}>
+                {heroImg ? <img src={heroImg} alt={heroName || ''} style={{ width: '24px', height: '24px', borderRadius: '50%' }} /> : '🎯'}
+                <span style={{ fontSize: '13px', fontWeight: 'bold' }}>{heroName}</span>
+              </Link>
+            )}
+            {article.tierVote && (
+              <span style={{ display: 'inline-flex', alignItems: 'center', padding: '6px 12px', borderRadius: '20px', border: '1px solid var(--color-line)', background: 'var(--color-paper-2)', fontSize: '13px', fontWeight: 'bold', color: TIER_COLORS[article.tierVote] || 'var(--color-ink)' }}>
+                🏅 Tier {article.tierVote}
+              </span>
+            )}
+          </div>
+        </div>
         <div style={{ marginTop: '8px' }}>
           <VoteButton
             articleId={article.id}
-            initialVotes={article._count.votes}
-            initiallyVoted={initiallyVoted}
+            initialNetVotes={netVotes}
+            initialVoteValue={initialVoteValue}
             isLoggedIn={!!session}
           />
         </div>
       </div>
-      <div className="am" style={{ color: 'var(--muted)', fontSize: 13, marginBottom: 16, marginTop: 8 }}>
+      <div className="am" style={{ color: 'var(--color-ink-sub)', fontSize: 13, paddingBottom: 16, borderBottom: '1px solid var(--color-line)' }}>
         ✍️ {article.author.name} · 🏅 {article.author.reputation} uy tín ·{' '}
         {new Date(article.createdAt).toLocaleDateString('vi-VN')}
       </div>
 
-      <div className="afield" style={{ whiteSpace: 'pre-wrap', fontSize: 15, lineHeight: 1.7 }}>
+      <div className="afield" style={{ whiteSpace: 'pre-wrap', fontSize: 15, lineHeight: 1.7, marginTop: 24 }}>
         {article.content}
       </div>
 
-      <div className="afield">
-        <div className="lbl">💬 Bình luận ({article.comments.length})</div>
+      <div className="afield" style={{ marginTop: 40 }}>
+        <div className="lbl" style={{ fontSize: 16, fontWeight: 'bold', marginBottom: 16 }}>💬 Bình luận ({article.comments.length})</div>
         {article.comments.length === 0 && (
-          <p className="empty">Chưa có bình luận. Hãy là người đầu tiên góp ý!</p>
+          <p className="empty" style={{ color: 'var(--color-ink-sub)' }}>Chưa có bình luận. Hãy là người đầu tiên góp ý!</p>
         )}
-        {article.comments.map((c) => (
-          <div className="acard" key={c.id} style={{ marginTop: 10 }}>
-            <div className="am" style={{ fontSize: 12, color: 'var(--muted)' }}>
+        {article.comments.map((c: any) => (
+          <div className="acard" key={c.id} style={{ marginTop: 12, background: 'var(--color-paper-2)', padding: 16, borderRadius: 12, border: '1px solid var(--color-line)' }}>
+            <div className="am" style={{ fontSize: 12, color: 'var(--color-ink-sub)' }}>
               👤 {c.author.name} · {new Date(c.createdAt).toLocaleDateString('vi-VN')}
             </div>
-            <div style={{ marginTop: 4, whiteSpace: 'pre-wrap' }}>{c.content}</div>
+            <div style={{ marginTop: 8, whiteSpace: 'pre-wrap', fontSize: 14 }}>{c.content}</div>
           </div>
         ))}
 
         {session ? (
-          <CommentForm articleId={article.id} />
+          <div style={{ marginTop: 24 }}><CommentForm articleId={article.id} /></div>
         ) : (
-          <p className="empty" style={{ marginTop: 14 }}>
-            <Link href="/login" style={{ color: 'var(--accent)' }}>Đăng nhập</Link> để bình luận.
+          <p className="empty" style={{ marginTop: 24, padding: 16, background: 'var(--color-paper-2)', borderRadius: 12, textAlign: 'center' }}>
+            <Link href="/login" style={{ color: 'var(--color-accent)', fontWeight: 'bold' }}>Đăng nhập</Link> để tham gia thảo luận.
           </p>
         )}
       </div>

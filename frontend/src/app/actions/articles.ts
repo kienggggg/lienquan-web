@@ -15,8 +15,11 @@ export async function createArticle(formData: FormData) {
   if (!title || title.length < 6) return { error: 'Tiêu đề quá ngắn (tối thiểu 6 ký tự).' };
   if (!content || content.length < 30) return { error: 'Nội dung quá ngắn (tối thiểu 30 ký tự).' };
 
+  const heroId = (formData.get('heroId') as string)?.trim() || null;
+  const tierVote = (formData.get('tierVote') as string)?.trim() || null;
+
   const article = await prisma.article.create({
-    data: { title, content, authorId: session.userId as string },
+    data: { title, content, authorId: session.userId as string, heroId, tierVote },
   });
   revalidatePath('/articles');
   redirect(`/articles/${article.id}`);

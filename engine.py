@@ -321,6 +321,7 @@ def build(hero: dict, items: dict) -> list[dict]:
 
 # -------------------------------------------------------------------- TIER ----
 def tier_of(hero: dict) -> str:
+    """Fallback cho điểm tĩnh."""
     wr = hero.get("winrate")
     if wr is None:
         return "?"
@@ -333,6 +334,89 @@ def tier_of(hero: dict) -> str:
     if wr >= 48.5:
         return "C"
     return "D"
+
+def _role_fitness_score(hero: dict, role: str) -> float:
+    """Tính điểm độ hợp của bộ kỹ năng (attr) tướng so với chuẩn của vai trò.
+    Trả về một chỉ số modifier (e.g. từ -2.0 đến +2.0) để cộng vào score."""
+    tpl_attr = ROLE_TEMPLATE.get(role, ROLE_TEMPLATE["Đấu sĩ"])["attr"]
+    hero_attr = hero.get("attr", {})
+    score = 0.0
+    for k, v in tpl_attr.items():
+        h_val = int(hero_attr.get(k, 0))
+        # Nếu role yêu cầu thuộc tính k cao (v > 0)
+        if v > 0:
+            if h_val >= v:
+                score += 0.5  # Có thuộc tính mạnh như/hơn role yêu cầu
+            elif h_val == v - 1:
+                score += 0.0  # Chấp nhận được
+            else:
+                score -= 1.0  # Thiếu hụt trầm trọng thuộc tính cần cho role
+    return score
+
+def _matchup_score(hero: dict, role: str, roster: list[dict]) -> float:
+    """Điểm khắc chế khi đi cùng một đường (role).
+    Cộng điểm nếu khắc chế nhiều tướng meta ở lane này."""
+    score = 0.0
+    for o in roster:
+        if o["id"] == hero["id"] or role not in o.get("roles", []):
+            continue
+        # Tính điểm hero khắc chế o
+        s_beat, _ = _counter_lane(hero, o)
+        # Tính điểm o khắc chế hero
+        s_beaten, _ = _counter_lane(o, hero)
+        
+        # Nếu o là meta (winrate cao), khắc chế o sẽ được nhiều điểm hơn, bị o khắc chế trừ nhiều điểm hơn
+        o_wr = float(o.get("winrate") or 50.0)
+        weight = 1.2 if o_wr >= 51.5 else 1.0 if o_wr >= 49.0 else 0.8
+        
+        score += (s_beat - s_beaten) * weight * 0.1 # hệ số điều chỉnh nhỏ lại để không lấn át winrate
+
+    return score
+
+def calculate_role_tier(hero: dict, role: str, roster: list[dict]) -> str:
+    wr = hero.get("winrate")
+    if wr is None:
+        return "?"
+    
+    # 1. Base Score từ Winrate (Trọng số chính)
+    score = float(wr)
+    
+    # 2. Pickrate modifier (Pickrate cao chứng tỏ tướng đó mạnh ổn định, không phải chỉ hên do ít người chơi)
+    pr = float(hero.get("pickrate") or 0)
+    if pr > 5.0: score += 0.5
+    elif pr < 1.0: score -= 0.5
+
+    # 3. Role Fitness (Độ hợp chất tướng)
+    score += _role_fitness_score(hero, role)
+    
+    # 4. Matchup Score (Khắc chế cùng đường)
+    score += _matchup_score(hero, role, roster)
+    
+    # Phân hạng Tier dựa trên final score
+    if score >= 53.0: return "S"
+    if score >= 51.0: return "A"
+    if score >= 49.5: return "B"
+    if score >= 48.0: return "C"
+    return "D"
+
+def enrich_heroes_with_tiers(roster: list[dict]) -> list[dict]:
+    """Làm giàu data, tính sẵn role_tiers cho mỗi tướng."""
+    for h in roster:
+        h["role_tiers"] = {}
+        if h.get("winrate") is None:
+            for r in h.get("roles", []):
+                h["role_tiers"][r] = "?"
+            continue
+            
+        for r in h.get("roles", []):
+            h["role_tiers"][r] = calculate_role_tier(h, r, roster)
+            
+        # Nếu tướng không có roles thì set default
+        if not h.get("roles"):
+            h["role_tiers"]["Đấu sĩ"] = calculate_role_tier(h, "Đấu sĩ", roster)
+            
+    return roster
+
 
 
 # ------------------------------------------------------------- ĐỘI HÌNH -------

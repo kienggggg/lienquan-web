@@ -1,24 +1,24 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { toggleVote } from '@/app/actions/votes';
+import { submitVote } from '@/app/actions/votes';
 
 export default function VoteButton({
   articleId,
-  initialVotes,
-  initiallyVoted,
+  initialNetVotes,
+  initialVoteValue, // 1 (Up), -1 (Down), 0 (None)
   isLoggedIn,
 }: {
   articleId: string;
-  initialVotes: number;
-  initiallyVoted: boolean;
+  initialNetVotes: number;
+  initialVoteValue: number;
   isLoggedIn: boolean;
 }) {
-  const [votes, setVotes] = useState(initialVotes);
-  const [voted, setVoted] = useState(initiallyVoted);
+  const [netVotes, setNetVotes] = useState(initialNetVotes);
+  const [voteValue, setVoteValue] = useState(initialVoteValue);
   const [isPending, startTransition] = useTransition();
 
-  const handleVote = (e: React.MouseEvent) => {
+  const handleVote = (e: React.MouseEvent, value: number) => {
     e.preventDefault();
     e.stopPropagation();
 
@@ -30,44 +30,65 @@ export default function VoteButton({
 
     startTransition(async () => {
       // Optimistic UI updates
-      const nextVoted = !voted;
-      const nextVotes = nextVoted ? votes + 1 : votes - 1;
-      setVoted(nextVoted);
-      setVotes(nextVotes);
+      const isUnvoting = voteValue === value;
+      const nextVoteValue = isUnvoting ? 0 : value;
+      
+      let nextNetVotes = netVotes;
+      if (isUnvoting) {
+        nextNetVotes -= voteValue;
+      } else {
+        // Nếu đã vote trước đó, bù trừ
+        nextNetVotes = netVotes - voteValue + value;
+      }
+      
+      setVoteValue(nextVoteValue);
+      setNetVotes(nextNetVotes);
 
-      const res = await toggleVote(articleId);
+      const res = await submitVote(articleId, value);
       if (res.error) {
         // Rollback
-        setVoted(voted);
-        setVotes(votes);
+        setVoteValue(voteValue);
+        setNetVotes(netVotes);
         alert(res.error);
-      } else if (typeof res.voted === 'boolean') {
-        setVoted(res.voted);
       }
     });
   };
 
   return (
-    <button
-      onClick={handleVote}
-      className={`vote-btn ${voted ? 'voted' : ''}`}
-      disabled={isPending}
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '6px',
-        padding: '6px 12px',
-        borderRadius: '20px',
-        border: '1px solid var(--color-line)',
-        background: voted ? 'var(--color-accent)' : 'var(--color-paper-3)',
-        color: voted ? '#fff' : 'var(--color-ink)',
-        fontSize: '13px',
-        fontWeight: 'bold',
-        cursor: isPending ? 'wait' : 'pointer',
-        transition: 'all 0.2s ease',
-      }}
-    >
-      👍 {votes}
-    </button>
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: 'var(--color-paper-2)', borderRadius: '20px', border: '1px solid var(--color-line)', padding: '4px' }}>
+      <button
+        onClick={(e) => handleVote(e, 1)}
+        disabled={isPending}
+        style={{
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+          width: '32px', height: '32px', borderRadius: '16px', border: 'none',
+          background: voteValue === 1 ? 'var(--color-accent)' : 'transparent',
+          color: voteValue === 1 ? '#fff' : 'var(--color-ink-sub)',
+          cursor: isPending ? 'wait' : 'pointer', transition: 'all 0.2s ease',
+        }}
+        title="Thích"
+      >
+        ▲
+      </button>
+      
+      <span style={{ fontSize: '14px', fontWeight: 'bold', color: 'var(--color-ink)', minWidth: '24px', textAlign: 'center' }}>
+        {netVotes}
+      </span>
+
+      <button
+        onClick={(e) => handleVote(e, -1)}
+        disabled={isPending}
+        style={{
+          display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+          width: '32px', height: '32px', borderRadius: '16px', border: 'none',
+          background: voteValue === -1 ? 'var(--color-bad)' : 'transparent',
+          color: voteValue === -1 ? '#fff' : 'var(--color-ink-sub)',
+          cursor: isPending ? 'wait' : 'pointer', transition: 'all 0.2s ease',
+        }}
+        title="Không thích"
+      >
+        ▼
+      </button>
+    </div>
   );
 }

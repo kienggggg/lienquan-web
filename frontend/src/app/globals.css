@@ -436,9 +436,63 @@ h1 { font-size: 32px; letter-spacing: -0.02em; }
 .spanel .t { font-size: 14px; font-weight: 700; color: var(--color-ink-sub); margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em; }
 
 @media (max-width: 768px) {
+  body { padding-bottom: 70px; } /* Space for mobile nav */
   .udetail { grid-template-columns: minmax(0, 1fr); }
-  .navtop { top: 8px; border-radius: 24px; }
-  .navtop .brand { display: none; } /* Hide brand text on mobile pill */
+  .navtop { display: none; } /* Hide pill nav on mobile */
+  
+  /* Mobile Layout Tweaks */
+  .wrap { padding: 0 16px; }
+  header { padding: 24px 0 16px; }
+  h1 { font-size: 26px; }
+  
+  .htile { min-width: 0; padding: 8px; }
+  .htile .av { width: 36px; height: 36px; }
+  .htile .nm { font-size: 14px; }
+  .htile .ro, .htile .wr { font-size: 11px; }
+  
+  .tierbadge { width: 44px; font-size: 20px; }
+  .tierheroes {
+    padding: 12px; gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+  
+  .herobanner { gap: 12px; }
+  .hb-feature { min-height: 220px; padding: 16px; }
+  .hb-feature .nm { font-size: 24px; }
+  .hb-feature .hb-btn { padding: 6px 12px; font-size: 13px; }
+}
+
+/* ==========================================================================
+   Mobile Bottom Navigation
+   ========================================================================== */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 64px;
+    background: color-mix(in oklch, var(--color-paper-2) 92%, transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--color-line);
+    z-index: 100;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .mn-item {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 4px; color: var(--color-ink-sub); flex: 1; height: 100%; transition: all 0.2s;
+  }
+  .mn-item.active { color: var(--color-accent); }
+  .mn-item:active { transform: scale(0.92); }
+  .mn-icon { font-size: 22px; line-height: 1; margin-bottom: 2px; }
+  .mn-label { font-size: 11px; font-weight: 700; }
 }
 
 /* Utility */

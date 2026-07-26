@@ -1,0 +1,332 @@
+{
+  "comps": [
+    {
+      "theme": "Lao vào bắt lẻ",
+      "score": 21,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "nakroth",
+          "name": "Nakroth",
+          "lane": "Rừng",
+          "role": "Sát thủ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "astrid",
+          "name": "Astrid",
+          "lane": "Tà Thần",
+          "role": "Đấu sĩ"
+        },
+        {
+          "id": "alice",
+          "name": "Alice",
+          "lane": "Hỗ trợ",
+          "role": "Hỗ trợ"
+        }
+      ],
+      "carry": "Nakroth",
+      "play": "Rình bắt lẻ mục tiêu đi một mình, tạo lợi thế quân số rồi cuốn chiếu. Ưu tiên cơ động cao, chọn thời điểm địch dàn trải.",
+      "pro": "Tạo đột biến nhanh, snowball mạnh khi dẫn trước.",
+      "con": "Nếu địch đi cụm và có khống chế cứng thì khó ăn; hụt combo là mất nhịp."
+    },
+    {
+      "theme": "Lao vào bắt lẻ",
+      "score": 21,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "nakroth",
+          "name": "Nakroth",
+          "lane": "Rừng",
+          "role": "Sát thủ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "ybneth",
+          "name": "Y’bneth",
+          "lane": "Tà Thần",
+          "role": "Đỡ đòn"
+        },
+        {
+          "id": "alice",
+          "name": "Alice",
+          "lane": "Hỗ trợ",
+          "role": "Hỗ trợ"
+        }
+      ],
+      "carry": "Nakroth",
+      "play": "Rình bắt lẻ mục tiêu đi một mình, tạo lợi thế quân số rồi cuốn chiếu. Ưu tiên cơ động cao, chọn thời điểm địch dàn trải.",
+      "pro": "Tạo đột biến nhanh, snowball mạnh khi dẫn trước.",
+      "con": "Nếu địch đi cụm và có khống chế cứng thì khó ăn; hụt combo là mất nhịp."
+    },
+    {
+      "theme": "Lao vào bắt lẻ",
+      "score": 21,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "nakroth",
+          "name": "Nakroth",
+          "lane": "Rừng",
+          "role": "Sát thủ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "volkath",
+          "name": "Volkath",
+          "lane": "Tà Thần",
+          "role": "Đấu sĩ"
+        },
+        {
+          "id": "alice",
+          "name": "Alice",
+          "lane": "Hỗ trợ",
+          "role": "Hỗ trợ"
+        }
+      ],
+      "carry": "Nakroth",
+      "play": "Rình bắt lẻ mục tiêu đi một mình, tạo lợi thế quân số rồi cuốn chiếu. Ưu tiên cơ động cao, chọn thời điểm địch dàn trải.",
+      "pro": "Tạo đột biến nhanh, snowball mạnh khi dẫn trước.",
+      "con": "Nếu địch đi cụm và có khống chế cứng thì khó ăn; hụt combo là mất nhịp."
+    },
+    {
+      "theme": "Lao vào bắt lẻ",
+      "score": 21,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "nakroth",
+          "name": "Nakroth",
+          "lane": "Rừng",
+          "role": "Sát thủ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "rourke",
+          "name": "Rourke",
+          "lane": "Tà Thần",
+          "role": "Đấu sĩ"
+        },
+        {
+          "id": "alice",
+          "name": "Alice",
+          "lane": "Hỗ trợ",
+          "role": "Hỗ trợ"
+        }
+      ],
+      "carry": "Nakroth",
+      "play": "Rình bắt lẻ mục tiêu đi một mình, tạo lợi thế quân số rồi cuốn chiếu. Ưu tiên cơ động cao, chọn thời điểm địch dàn trải.",
+      "pro": "Tạo đột biến nhanh, snowball mạnh khi dẫn trước.",
+      "con": "Nếu địch đi cụm và có khống chế cứng thì khó ăn; hụt combo là mất nhịp."
+    },
+    {
+      "theme": "Đội hình cân bằng",
+      "score": 20,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "zephys",
+          "name": "Zephys",
+          "lane": "Rừng",
+          "role": "Đấu sĩ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "ybneth",
+          "name": "Y’bneth",
+          "lane": "Tà Thần",
+          "role": "Đỡ đòn"
+        },
+        {
+          "id": "max",
+          "name": "Max",
+          "lane": "Hỗ trợ",
+          "role": "Đỡ đòn"
+        }
+      ],
+      "carry": "Moren",
+      "play": "Đủ tuyến đầu, sát thương và khống chế — chơi theo tình huống: giao tranh khi có lợi, bắt lẻ khi địch hớ.",
+      "pro": "Linh hoạt, ít điểm yếu rõ rệt.",
+      "con": "Không có điểm mạnh vượt trội để áp đặt lối chơi."
+    },
+    {
+      "theme": "Đội hình cân bằng",
+      "score": 20,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "zephys",
+          "name": "Zephys",
+          "lane": "Rừng",
+          "role": "Đấu sĩ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "ybneth",
+          "name": "Y’bneth",
+          "lane": "Tà Thần",
+          "role": "Đỡ đòn"
+        },
+        {
+          "id": "toro",
+          "name": "Toro",
+          "lane": "Hỗ trợ",
+          "role": "Đỡ đòn"
+        }
+      ],
+      "carry": "Moren",
+      "play": "Đủ tuyến đầu, sát thương và khống chế — chơi theo tình huống: giao tranh khi có lợi, bắt lẻ khi địch hớ.",
+      "pro": "Linh hoạt, ít điểm yếu rõ rệt.",
+      "con": "Không có điểm mạnh vượt trội để áp đặt lối chơi."
+    },
+    {
+      "theme": "Đội hình cân bằng",
+      "score": 20,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "zephys",
+          "name": "Zephys",
+          "lane": "Rừng",
+          "role": "Đấu sĩ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "ybneth",
+          "name": "Y’bneth",
+          "lane": "Tà Thần",
+          "role": "Đỡ đòn"
+        },
+        {
+          "id": "cresht",
+          "name": "Cresht",
+          "lane": "Hỗ trợ",
+          "role": "Đỡ đòn"
+        }
+      ],
+      "carry": "Moren",
+      "play": "Đủ tuyến đầu, sát thương và khống chế — chơi theo tình huống: giao tranh khi có lợi, bắt lẻ khi địch hớ.",
+      "pro": "Linh hoạt, ít điểm yếu rõ rệt.",
+      "con": "Không có điểm mạnh vượt trội để áp đặt lối chơi."
+    },
+    {
+      "theme": "Đội hình cân bằng",
+      "score": 20,
+      "difficulty": "Trung bình",
+      "members": [
+        {
+          "id": "zephys",
+          "name": "Zephys",
+          "lane": "Rừng",
+          "role": "Đấu sĩ"
+        },
+        {
+          "id": "moren",
+          "name": "Moren",
+          "lane": "Rồng",
+          "role": "Xạ thủ"
+        },
+        {
+          "id": "preyta",
+          "name": "Preyta",
+          "lane": "Trung",
+          "role": "Pháp sư"
+        },
+        {
+          "id": "ybneth",
+          "name": "Y’bneth",
+          "lane": "Tà Thần",
+          "role": "Đỡ đòn"
+        },
+        {
+          "id": "taara",
+          "name": "Taara",
+          "lane": "Hỗ trợ",
+          "role": "Đỡ đòn"
+        }
+      ],
+      "carry": "Moren",
+      "play": "Đủ tuyến đầu, sát thương và khống chế — chơi theo tình huống: giao tranh khi có lợi, bắt lẻ khi địch hớ.",
+      "pro": "Linh hoạt, ít điểm yếu rõ rệt.",
+      "con": "Không có điểm mạnh vượt trội để áp đặt lối chơi."
+    }
+  ]
+}

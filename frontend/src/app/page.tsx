@@ -3,14 +3,21 @@ import path from 'path';
 import Link from 'next/link';
 
 async function getHeroes() {
-  const filePath = path.join(process.cwd(), '..', 'data', 'heroes.json');
+  const filePath = path.join(process.cwd(), '..', 'data', 'heroes_meta.json');
   try {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const data = JSON.parse(fileContent);
     return data;
   } catch (error) {
-    console.error("Failed to read heroes data", error);
-    return {};
+    console.error("Failed to read heroes_meta data", error);
+    // fallback
+    const fbPath = path.join(process.cwd(), '..', 'data', 'heroes.json');
+    try {
+      const fbContent = fs.readFileSync(fbPath, 'utf-8');
+      return JSON.parse(fbContent);
+    } catch(e) {
+      return {};
+    }
   }
 }
 
@@ -22,7 +29,31 @@ function getTier(winrate: number) {
   return { name: 'D', color: 'var(--color-bad)' };
 }
 
-export default async function Home() {
+const TIER_COLOR: Record<string, string> = {
+  S: 'var(--color-ok)',
+  A: 'var(--color-accent)',
+  B: 'var(--color-gold)',
+  C: 'var(--color-ink-faint)',
+  D: 'var(--color-bad)'
+};
+
+const ROLES = ["Tất cả", "Rừng", "Đường Tà Thần", "Đường Giữa", "Đường Rồng", "Hỗ Trợ"];
+// Ánh xạ từ Tên Đường/Tab sang Role name thực tế trong data
+const ROLE_MAP: Record<string, string> = {
+  "Rừng": "Sát thủ",
+  "Đường Tà Thần": "Đấu sĩ",
+  "Đường Giữa": "Pháp sư",
+  "Đường Rồng": "Xạ thủ",
+  "Hỗ Trợ": "Hỗ trợ"
+};
+
+type SearchParams = Promise<{ [key: string]: string | string[] | undefined }>
+
+export default async function Home(props: { searchParams: SearchParams }) {
+  const searchParams = await props.searchParams;
+  const currentTab = typeof searchParams.role === 'string' ? searchParams.role : 'Tất cả';
+  const targetRole = ROLE_MAP[currentTab]; // may be undefined for "Tất cả"
+  
   const heroesData = await getHeroes();
   
   let heroesList = [];
@@ -37,7 +68,13 @@ export default async function Home() {
     }));
   }
 
-  const featured = heroesList
+  // Filter list based on selected role
+  let filteredList = heroesList;
+  if (targetRole) {
+    filteredList = heroesList.filter((h: any) => h.roles?.includes(targetRole) || h.role_tiers?.[targetRole]);
+  }
+
+  const featured = filteredList
     .filter((h:any) => typeof h.winrate === 'number' && h.img)
     .sort((a:any,b:any) => b.winrate - a.winrate)
     .slice(0, 5);
@@ -48,8 +85,29 @@ export default async function Home() {
     <div className="hwrap">
       <header style={{ paddingBottom: '32px' }}>
         <h1>Bảng xếp hạng Tướng & Meta</h1>
-        <div className="sub">Phân tích meta mới nhất. Dữ liệu tỉ lệ thắng và sức mạnh từ xếp hạng máy chủ.</div>
+        <div className="sub">Phân tích meta mới nhất. Dữ liệu tỉ lệ thắng, kỹ năng và mức độ khắc chế.</div>
       </header>
+
+      {/* Role Tabs */}
+      <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '24px' }}>
+        {ROLES.map(role => (
+          <Link 
+            key={role} 
+            href={`/?role=${encodeURIComponent(role)}`}
+            className="btn-interactive"
+            style={{
+              padding: '8px 16px',
+              borderRadius: '20px',
+              backgroundColor: currentTab === role ? 'var(--color-accent)' : 'var(--color-bg-elevated)',
+              color: currentTab === role ? '#fff' : 'var(--color-ink)',
+              fontWeight: currentTab === role ? 'bold' : 'normal',
+              whiteSpace: 'nowrap'
+            }}
+          >
+            {role}
+          </Link>
+        ))}
+      </div>
 
       {hero && (
         <div className="herobanner">
@@ -57,9 +115,11 @@ export default async function Home() {
             <div className="hb-overlay"></div>
             <div className="hb-badge">🔥 META NỔI BẬT</div>
             <div className="nm">{hero.name || hero.id}</div>
-            <div className="ro">{hero.roles?.join(' · ') || 'Unknown'}</div>
+            <div className="ro">{targetRole || hero.roles?.join(' · ') || 'Unknown'}</div>
             <div className="hb-stats">
-              <span style={{ color: getTier(hero.winrate).color }}>Tier {getTier(hero.winrate).name}</span>
+              <span style={{ color: targetRole && hero.role_tiers ? TIER_COLOR[hero.role_tiers[targetRole] || 'B'] : getTier(hero.winrate).color }}>
+                Tier {targetRole && hero.role_tiers ? (hero.role_tiers[targetRole] || '?') : getTier(hero.winrate).name}
+              </span>
               <span>·</span>
               <span>Win {hero.winrate}%</span>
               <span>·</span>
@@ -72,16 +132,17 @@ export default async function Home() {
               <div className="rtitle">Đang lên hạng</div>
               <div className="hb-list">
                 {hotList.map((h: any) => {
-                  const tier = getTier(h.winrate);
+                  const tName = targetRole && h.role_tiers ? (h.role_tiers[targetRole] || '?') : getTier(h.winrate).name;
+                  const tColor = TIER_COLOR[tName] || 'var(--color-ink-sub)';
                   return (
                     <Link href={`/hero/${h.id}`} key={h.id} className="hb-item">
                       <img src={h.img} alt={h.name || h.id} className="av" />
                       <div className="nbox">
                         <div className="nm">{h.name || h.id}</div>
-                        <div className="ro">{h.roles?.[0] || 'Unknown'}</div>
+                        <div className="ro">{targetRole || h.roles?.[0] || 'Unknown'}</div>
                       </div>
                       <div className="rstats">
-                        <div className="s-tier" style={{ color: tier.color }}>{tier.name}</div>
+                        <div className="s-tier" style={{ color: tColor }}>{tName}</div>
                         <div className="s-win">Win {h.winrate}%</div>
                       </div>
                     </Link>
@@ -110,22 +171,25 @@ export default async function Home() {
 
       {(() => {
         const TIER_ORDER = ['S', 'A', 'B', 'C', 'D'];
-        const TIER_COLOR: Record<string, string> = {
-          S: 'var(--color-ok)',
-          A: 'var(--color-accent)',
-          B: 'var(--color-gold)',
-          C: 'var(--color-ink-faint)',
-          D: 'var(--color-bad)'
-        };
-        const withWR = heroesList.filter((h: any) => typeof h.winrate === 'number');
-        const noWR = heroesList.filter((h: any) => typeof h.winrate !== 'number');
+        
+        const withWR = filteredList.filter((h: any) => typeof h.winrate === 'number');
+        const noWR = filteredList.filter((h: any) => typeof h.winrate !== 'number');
         
         const byTier: Record<string, any[]> = { S: [], A: [], B: [], C: [], D: [] };
+        
         for (const h of withWR) {
-          const t = getTier(h.winrate).name;
+          // Tính tier dựa trên targetRole nếu có, nếu không thì lấy winrate tổng
+          let t = '?';
+          if (targetRole && h.role_tiers) {
+            t = h.role_tiers[targetRole] || '?';
+          } else {
+            t = getTier(h.winrate).name;
+          }
           if (byTier[t]) byTier[t].push(h);
         }
+        
         for (const t of TIER_ORDER) {
+          // Sắp xếp theo winrate giảm dần trong cùng 1 tier
           byTier[t].sort((a: any, b: any) => b.winrate - a.winrate);
         }
 
@@ -145,7 +209,7 @@ export default async function Home() {
                         <img src={h.img} alt={h.name || h.id} className="av" />
                         <div>
                           <div className="nm">{h.name || h.id}</div>
-                          <div className="ro">{h.roles?.[0] || 'Unknown'}</div>
+                          <div className="ro">{targetRole || h.roles?.[0] || 'Unknown'}</div>
                           <div className="wr">Win <b>{h.winrate}%</b></div>
                         </div>
                       </Link>
@@ -166,7 +230,7 @@ export default async function Home() {
                       <img src={h.img} alt={h.name || h.id} className="av" />
                       <div>
                         <div className="nm">{h.name || h.id}</div>
-                        <div className="ro">{h.roles?.[0] || 'Unknown'}</div>
+                        <div className="ro">{targetRole || h.roles?.[0] || 'Unknown'}</div>
                       </div>
                     </Link>
                   ))}
