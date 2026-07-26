@@ -96,6 +96,7 @@ export default async function Home(props: { searchParams: SearchParams }) {
             href={`/?role=${encodeURIComponent(role)}`}
             className="btn-interactive"
             style={{
+              flexShrink: 0,
               padding: '8px 16px',
               borderRadius: '20px',
               backgroundColor: currentTab === role ? 'var(--color-accent)' : 'var(--color-bg-elevated)',
