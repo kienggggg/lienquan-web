@@ -214,11 +214,8 @@ export default async function Home(props: { searchParams: SearchParams }) {
                     {tierHeroes.map((h: any) => (
                       <Link href={`/hero/${h.id}`} key={h.id} className="htile">
                         <img src={h.img} alt={h.name || h.id} className="av" />
-                        <div>
-                          <div className="nm">{h.name || h.id}</div>
-                          <div className="ro">{h.sub_roles ? h.sub_roles.join(' · ') : (targetRole || h.roles?.[0] || 'Unknown')}</div>
-                          <div className="wr">Win <b>{h.winrate ? `${h.winrate}%` : '---'}</b></div>
-                        </div>
+                        <div className="wr">{h.winrate ? `${h.winrate}%` : '---'}</div>
+                        <div className="nm">{h.name || h.id}</div>
                       </Link>
                     ))}
                   </div>
@@ -235,11 +232,8 @@ export default async function Home(props: { searchParams: SearchParams }) {
                   {byTier['?'].map((h: any) => (
                     <Link href={`/hero/${h.id}`} key={h.id} className="htile">
                       <img src={h.img} alt={h.name || h.id} className="av" />
-                      <div>
-                        <div className="nm">{h.name || h.id}</div>
-                        <div className="ro">{h.sub_roles ? h.sub_roles.join(' · ') : (targetRole || h.roles?.[0] || 'Unknown')}</div>
-                        <div className="wr">Win <b>{h.winrate ? `${h.winrate}%` : '---'}</b></div>
-                      </div>
+                      <div className="wr">{h.winrate ? `${h.winrate}%` : '---'}</div>
+                      <div className="nm">{h.name || h.id}</div>
                     </Link>
                   ))}
                 </div>

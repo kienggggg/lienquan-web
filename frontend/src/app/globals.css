@@ -98,14 +98,33 @@ img.av, svg.av {
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
   outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-interactive::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 50%; height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+  transform: skewX(-20deg);
+  transition: all 0.4s ease;
+}
+
+.btn-interactive:hover::before {
+  left: 150%;
 }
 
 /* 1. Hover */
 .btn-interactive:hover, .btn-interactive.is-hover {
-  background: var(--color-paper-3);
+  background: color-mix(in oklch, var(--color-accent) 20%, var(--color-paper-3));
   border-color: var(--color-accent);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 15px color-mix(in oklch, var(--color-accent) 40%, transparent), inset 0 0 10px color-mix(in oklch, var(--color-accent) 15%, transparent);
+  color: #fff;
 }
 
 /* 2. Focus-visible */
@@ -116,8 +135,8 @@ img.av, svg.av {
 
 /* 3. Active */
 .btn-interactive:active, .btn-interactive.is-active {
-  transform: scale(0.98);
-  background: var(--color-paper-2);
+  transform: scale(0.95);
+  box-shadow: none;
 }
 
 /* 4. Disabled */
@@ -306,13 +325,13 @@ h1 { font-size: 32px; letter-spacing: -0.02em; }
 
 .htile {
   display: flex;
-  gap: 12px;
+  flex-direction: column;
   align-items: center;
-  background: var(--color-paper-2);
-  border: 1px solid var(--color-line);
-  border-radius: 12px;
-  padding: 10px 14px 10px 10px;
-  min-width: 160px;
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 4px;
+  width: 60px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   outline: none;
   cursor: pointer;
@@ -321,8 +340,8 @@ h1 { font-size: 32px; letter-spacing: -0.02em; }
 .htile:hover, .htile:focus-visible {
   border-color: var(--color-accent);
   background: var(--color-paper-3);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px color-mix(in oklch, var(--color-accent) 15%, transparent);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 4px 12px color-mix(in oklch, var(--color-accent) 40%, transparent);
   text-decoration: none;
 }
 
@@ -330,41 +349,48 @@ h1 { font-size: 32px; letter-spacing: -0.02em; }
   transform: translateY(0);
 }
 
-.htile .av { width: 44px; height: 44px; border-radius: 8px; }
-.htile .nm { font-family: var(--font-display); font-weight: 700; color: var(--color-ink); font-size: 15px; }
-.htile .ro { font-size: 12px; color: var(--color-ink-sub); }
-.htile .wr { font-size: 12px; margin-top: 2px; }
-.htile .wr b { color: var(--color-accent); }
+.htile .av { width: 48px; height: 48px; border-radius: 6px; border: 1px solid var(--color-line); box-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+.htile .nm { font-family: var(--font-main); font-weight: 600; color: var(--color-ink); font-size: 11px; margin-top: 4px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+.htile .wr { font-size: 10px; font-weight: 700; color: #fff; background: var(--color-accent); padding: 1px 4px; border-radius: 4px; margin-top: -12px; z-index: 2; box-shadow: 0 1px 3px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.2); }
 
 .tierrow {
   display: flex;
-  gap: 16px;
-  margin: 16px 0;
+  margin: 12px 0;
   background: var(--color-paper-2);
   border: 1px solid var(--color-line);
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
+  align-items: stretch;
 }
 
 .tierbadge {
-  width: 64px;
+  width: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 800;
   background: var(--color-paper-3);
   color: var(--color-ink);
   flex: none;
   border-right: 1px solid var(--color-line);
+  position: relative;
+}
+.tierbadge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.2) 100%);
+  pointer-events: none;
 }
 
 .tierheroes {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   flex-wrap: wrap;
-  padding: 16px;
+  padding: 12px;
+  align-items: flex-start;
 }
 
 /* ==========================================================================
