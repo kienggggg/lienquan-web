@@ -1,0 +1,67 @@
+{
+  "id": "astrid",
+  "name": "Astrid",
+  "roles": [
+    "Đấu sĩ"
+  ],
+  "lane": "Tà Thần",
+  "img": "https://lienquan.garena.vn/wp-content/uploads/2024/05/91a969152f4340611e12e4eeb96a9aa259e021a48fbe91.jpg",
+  "skills": [
+    {
+      "name": "Kiếm Tâm",
+      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/abcf17da55f204e8f45e64916f86dc8b59e0221cc54241.png",
+      "desc": "Nội tại: Mỗi đòn đánh thường trúng tướng địch (trừ Đột kích) sẽ giúp Astrid giảm hồi chiêu cho Chiêu 1 và Chiêu 2 (giảm nửa hiệu quả khi mục tiêu là quái rừng)."
+    },
+    {
+      "name": "Bạt Kiếm",
+      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/10450bf3def43e5567d4e3cf7fc1e14259e022b19cf761.png",
+      "desc": "Astrid vung thanh kiếm cực đại gây sát thương vật lý lên những kẻ địch lân cận. Mỗi kẻ địch trúng chiêu giúp Astrid nhận cộng dồn tốc đánh và tốc chạy, tối đa 3 cộng dồn."
+    },
+    {
+      "name": "Quả Cảm",
+      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/ad69e4b4519125fbf23419020c5973a459e022ea2af161.png",
+      "desc": "Astrid lướt theo hướng chỉ định, khiến đòn đánh kế tiếp trở thành Đột kích, gây sát thương vật lý, và làm chậm tốc chạy của kẻ địch trúng chiêu. Đồng thời, Astrid nhận được lá chắn sát thương."
+    },
+    {
+      "name": "Cự Kiếm",
+      "icon": "https://lienquan.garena.vn/wp-content/uploads/2024/05/c4a08f0a9a741a2054f4306f5d92591059e0232482e571.png",
+      "desc": "Astrid tập trung sức mạnh trong 2 giây giúp miễn nhiễm mọi sát thương và khống chế. Sau đó, cô vung kiếm gây sát thương chuẩn (tối đa 1000 với quái và lính) và làm choáng tất cả nạn nhân trúng phải. Sát thương chuẩn trúng tướng địch sẽ kèm hút máu."
+    }
+  ],
+  "winrate": 55.23,
+  "pickrate": 2.03,
+  "banrate": 0.1,
+  "templated": true,
+  "damage": "physical",
+  "spike": "mid",
+  "attr": {
+    "mobility": 1,
+    "cc": 2,
+    "range": 0,
+    "sustain": 2,
+    "burst": 2,
+    "dps": 2,
+    "engage": 2,
+    "tanky": 2
+  },
+  "pros": [
+    "Vừa chịu đòn vừa gây sát thương",
+    "Có khống chế, đôi công đường tốt"
+  ],
+  "cons": [
+    "Cơ động thấp, dễ bị poke tầm xa",
+    "Bùng nổ không cao"
+  ],
+  "play": "Cầm đường Tà Thần đôi công thắng thế rồi đảo gank; giao tranh nhảy tuyến sau khống chế và chịu đòn cho đội.",
+  "tags": [],
+  "combo": "",
+  "spell": "Bộc Phá",
+  "arcana": [
+    "Đỏ: Công vật lý / máu",
+    "Tím: Máu + tốc chạy",
+    "Lục: Xuyên giáp / hút máu"
+  ],
+  "role_tiers": {
+    "Đấu sĩ": "S"
+  }
+}

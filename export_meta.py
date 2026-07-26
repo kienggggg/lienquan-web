@@ -6,8 +6,15 @@ def main():
     print("Loading heroes...")
     roster = engine.load_heroes()
     
-    print("Enriching heroes with role-specific tiers...")
+    print("Enriching heroes with role-specific tiers, counters and synergies...")
     enriched_roster = engine.enrich_heroes_with_tiers(roster)
+    
+    # Add counters and synergies
+    for h in enriched_roster:
+        h["analysis"] = {
+            "counters": engine.counters(h, enriched_roster, top=4),
+            "synergies": engine.synergies(h, enriched_roster, top=4)
+        }
     
     # Preserve metadata if available
     metadata = {}
