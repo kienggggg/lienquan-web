@@ -2,9 +2,7 @@
 
 import { prisma } from '@/lib/prisma';
 import bcrypt from 'bcryptjs';
-import { encrypt } from '@/lib/auth';
-import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
+import { signIn, signOut } from '@/auth';
 
 export async function register(formData: FormData) {
   const name = formData.get('name') as string;
@@ -22,7 +20,7 @@ export async function register(formData: FormData) {
 
   const hashedPassword = await bcrypt.hash(password, 10);
 
-  const user = await prisma.user.create({
+  await prisma.user.create({
     data: {
       name,
       email,
@@ -30,13 +28,13 @@ export async function register(formData: FormData) {
     },
   });
 
-  const sessionData = { userId: user.id, email: user.email, name: user.name, role: user.role };
-  const sessionToken = await encrypt(sessionData);
-
-  const cookieStore = await cookies();
-  cookieStore.set('session', sessionToken, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', maxAge: 60 * 60 * 24 });
-
-  redirect('/');
+  // After registration, sign in
+  await signIn('credentials', {
+    email,
+    password,
+    redirect: true,
+    redirectTo: '/'
+  });
 }
 
 export async function login(formData: FormData) {
@@ -47,28 +45,21 @@ export async function login(formData: FormData) {
     return { error: 'Vui lòng điền đủ thông tin.' };
   }
 
-  const user = await prisma.user.findUnique({ where: { email } });
-  if (!user) {
-    return { error: 'Sai tài khoản hoặc mật khẩu.' };
+  try {
+    await signIn('credentials', {
+      email,
+      password,
+      redirect: true,
+      redirectTo: '/'
+    });
+  } catch (error: any) {
+    if (error.type === 'CredentialsSignin') {
+      return { error: 'Sai tài khoản hoặc mật khẩu.' };
+    }
+    throw error; // Let Next.js handle redirect errors
   }
-
-  const isValid = await bcrypt.compare(password, user.password);
-  if (!isValid) {
-    return { error: 'Sai tài khoản hoặc mật khẩu.' };
-  }
-
-  const sessionData = { userId: user.id, email: user.email, name: user.name, role: user.role };
-  const sessionToken = await encrypt(sessionData);
-
-  const cookieStore = await cookies();
-  cookieStore.set('session', sessionToken, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'lax', maxAge: 60 * 60 * 24 });
-
-  redirect('/');
 }
 
-// Đăng xuất: xóa cookie phiên rồi về trang chủ.
 export async function logoutAction() {
-  const cookieStore = await cookies();
-  cookieStore.delete('session');
-  redirect('/');
+  await signOut({ redirectTo: '/' });
 }
