@@ -16,6 +16,10 @@ export default function MobileNav() {
         <span className="mn-icon">🛠️</span>
         <span className="mn-label">Đội hình</span>
       </Link>
+      <Link href="/articles" className={`mn-item ${pathname === "/articles" ? "active" : ""}`}>
+        <span className="mn-icon">💬</span>
+        <span className="mn-label">Cộng đồng</span>
+      </Link>
       <Link href="/tin-tuc" className={`mn-item ${pathname === "/tin-tuc" ? "active" : ""}`}>
         <span className="mn-icon">📰</span>
         <span className="mn-label">Tin tức</span>
