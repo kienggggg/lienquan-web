@@ -72,6 +72,14 @@
         "Pháp sư": "C",
         "Xạ thủ": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng rất cao (53.6%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế.",
+        "Xạ thủ": "Tỉ lệ thắng rất cao (53.6%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa",
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -222,6 +230,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng rất cao (53.29%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -397,6 +411,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.18%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -566,6 +586,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng ổn định (51.65%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -746,6 +772,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (49.58%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -926,6 +958,12 @@
       "role_tiers": {
         "Sát thủ": "S"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng thấp (49.88%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -1128,8 +1166,14 @@
         "Lục: Công phép / giảm hồi chiêu"
       ],
       "role_tiers": {
-        "Pháp sư": "?"
+        "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -1307,8 +1351,14 @@
         "Lục: Xuyên giáp / hút máu"
       ],
       "role_tiers": {
-        "Đấu sĩ": "?"
+        "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -1475,8 +1525,14 @@
         "Lục: Giảm hồi chiêu / kháng phép"
       ],
       "role_tiers": {
-        "Hỗ trợ": "?"
+        "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -1652,6 +1708,12 @@
       "role_tiers": {
         "Đấu sĩ": "B"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (46.71%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -1818,8 +1880,14 @@
         "Lục: Xuyên giáp / hút máu"
       ],
       "role_tiers": {
-        "Đấu sĩ": "?"
+        "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -1989,6 +2057,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng ổn định (51.99%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -2169,6 +2243,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng ổn định (50.53%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -2335,8 +2415,14 @@
         "Lục: Chí mạng / xuyên giáp"
       ],
       "role_tiers": {
-        "Xạ thủ": "?"
+        "Xạ thủ": "A"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -2484,8 +2570,14 @@
         "Lục: Giảm hồi chiêu / kháng phép"
       ],
       "role_tiers": {
-        "Hỗ trợ": "?"
+        "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -2661,6 +2753,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.09%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -2830,6 +2928,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (49.25%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -3010,6 +3114,12 @@
       "role_tiers": {
         "Xạ thủ": "A"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (49.6%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -3157,8 +3267,14 @@
         "Lục: Công phép / giảm hồi chiêu"
       ],
       "role_tiers": {
-        "Pháp sư": "?"
+        "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -3339,6 +3455,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (47.82%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -3505,8 +3627,14 @@
         "Lục: Giảm hồi chiêu / kháng phép"
       ],
       "role_tiers": {
-        "Hỗ trợ": "?"
+        "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -3682,6 +3810,12 @@
       "role_tiers": {
         "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng thấp (49.4%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -3887,6 +4021,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (49.45%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -4067,6 +4207,12 @@
       "role_tiers": {
         "Xạ thủ": "C"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (47.7%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -4217,6 +4363,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng ổn định (51.96%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -4397,6 +4549,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (48.77%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -4566,6 +4724,12 @@
       "role_tiers": {
         "Sát thủ": "S"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng ổn định (50.66%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -4771,6 +4935,12 @@
       "role_tiers": {
         "Xạ thủ": "S"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng rất cao (53.42%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -4921,6 +5091,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng ổn định (50.13%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -5087,8 +5263,14 @@
         "Lục: Công phép / giảm hồi chiêu"
       ],
       "role_tiers": {
-        "Pháp sư": "?"
+        "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -5269,6 +5451,12 @@
       "role_tiers": {
         "Hỗ trợ": "B"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng thấp (46.66%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -5444,6 +5632,12 @@
       "role_tiers": {
         "Xạ thủ": "S"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng ổn định (51.31%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -5594,6 +5788,12 @@
       "role_tiers": {
         "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng thấp (48.04%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -5799,6 +5999,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (48.23%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -5965,8 +6171,14 @@
         "Lục: Công vật lý / xuyên giáp"
       ],
       "role_tiers": {
-        "Sát thủ": "?"
+        "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -6172,6 +6384,12 @@
       "role_tiers": {
         "Pháp sư": "B"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (47.27%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -6352,6 +6570,12 @@
       "role_tiers": {
         "Xạ thủ": "C"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (47.02%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -6502,6 +6726,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng ổn định (50.22%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -6677,6 +6907,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng rất cao (53.26%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -6846,6 +7082,12 @@
       "role_tiers": {
         "Xạ thủ": "C"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (48.0%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -6996,6 +7238,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng ổn định (51.16%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -7171,6 +7419,12 @@
       "role_tiers": {
         "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng thấp (49.15%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -7376,6 +7630,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (47.86%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -7556,6 +7816,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (47.92%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -7725,6 +7991,12 @@
       "role_tiers": {
         "Xạ thủ": "B"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (47.61%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -7872,8 +8144,14 @@
         "Lục: Chí mạng / xuyên giáp"
       ],
       "role_tiers": {
-        "Xạ thủ": "?"
+        "Xạ thủ": "A"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -8024,6 +8302,12 @@
       "role_tiers": {
         "Pháp sư": "B"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (47.51%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -8204,6 +8488,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.51%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -8370,8 +8660,14 @@
         "Lục: Xuyên giáp / hút máu"
       ],
       "role_tiers": {
-        "Đấu sĩ": "?"
+        "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -8541,6 +8837,12 @@
       "role_tiers": {
         "Hỗ trợ": "A"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng thấp (48.8%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -8713,8 +9015,14 @@
         "Lục: Công vật lý / xuyên giáp"
       ],
       "role_tiers": {
-        "Sát thủ": "?"
+        "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -8920,6 +9228,12 @@
       "role_tiers": {
         "Đỡ đòn": "A"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng ổn định (50.34%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -9077,6 +9391,12 @@
       "role_tiers": {
         "Đấu sĩ": "B"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (46.96%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -9246,6 +9566,12 @@
       "role_tiers": {
         "Xạ thủ": "B"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (48.79%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -9396,6 +9722,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng rất cao (53.57%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -9558,6 +9890,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.08%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -9727,6 +10065,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng thấp (49.25%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -9902,6 +10246,12 @@
       "role_tiers": {
         "Đỡ đòn": "B"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng thấp (47.49%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -10064,6 +10414,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng ổn định (50.88%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -10233,6 +10589,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng rất cao (52.96%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -10413,6 +10775,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng rất cao (53.03%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -10582,6 +10950,12 @@
       "role_tiers": {
         "Đỡ đòn": "A"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng thấp (49.79%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -10741,8 +11115,14 @@
         "Lục: Chí mạng / xuyên giáp"
       ],
       "role_tiers": {
-        "Xạ thủ": "?"
+        "Xạ thủ": "A"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -10893,6 +11273,12 @@
       "role_tiers": {
         "Pháp sư": "C"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (46.77%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -11073,6 +11459,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng rất cao (52.28%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -11235,6 +11627,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (48.74%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -11415,6 +11813,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (49.0%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -11595,6 +11999,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.24%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -11764,6 +12174,12 @@
       "role_tiers": {
         "Xạ thủ": "B"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (48.52%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -11914,6 +12330,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng thấp (49.93%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -12089,6 +12511,12 @@
       "role_tiers": {
         "Xạ thủ": "S"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng rất cao (54.7%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -12239,6 +12667,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (47.94%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -12408,6 +12842,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng ổn định (50.11%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -12583,6 +13023,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng ổn định (50.07%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -12752,6 +13198,12 @@
       "role_tiers": {
         "Đấu sĩ": "B"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (46.3%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -12926,6 +13378,12 @@
       "role_tiers": {
         "Xạ thủ": "S"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng ổn định (51.5%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ. Có lợi thế lớn khắc chế nhiều tướng meta cùng đường."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -13113,6 +13571,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng rất cao (55.23%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -13279,8 +13743,14 @@
         "Lục: Xuyên giáp / hút máu"
       ],
       "role_tiers": {
-        "Đấu sĩ": "?"
+        "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -13450,6 +13920,12 @@
       "role_tiers": {
         "Xạ thủ": "B"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (48.74%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -13600,6 +14076,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (48.33%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -13769,6 +14251,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng ổn định (51.16%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -13954,6 +14442,12 @@
       "role_tiers": {
         "Sát thủ": "S"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng ổn định (51.2%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -14159,6 +14653,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (48.61%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -14339,6 +14839,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (48.58%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -14480,8 +14986,14 @@
         "Lục: Công vật lý / xuyên giáp"
       ],
       "role_tiers": {
-        "Sát thủ": "?"
+        "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -14687,6 +15199,12 @@
       "role_tiers": {
         "Sát thủ": "S"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng thấp (49.78%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -14898,6 +15416,12 @@
       "role_tiers": {
         "Pháp sư": "B"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (48.4%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Sốc sát thương"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -15078,6 +15602,12 @@
       "role_tiers": {
         "Pháp sư": "B"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (46.68%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -15233,6 +15763,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.59%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -15402,6 +15938,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng rất cao (54.99%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -15582,6 +16124,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng ổn định (51.14%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -15762,6 +16310,12 @@
       "role_tiers": {
         "Xạ thủ": "A"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng ổn định (50.03%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -15917,6 +16471,12 @@
       "role_tiers": {
         "Đấu sĩ": "B"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.3%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đấu sĩ Sát thủ"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -16086,6 +16646,12 @@
       "role_tiers": {
         "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng thấp (48.86%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -16288,8 +16854,14 @@
         "Lục: Công vật lý / xuyên giáp"
       ],
       "role_tiers": {
-        "Sát thủ": "?"
+        "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -16501,6 +17073,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (48.92%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -16670,6 +17248,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng ổn định (50.93%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -16845,6 +17429,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (48.93%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -17025,6 +17615,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng ổn định (51.52%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -17191,6 +17787,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng ổn định (51.9%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư. Có lợi thế lớn khắc chế nhiều tướng meta cùng đường."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -17328,6 +17930,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng rất cao (52.5%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -17490,6 +18098,12 @@
       "role_tiers": {
         "Xạ thủ": "S"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng ổn định (51.08%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -17640,6 +18254,12 @@
       "role_tiers": {
         "Pháp sư": "B"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (48.41%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -17825,6 +18445,12 @@
       "role_tiers": {
         "Sát thủ": "S"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Tỉ lệ thắng thấp (49.8%). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -18030,6 +18656,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng ổn định (51.41%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -18197,6 +18829,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng ổn định (51.6%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Có lợi thế lớn khắc chế nhiều tướng meta cùng đường."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -18372,6 +19010,12 @@
       "role_tiers": {
         "Xạ thủ": "A"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (49.81%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -18527,6 +19171,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng rất cao (52.2%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ. Có lợi thế lớn khắc chế nhiều tướng meta cùng đường."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -18689,6 +19339,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng rất cao (54.12%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -18869,6 +19525,12 @@
       "role_tiers": {
         "Đấu sĩ": "A"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (47.7%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -19053,8 +19715,14 @@
         "Lục: Công vật lý / xuyên giáp"
       ],
       "role_tiers": {
-        "Sát thủ": "?"
+        "Sát thủ": "A"
       },
+      "role_tiers_reason": {
+        "Sát thủ": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Sát thủ."
+      },
+      "sub_roles": [
+        "Sát thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -19264,6 +19932,12 @@
       "role_tiers": {
         "Xạ thủ": "A"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng ổn định (50.3%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Cơ động"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -19414,6 +20088,12 @@
       "role_tiers": {
         "Hỗ trợ": "S"
       },
+      "role_tiers_reason": {
+        "Hỗ trợ": "Tỉ lệ thắng thấp (49.61%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ."
+      },
+      "sub_roles": [
+        "Hỗ trợ Hồi máu/Bảo kê"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -19589,6 +20269,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (49.63%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -19775,6 +20461,12 @@
       "role_tiers": {
         "Đấu sĩ": "D"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng ổn định (50.19%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đấu sĩ Sát thủ"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -19912,6 +20604,12 @@
       "role_tiers": {
         "Pháp sư": "S"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng rất cao (52.02%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -20092,6 +20790,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng ổn định (51.36%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -20254,6 +20958,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng ổn định (51.21%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -20423,6 +21133,12 @@
       "role_tiers": {
         "Pháp sư": "B"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (47.24%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -20609,6 +21325,12 @@
       "role_tiers": {
         "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Tỉ lệ thắng thấp (48.29%). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -20789,6 +21511,12 @@
       "role_tiers": {
         "Đỡ đòn": "S"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng ổn định (50.39%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Bất lợi vì bị nhiều tướng meta cùng đường khắc chế."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -20951,6 +21679,12 @@
       "role_tiers": {
         "Đấu sĩ": "S"
       },
+      "role_tiers_reason": {
+        "Đấu sĩ": "Tỉ lệ thắng thấp (49.72%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đấu sĩ."
+      },
+      "sub_roles": [
+        "Đấu sĩ Hồi phục"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -21117,8 +21851,14 @@
         "Lục: Công phép / giảm hồi chiêu"
       ],
       "role_tiers": {
-        "Pháp sư": "?"
+        "Pháp sư": "A"
       },
+      "role_tiers_reason": {
+        "Pháp sư": "Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định). Bộ kỹ năng cực kỳ phù hợp với vai trò Pháp sư."
+      },
+      "sub_roles": [
+        "Pháp sư Cấu rỉa"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -21305,6 +22045,12 @@
       "role_tiers": {
         "Đỡ đòn": "A"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng thấp (48.47%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Có lợi thế lớn khắc chế nhiều tướng meta cùng đường."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -21480,6 +22226,12 @@
       "role_tiers": {
         "Xạ thủ": "C"
       },
+      "role_tiers_reason": {
+        "Xạ thủ": "Tỉ lệ thắng thấp (47.82%). Bộ kỹ năng cực kỳ phù hợp với vai trò Xạ thủ."
+      },
+      "sub_roles": [
+        "Xạ thủ Chủ lực DPS"
+      ],
       "analysis": {
         "counters": {
           "lane": {
@@ -21617,6 +22369,14 @@
         "Đỡ đòn": "S",
         "Hỗ trợ": "A"
       },
+      "role_tiers_reason": {
+        "Đỡ đòn": "Tỉ lệ thắng thấp (47.68%). Bộ kỹ năng cực kỳ phù hợp với vai trò Đỡ đòn. Có lợi thế lớn khắc chế nhiều tướng meta cùng đường.",
+        "Hỗ trợ": "Tỉ lệ thắng thấp (47.68%). Bộ kỹ năng cực kỳ phù hợp với vai trò Hỗ trợ. Có lợi thế lớn khắc chế nhiều tướng meta cùng đường."
+      },
+      "sub_roles": [
+        "Đỡ đòn Mở giao tranh",
+        "Hỗ trợ Khống chế/Mở giao tranh"
+      ],
       "analysis": {
         "counters": {
           "lane": {

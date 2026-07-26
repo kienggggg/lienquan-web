@@ -139,11 +139,11 @@ export default async function Home(props: { searchParams: SearchParams }) {
                       <img src={h.img} alt={h.name || h.id} className="av" />
                       <div className="nbox">
                         <div className="nm">{h.name || h.id}</div>
-                        <div className="ro">{targetRole || h.roles?.[0] || 'Unknown'}</div>
+                        <div className="ro">{h.sub_roles && h.sub_roles.length > 0 ? h.sub_roles[0] : (targetRole || h.roles?.[0] || 'Unknown')}</div>
                       </div>
                       <div className="rstats">
                         <div className="s-tier" style={{ color: tColor }}>{tName}</div>
-                        <div className="s-win">Win {h.winrate}%</div>
+                        <div className="s-win">Win {h.winrate ? `${h.winrate}%` : '---'}</div>
                       </div>
                     </Link>
                   );
@@ -172,25 +172,32 @@ export default async function Home(props: { searchParams: SearchParams }) {
       {(() => {
         const TIER_ORDER = ['S', 'A', 'B', 'C', 'D'];
         
-        const withWR = filteredList.filter((h: any) => typeof h.winrate === 'number');
-        const noWR = filteredList.filter((h: any) => typeof h.winrate !== 'number');
+        const byTier: Record<string, any[]> = { S: [], A: [], B: [], C: [], D: [], '?': [] };
         
-        const byTier: Record<string, any[]> = { S: [], A: [], B: [], C: [], D: [] };
-        
-        for (const h of withWR) {
+        for (const h of filteredList) {
           // Tính tier dựa trên targetRole nếu có, nếu không thì lấy winrate tổng
           let t = '?';
           if (targetRole && h.role_tiers) {
             t = h.role_tiers[targetRole] || '?';
-          } else {
+          } else if (h.role_tiers && Object.keys(h.role_tiers).length > 0) {
+            // Pick highest tier if no target role
+            const tiers = Object.values(h.role_tiers) as string[];
+            if (tiers.includes('S')) t = 'S';
+            else if (tiers.includes('A')) t = 'A';
+            else if (tiers.includes('B')) t = 'B';
+            else if (tiers.includes('C')) t = 'C';
+            else if (tiers.includes('D')) t = 'D';
+          } else if (typeof h.winrate === 'number') {
             t = getTier(h.winrate).name;
           }
           if (byTier[t]) byTier[t].push(h);
         }
         
-        for (const t of TIER_ORDER) {
-          // Sắp xếp theo winrate giảm dần trong cùng 1 tier
-          byTier[t].sort((a: any, b: any) => b.winrate - a.winrate);
+        for (const t of [...TIER_ORDER, '?']) {
+          // Sắp xếp theo winrate giảm dần trong cùng 1 tier (nếu có winrate)
+          if (byTier[t]) {
+             byTier[t].sort((a: any, b: any) => (b.winrate || 50) - (a.winrate || 50));
+          }
         }
 
         return (
@@ -209,8 +216,8 @@ export default async function Home(props: { searchParams: SearchParams }) {
                         <img src={h.img} alt={h.name || h.id} className="av" />
                         <div>
                           <div className="nm">{h.name || h.id}</div>
-                          <div className="ro">{targetRole || h.roles?.[0] || 'Unknown'}</div>
-                          <div className="wr">Win <b>{h.winrate}%</b></div>
+                          <div className="ro">{h.sub_roles ? h.sub_roles.join(' · ') : (targetRole || h.roles?.[0] || 'Unknown')}</div>
+                          <div className="wr">Win <b>{h.winrate ? `${h.winrate}%` : '---'}</b></div>
                         </div>
                       </Link>
                     ))}
@@ -219,18 +226,19 @@ export default async function Home(props: { searchParams: SearchParams }) {
               );
             })}
 
-            {noWR.length > 0 && (
+            {byTier['?'] && byTier['?'].length > 0 && (
               <div className="tierrow" key="unranked">
                 <div className="tierbadge" style={{ color: 'var(--color-ink-sub)', borderRight: '2px solid var(--color-line)' }}>
                   ?
                 </div>
                 <div className="tierheroes">
-                  {noWR.map((h: any) => (
+                  {byTier['?'].map((h: any) => (
                     <Link href={`/hero/${h.id}`} key={h.id} className="htile">
                       <img src={h.img} alt={h.name || h.id} className="av" />
                       <div>
                         <div className="nm">{h.name || h.id}</div>
-                        <div className="ro">{targetRole || h.roles?.[0] || 'Unknown'}</div>
+                        <div className="ro">{h.sub_roles ? h.sub_roles.join(' · ') : (targetRole || h.roles?.[0] || 'Unknown')}</div>
+                        <div className="wr">Win <b>{h.winrate ? `${h.winrate}%` : '---'}</b></div>
                       </div>
                     </Link>
                   ))}

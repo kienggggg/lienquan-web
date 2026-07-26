@@ -373,47 +373,108 @@ def _matchup_score(hero: dict, role: str, roster: list[dict]) -> float:
 
     return score
 
-def calculate_role_tier(hero: dict, role: str, roster: list[dict]) -> str:
+def calculate_role_tier(hero: dict, role: str, roster: list[dict]) -> tuple[str, str]:
     wr = hero.get("winrate")
+    missing_data = False
     if wr is None:
-        return "?"
+        wr = 50.0
+        missing_data = True
     
     # 1. Base Score từ Winrate (Trọng số chính)
     score = float(wr)
     
-    # 2. Pickrate modifier (Pickrate cao chứng tỏ tướng đó mạnh ổn định, không phải chỉ hên do ít người chơi)
+    # 2. Pickrate modifier
     pr = float(hero.get("pickrate") or 0)
     if pr > 5.0: score += 0.5
     elif pr < 1.0: score -= 0.5
 
     # 3. Role Fitness (Độ hợp chất tướng)
-    score += _role_fitness_score(hero, role)
+    fit_score = _role_fitness_score(hero, role)
+    score += fit_score
     
     # 4. Matchup Score (Khắc chế cùng đường)
-    score += _matchup_score(hero, role, roster)
+    match_score = _matchup_score(hero, role, roster)
+    score += match_score
     
     # Phân hạng Tier dựa trên final score
-    if score >= 53.0: return "S"
-    if score >= 51.0: return "A"
-    if score >= 49.5: return "B"
-    if score >= 48.0: return "C"
-    return "D"
+    if score >= 53.0: tier = "S"
+    elif score >= 51.0: tier = "A"
+    elif score >= 49.5: tier = "B"
+    elif score >= 48.0: tier = "C"
+    else: tier = "D"
+
+    # Tạo câu giải thích
+    reasons = []
+    if missing_data:
+        reasons.append("Chưa có dữ liệu tỉ lệ thắng (dùng mức cân bằng mặc định).")
+    elif float(wr) >= 52.0:
+        reasons.append(f"Tỉ lệ thắng rất cao ({wr}%).")
+    elif float(wr) >= 50.0:
+        reasons.append(f"Tỉ lệ thắng ổn định ({wr}%).")
+    else:
+        reasons.append(f"Tỉ lệ thắng thấp ({wr}%).")
+        
+    if fit_score >= 0.5:
+        reasons.append(f"Bộ kỹ năng cực kỳ phù hợp với vai trò {role}.")
+    elif fit_score >= 0:
+        reasons.append(f"Bộ kỹ năng phù hợp với vai trò {role}.")
+    else:
+        reasons.append(f"Bộ kỹ năng không thực sự tối ưu cho {role}.")
+        
+    if match_score >= 0.5:
+        reasons.append("Có lợi thế lớn khắc chế nhiều tướng meta cùng đường.")
+    elif match_score <= -0.5:
+        reasons.append("Bất lợi vì bị nhiều tướng meta cùng đường khắc chế.")
+        
+    return tier, " ".join(reasons)
+
+def get_sub_roles(hero: dict) -> list[str]:
+    """Phân hóa 6 vai trò cơ bản thành các vai trò chuyên sâu dựa vào thuộc tính kỹ năng (attr)."""
+    sub_roles = []
+    for r in hero.get("roles", ["Đấu sĩ"]):
+        if r == "Hỗ trợ":
+            if _a(hero, "sustain") >= 2: sub_roles.append("Hỗ trợ Hồi máu/Bảo kê")
+            elif _a(hero, "cc") >= 2: sub_roles.append("Hỗ trợ Khống chế/Mở giao tranh")
+            else: sub_roles.append("Hỗ trợ Đa dụng")
+        elif r == "Pháp sư":
+            if _a(hero, "range") >= 2: sub_roles.append("Pháp sư Cấu rỉa")
+            elif _a(hero, "burst") >= 2: sub_roles.append("Pháp sư Sốc sát thương")
+            elif _a(hero, "cc") >= 2: sub_roles.append("Pháp sư Khống chế")
+            else: sub_roles.append("Pháp sư Tiêu chuẩn")
+        elif r == "Xạ thủ":
+            if _a(hero, "mobility") >= 2: sub_roles.append("Xạ thủ Cơ động")
+            elif _a(hero, "dps") >= 2: sub_roles.append("Xạ thủ Chủ lực DPS")
+            elif _a(hero, "burst") >= 2: sub_roles.append("Xạ thủ Dồn sát thương")
+            else: sub_roles.append("Xạ thủ Tiêu chuẩn")
+        elif r == "Đấu sĩ":
+            if _a(hero, "sustain") >= 2: sub_roles.append("Đấu sĩ Hồi phục")
+            elif _a(hero, "burst") >= 2: sub_roles.append("Đấu sĩ Sát thủ")
+            elif _a(hero, "dps") >= 2: sub_roles.append("Đấu sĩ DPS")
+            else: sub_roles.append("Đấu sĩ Tiêu chuẩn")
+        elif r == "Sát thủ":
+            if _a(hero, "mobility") >= 2 and _a(hero, "burst") >= 2: sub_roles.append("Sát thủ Cơ động")
+            else: sub_roles.append("Sát thủ Dồn sát thương")
+        elif r == "Đỡ đòn":
+            if _a(hero, "engage") >= 2: sub_roles.append("Đỡ đòn Mở giao tranh")
+            elif _a(hero, "tanky") >= 2: sub_roles.append("Đỡ đòn Chống chịu thuần")
+            else: sub_roles.append("Đỡ đòn Tiêu chuẩn")
+    return list(dict.fromkeys(sub_roles))
 
 def enrich_heroes_with_tiers(roster: list[dict]) -> list[dict]:
     """Làm giàu data, tính sẵn role_tiers cho mỗi tướng."""
     for h in roster:
         h["role_tiers"] = {}
-        if h.get("winrate") is None:
-            for r in h.get("roles", []):
-                h["role_tiers"][r] = "?"
-            continue
+        h["role_tiers_reason"] = {}
+        h["sub_roles"] = get_sub_roles(h)
+        
+        roles_to_calc = h.get("roles", [])
+        if not roles_to_calc:
+            roles_to_calc = ["Đấu sĩ"]
             
-        for r in h.get("roles", []):
-            h["role_tiers"][r] = calculate_role_tier(h, r, roster)
-            
-        # Nếu tướng không có roles thì set default
-        if not h.get("roles"):
-            h["role_tiers"]["Đấu sĩ"] = calculate_role_tier(h, "Đấu sĩ", roster)
+        for r in roles_to_calc:
+            t, reason = calculate_role_tier(h, r, roster)
+            h["role_tiers"][r] = t
+            h["role_tiers_reason"][r] = reason
             
     return roster
 

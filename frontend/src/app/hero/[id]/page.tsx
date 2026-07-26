@@ -49,7 +49,7 @@ export default async function HeroPage({ params }: { params: { id: string } }) {
         <img src={getLocalImgUrl(hero.img)} alt={hero.name} className="av" />
         <div>
           <h1>{hero.name}</h1>
-          <div className="meta">Vai trò: {hero.roles?.join(', ')}</div>
+          <div className="meta">Vai trò: {hero.sub_roles?.join(', ') || hero.roles?.join(', ')}</div>
         </div>
       </div>
 
@@ -59,7 +59,7 @@ export default async function HeroPage({ params }: { params: { id: string } }) {
             <img src={getLocalImgUrl(hero.img)} alt={hero.name} />
             <div className="ov">
               <div className="nm">{hero.name}</div>
-              <div className="role">{hero.roles?.[0]}</div>
+              <div className="role">{hero.sub_roles?.[0] || hero.roles?.[0]}</div>
             </div>
           </div>
           
@@ -81,6 +81,17 @@ export default async function HeroPage({ params }: { params: { id: string } }) {
         <div>
           <div className="spanel">
             <div className="t">Phân tích chuyên sâu</div>
+            
+            {hero.role_tiers_reason && Object.keys(hero.role_tiers_reason).length > 0 && (
+              <div className="introbox" style={{ marginBottom: 15, borderLeftColor: '#9c27b0' }}>
+                <h4 style={{ color: '#9c27b0', marginBottom: 5 }}>Lý do Xếp hạng</h4>
+                {Object.entries(hero.role_tiers_reason).map(([role, reason]) => (
+                  <div key={role} style={{ marginBottom: 8 }}>
+                    <strong style={{ color: 'var(--color-ink)' }}>{role} (Hạng {hero.role_tiers?.[role] || '?'}):</strong> {reason as string}
+                  </div>
+                ))}
+              </div>
+            )}
             
             {hero.pros && hero.pros.length > 0 && (
               <div className="introbox" style={{ marginBottom: 15, borderLeftColor: '#4caf50' }}>
