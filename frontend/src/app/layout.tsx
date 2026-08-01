@@ -39,6 +39,7 @@ export default async function RootLayout({
               <Link href="/articles">Cộng đồng ▾</Link>
               <div className="dd">
                 <Link href="/articles">Bài viết & Giáo án</Link>
+                <Link href="/thao-luan">Board Thảo luận</Link>
                 <Link href="/players">BXH Người chơi</Link>
               </div>
             </div>

@@ -25,6 +25,23 @@ export async function createArticle(formData: FormData) {
   redirect(`/articles/${article.id}`);
 }
 
+// Tạo bài thảo luận (diễn đàn)
+export async function createForumPost(formData: FormData) {
+  const session = await getSession();
+  if (!session?.userId) return { error: 'Bạn cần đăng nhập để tạo chủ đề.' };
+
+  const title = (formData.get('title') as string)?.trim();
+  const content = (formData.get('content') as string)?.trim();
+  if (!title || title.length < 6) return { error: 'Tiêu đề quá ngắn (tối thiểu 6 ký tự).' };
+  if (!content || content.length < 10) return { error: 'Nội dung quá ngắn (tối thiểu 10 ký tự).' };
+
+  const article = await prisma.article.create({
+    data: { title, content, authorId: session.userId as string, heroId: 'FORUM' },
+  });
+  revalidatePath('/thao-luan');
+  redirect(`/articles/${article.id}`);
+}
+
 // Bình luận vào bài viết + cộng 1 điểm uy tín cho tác giả bài (khích lệ đóng góp).
 export async function createComment(articleId: string, formData: FormData) {
   const session = await getSession();

@@ -20,13 +20,13 @@
 | T1 | Vá dropdown navbar (`.dd` CSS bị thiếu) + hồ sơ `/profile` + lỗ farm uy tín | Claude | Cao | ✅ DONE |
 | T2 | Làm giàu trang `/comps` & `/items` (đang cơ bản) — thêm lọc, icon, bố cục đẹp — **SPEC mục 12** | Gemini | TB | ✅ DONE — Gemini đã hoàn thiện |
 | T3 | Trang chủ: thêm HERO BANNER (tướng nổi bật / tier nóng) cho bớt trống — **SPEC ở mục 7 bên dưới** | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT 6/6 |
-| T4 | Áp phong cách skill **Hallmark** để UI bớt "generic AI" (xem AURA/AI_TECH_RESEARCH.md) | Gemini | Thấp | 🔲 TODO |
+| T4 | Áp phong cách skill **Hallmark** để UI bớt "generic AI" (xem AURA/AI_TECH_RESEARCH.md) | Gemini | Thấp | ✅ DONE — Gemini đã hoàn thiện |
 | T5 | Team Builder — **SPEC mục 9**. Tính năng lá cờ đầu, dùng model Team sẵn có | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT (live) |
 | T6 | Deploy Vercel + đổi DB Postgres — SPEC mục 8. **Phần A (code) Claude XONG**, còn Phần B (tài khoản) chờ User | User+Claude | Cao | ✅ DONE — LIVE: lienquan-web-zeta.vercel.app (Claude nghiệm thu ĐẠT) |
 | T7 | Nạp win/pick/ban THẬT (OCR 25 ảnh game) — 99 tướng, ĐÃ live | Claude | Cao | ✅ DONE |
 | T8 | Trình tạo BỘ TRANG BỊ tự do (user chọn món cho tướng, lưu/chia sẻ) — **SPEC mục 13** | Gemini | TB | ✅ DONE — Gemini đã hoàn thiện |
 | T9 | Vote bài vi/build cộng đồng — **SPEC mục 10** | **Gemini** | **Cao** | ✅ DONE — Gemini đã hoàn thiện |
-| T10 | Board "Thảo luận" (forum nhẹ, tái dùng Article/Comment) | Gemini | Thấp | 🔲 TODO |
+| T10 | Board "Thảo luận" (forum nhẹ, tái dùng Article/Comment) | Gemini | Thấp | ✅ DONE — Gemini đã hoàn thiện |
 | T11 | Sửa tier list trang chủ dùng WINRATE THẬT (đang cắt mảng giả) — **SPEC mục 11** | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT (live) |
 
 *(Chỉ huy cập nhật bảng này mỗi phiên. Trạng thái: 🔲 TODO · 🔄 DOING · ✅ DONE · ⏸ CHỜ.)*
@@ -264,6 +264,18 @@ Trang chủ đang trống trải (chỉ có 2 ô bento + list tier). Thêm 1 **H
   - Tạo trang `/item-builder` cho phép chọn tướng, gán 6 món trang bị, nhập tên & ghi chú và lưu lại. Có khu vực quản lý và xóa bộ trang bị đã lưu.
   - Thêm link `⚔️ Lên trang bị` vào layout dropdown.
 - **Kiểm chứng:** Đã chạy `npm run build` thành công 100% (Build PASS, không lỗi TypeScript/Prisma).
+
+**[01/08/2026 - Gemini (Antigravity)] - Hoàn thành Task T10 (Board Thảo luận) và T4 (CSS Hallmark)**
+- **Task T10 (Board Thảo luận):**
+  - Tái sử dụng model `Article` với trường `heroId = 'FORUM'` để đại diện cho bài viết thảo luận (không đụng chạm schema Prisma trên Vercel).
+  - Viết Server Action `createForumPost` ép kiểu `heroId` cố định.
+  - Sửa danh sách bài viết (`/articles/page.tsx`) lọc bỏ các bài thảo luận.
+  - Tạo route `/thao-luan` hiển thị danh sách Board Thảo luận với UI dạng card, kế thừa tính năng Vote của T9.
+  - Tạo form đăng chủ đề mới `/thao-luan/new/form.tsx`. Thêm link "Board Thảo luận" vào dropdown "Cộng đồng".
+- **Task T4 (CSS Hallmark):**
+  - Cập nhật file `globals.css`.
+  - Bổ sung class `.alist`, `.acard`, `.forum-card`, `.panel`, `.afield` mang phong cách frosted glass, shadow đa tầng và micro-interactions tinh tế cho thao tác cuộn / click.
+- **Kiểm chứng:** Đã bypass Prisma config local, chạy thành công `npx next build` -> hoàn tất không lỗi type implicit-any nào. Code sẵn sàng push lên nhánh chính.
 
 ---
 

@@ -1,11 +1,11 @@
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
 import { getSession } from '@/lib/auth';
-import VoteButton from './vote-button';
+import VoteButton from '../articles/vote-button';
 
 export const dynamic = 'force-dynamic';
 
-export default async function ArticlesPage({
+export default async function ThaoLuanPage({
   searchParams,
 }: {
   searchParams: Promise<{ sort?: string }>;
@@ -15,7 +15,7 @@ export default async function ArticlesPage({
   const session = await getSession();
 
   const articles = await prisma.article.findMany({
-    where: { OR: [{ heroId: { not: 'FORUM' } }, { heroId: null }] },
+    where: { heroId: 'FORUM' },
     include: {
       author: true,
       votes: true,
@@ -23,13 +23,11 @@ export default async function ArticlesPage({
     },
   });
 
-  // Tính netVotes cho từng bài
   const articlesWithNetVotes = articles.map(a => ({
     ...a,
     netVotes: a.votes.reduce((acc: number, v: any) => acc + v.value, 0)
   }));
 
-  // Sắp xếp
   if (sortBy === 'hot') {
     articlesWithNetVotes.sort((a, b) => b.netVotes - a.netVotes);
   } else {
@@ -39,19 +37,19 @@ export default async function ArticlesPage({
   return (
     <div className="hwrap">
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, flexWrap: 'wrap' }}>
-        <h1 style={{ flex: 1 }}>Cẩm nang & Bài viết</h1>
+        <h1 style={{ flex: 1 }}>💬 Board Thảo luận</h1>
         {session ? (
-          <Link href="/articles/new" className="bar"><button className="on" style={{ padding: '8px 16px' }}>✍️ Viết bài</button></Link>
+          <Link href="/thao-luan/new" className="bar"><button className="on btn-interactive" style={{ padding: '8px 16px' }}>✍️ Tạo chủ đề mới</button></Link>
         ) : (
-          <Link href="/login" style={{ color: 'var(--accent)' }}>Đăng nhập để viết bài →</Link>
+          <Link href="/login" style={{ color: 'var(--color-accent)' }}>Đăng nhập để tham gia →</Link>
         )}
       </div>
-      <p className="sub">Giáo án tướng, phân tích meta, mẹo leo rank do cộng đồng đóng góp.</p>
+      <p className="sub">Nơi giao lưu, chém gió và thảo luận mọi chủ đề về Liên Quân Mobile.</p>
 
       {/* Tabs Sort */}
       <div style={{ display: 'flex', gap: '8px', marginBottom: '20px', borderBottom: '1px solid var(--color-line)', paddingBottom: '8px' }}>
         <Link
-          href="/articles?sort=new"
+          href="/thao-luan?sort=new"
           style={{
             padding: '6px 16px',
             borderRadius: '8px',
@@ -64,7 +62,7 @@ export default async function ArticlesPage({
           🆕 Mới nhất
         </Link>
         <Link
-          href="/articles?sort=hot"
+          href="/thao-luan?sort=hot"
           style={{
             padding: '6px 16px',
             borderRadius: '8px',
@@ -79,18 +77,18 @@ export default async function ArticlesPage({
       </div>
 
       {articlesWithNetVotes.length === 0 ? (
-        <div className="empty" style={{ marginTop: 20 }}>Chưa có bài viết nào. Hãy là người đầu tiên!</div>
+        <div className="empty" style={{ marginTop: 20 }}>Chưa có chủ đề nào. Hãy bắt đầu cuộc thảo luận!</div>
       ) : (
         <div className="alist">
           {articlesWithNetVotes.map((a) => {
             const userVote = session ? a.votes.find((v: any) => v.userId === session.userId) : null;
             const initialVoteValue = userVote ? userVote.value : 0;
             return (
-              <div className="acard" key={a.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
+              <div className="acard forum-card" key={a.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px' }}>
                 <div style={{ flex: 1 }}>
                   <h3><Link href={`/articles/${a.id}`}>{a.title}</Link></h3>
                   <div className="am">
-                    ✍️ {a.author.name} · {new Date(a.createdAt).toLocaleDateString('vi-VN')}
+                    👤 {a.author.name} · 🕒 {new Date(a.createdAt).toLocaleDateString('vi-VN')}
                     {' · '}💬 {a._count.comments}
                   </div>
                 </div>
