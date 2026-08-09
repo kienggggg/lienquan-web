@@ -18,15 +18,14 @@
 | # | Nhiệm vụ | Giao cho | Ưu tiên | Trạng thái |
 |---|---|---|---|---|
 | T1 | Vá dropdown navbar (`.dd` CSS bị thiếu) + hồ sơ `/profile` + lỗ farm uy tín | Claude | Cao | ✅ DONE |
-| T2 | Làm giàu trang `/comps` & `/items` (đang cơ bản) — thêm lọc, icon, bố cục đẹp — **SPEC mục 12** | Gemini | TB | ✅ DONE — Gemini đã hoàn thiện |
-| T3 | Trang chủ: thêm HERO BANNER (tướng nổi bật / tier nóng) cho bớt trống — **SPEC ở mục 7 bên dưới** | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT 6/6 |
-| T4 | Áp phong cách skill **Hallmark** để UI bớt "generic AI" (xem AURA/AI_TECH_RESEARCH.md) | Gemini | Thấp | ✅ DONE — Gemini đã hoàn thiện |
+| T2 | Làm giàu trang `/comps` & `/items` (đang cơ bản) — thêm lọc, icon, bố cục đẹp — **SPEC mục 12** | Gemini | TB | ✅ DONE — Claude nghiệm thu ĐẠT (live) |
+| T4 | Áp phong cách skill **Hallmark** để UI bớt "generic AI" (xem AURA/AI_TECH_RESEARCH.md) | Gemini | Thấp | ✅ DONE — Nâng cấp TierListClient + Bento Grid eSports |
 | T5 | Team Builder — **SPEC mục 9**. Tính năng lá cờ đầu, dùng model Team sẵn có | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT (live) |
 | T6 | Deploy Vercel + đổi DB Postgres — SPEC mục 8. **Phần A (code) Claude XONG**, còn Phần B (tài khoản) chờ User | User+Claude | Cao | ✅ DONE — LIVE: lienquan-web-zeta.vercel.app (Claude nghiệm thu ĐẠT) |
 | T7 | Nạp win/pick/ban THẬT (OCR 25 ảnh game) — 99 tướng, ĐÃ live | Claude | Cao | ✅ DONE |
-| T8 | Trình tạo BỘ TRANG BỊ tự do (user chọn món cho tướng, lưu/chia sẻ) — **SPEC mục 13** | Gemini | TB | ✅ DONE — Gemini đã hoàn thiện |
-| T9 | Vote bài vi/build cộng đồng — **SPEC mục 10** | **Gemini** | **Cao** | ✅ DONE — Gemini đã hoàn thiện |
-| T10 | Board "Thảo luận" (forum nhẹ, tái dùng Article/Comment) | Gemini | Thấp | ✅ DONE — Gemini đã hoàn thiện |
+| T8 | Trình tạo BỘ TRANG BỊ tự do (user chọn món cho tướng, lưu/chia sẻ) — **SPEC mục 13** | Gemini | TB | ✅ DONE — Claude nghiệm thu ĐẠT (live) |
+| T9 | Vote bài vi/build cộng đồng — **SPEC mục 10** | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT (live) |
+| T10 | Board "Thảo luận" (forum nhẹ, tái dùng Article/Comment) | Gemini | Thấp | ✅ DONE — Hoàn thiện |
 | T11 | Sửa tier list trang chủ dùng WINRATE THẬT (đang cắt mảng giả) — **SPEC mục 11** | **Gemini** | **Cao** | ✅ DONE — Claude nghiệm thu ĐẠT (live) |
 
 *(Chỉ huy cập nhật bảng này mỗi phiên. Trạng thái: 🔲 TODO · 🔄 DOING · ✅ DONE · ⏸ CHỜ.)*
