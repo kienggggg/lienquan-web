@@ -2001,3 +2001,402 @@ h1 { font-size: 32px; letter-spacing: -0.02em; }
   }
 }
 
+/* ==========================================================================
+   METATFT STYLE COMPOSITIONS BAR (Tier Comps Pro Layout)
+   ========================================================================== */
+
+.comps-metatft-root {
+  padding-bottom: 60px;
+}
+
+.comps-filter-bar {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.comps-search-input-box {
+  flex: 1;
+  min-width: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.comps-search-input-box .search-ico {
+  position: absolute;
+  left: 12px;
+  color: var(--color-accent);
+}
+
+.comps-search-input-box input {
+  width: 100%;
+  background: var(--color-paper-1);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink);
+  font-size: 13px;
+  padding: 8px 34px 8px 34px;
+  border-radius: 8px;
+  outline: none;
+}
+
+.comps-search-input-box input:focus {
+  border-color: var(--color-accent);
+}
+
+.comps-search-input-box button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: var(--color-ink-sub);
+  cursor: pointer;
+}
+
+.comps-diff-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diff-lbl {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-ink-sub);
+}
+
+.diff-pill-btn {
+  background: var(--color-paper-1);
+  border: 1px solid var(--color-line);
+  color: var(--color-ink-sub);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.diff-pill-btn:hover {
+  border-color: var(--color-accent);
+  color: var(--color-ink);
+}
+
+.diff-pill-btn.active {
+  background: var(--color-accent);
+  color: #050811;
+  border-color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Comp Stack & Cards */
+.metatft-comp-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.metatft-comp-card {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
+.metatft-comp-card:hover {
+  border-color: rgba(0, 240, 255, 0.4);
+}
+
+.metatft-comp-main-row {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  gap: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.metatft-tier-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  flex: none;
+}
+
+.metatft-comp-info {
+  width: 220px;
+  flex: none;
+}
+
+.comp-title-line {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.comp-theme-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.comp-carry-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-top: 1px;
+}
+
+.comp-tags-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.strategy-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.strategy-tag.speed {
+  background: rgba(0, 240, 255, 0.1);
+  color: var(--color-accent);
+}
+
+.strategy-tag.diff.easy { background: rgba(16, 185, 129, 0.15); color: #10B981; }
+.strategy-tag.diff.med { background: rgba(255, 184, 0, 0.15); color: #FFB800; }
+.strategy-tag.diff.hard { background: rgba(239, 68, 68, 0.15); color: #EF4444; }
+
+/* 5 Heroes Lineup */
+.metatft-heroes-lineup {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.metatft-hero-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.hero-avatar-box {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  background: var(--color-paper-1);
+}
+
+.metatft-hero-unit.is-carry .hero-avatar-box {
+  border: 2px solid var(--color-gold);
+  box-shadow: 0 0 10px rgba(255, 184, 0, 0.35);
+}
+
+.unit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lane-badge {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  font-size: 9px;
+  background: rgba(5, 8, 17, 0.85);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+
+.carry-star-icon {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  font-size: 10px;
+}
+
+.unit-name {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-top: 3px;
+  max-width: 52px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+.carry-mini-items {
+  display: flex;
+  gap: 2px;
+  margin-top: 3px;
+}
+
+.mini-item-slot {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--color-line);
+}
+
+.mini-item-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Stats Columns */
+.metatft-stats-columns {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex: none;
+  padding: 0 10px;
+}
+
+.stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 55px;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--color-ink);
+}
+
+.stat-num.win-num {
+  color: var(--color-accent);
+}
+
+.stat-lbl {
+  font-size: 10px;
+  color: var(--color-ink-sub);
+  margin-top: 1px;
+}
+
+.metatft-expand-btn {
+  flex: none;
+  color: var(--color-ink-sub);
+  padding: 4px;
+}
+
+.chevron-arrow {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  font-size: 11px;
+}
+
+/* Accordion Drawer */
+.metatft-expanded-drawer {
+  border-top: 1px solid var(--color-line);
+  background: var(--color-paper-1);
+  padding: 16px 20px;
+  animation: fadeIn 0.2s ease;
+}
+
+.expanded-grid-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.detail-box {
+  background: var(--color-paper-2);
+  border: 1px solid var(--color-line);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.detail-box.strategy { border-left: 3px solid var(--color-accent); }
+.detail-box.pro { border-left: 3px solid #10B981; }
+.detail-box.con { border-left: 3px solid #EF4444; }
+
+.detail-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-ink);
+  margin-bottom: 6px;
+}
+
+.detail-desc {
+  font-size: 12px;
+  color: var(--color-ink-sub);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.expanded-footer-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.view-carry-link, .edit-team-link {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.view-carry-link {
+  background: var(--color-paper-3);
+  color: var(--color-accent);
+  border: 1px solid var(--color-line);
+}
+
+.edit-team-link {
+  background: var(--color-accent);
+  color: #050811;
+}
+
+@media (max-width: 900px) {
+  .metatft-comp-main-row {
+    flex-wrap: wrap;
+  }
+  .metatft-comp-info {
+    width: 100%;
+  }
+  .metatft-stats-columns {
+    width: 100%;
+    justify-content: space-around;
+    padding-top: 10px;
+    border-top: 1px dashed var(--color-line);
+  }
+}
+
+
